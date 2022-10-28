@@ -1,0 +1,5 @@
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csprojAssemblyReference.cache
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.cache
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.lref

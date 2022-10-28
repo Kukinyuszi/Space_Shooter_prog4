@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "H67lbvDnAQL36ijcJ7SOAypxtodyKo3t3As7uoBNWqNDvgNxKELI+9KXfgOn7A2f1EHqNXlw4/2P0hNIBN91fA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dorka\\source\\repos\\GUI_2022_23_01_B2291T\\Space shooter\\Space shooter\\Space shooter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dorka\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
