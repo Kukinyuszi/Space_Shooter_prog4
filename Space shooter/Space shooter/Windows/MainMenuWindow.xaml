@@ -22,7 +22,7 @@
             <Button Content="Start" Margin="10" Click="Start_Button_Click"  Padding="10" />
             <Button Content="Score board" Margin="10" Click="ScoreBoard_Click"  Padding="10" />
             <Button Content="Settings" Margin="10" Click="Settings_Button_Click"  Padding="10" />
-            <Button Content="Close"  Margin="10" Click="Quit_Button_Click"  Padding="10" />
+            <Button Content="Close"  Margin="10" Click="Button_Click"  Padding="10" />
         </StackPanel>
 
     </Grid>

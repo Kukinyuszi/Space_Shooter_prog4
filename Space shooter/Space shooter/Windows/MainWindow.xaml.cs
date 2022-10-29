@@ -126,11 +126,11 @@ namespace Space_shooter
                 logic.Controlup(SpaceShooterLogic.Controls.Shoot);
             }
         }
-        private void Pause_Button_Click(object sender, RoutedEventArgs e)
-        {
-            InGamePausePopUp pausePopUp = new InGamePausePopUp(this, gameTimer, gameMenu, _backgroundMusic_Settings);
-            pausePopUp.Show();
+        //private void Pause_Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InGamePausePopUp pausePopUp = new InGamePausePopUp(this, gameTimer, gameMenu, _backgroundMusic_Settings);
+        //    pausePopUp.Show();
 
-        }
+        //}
     }
 }

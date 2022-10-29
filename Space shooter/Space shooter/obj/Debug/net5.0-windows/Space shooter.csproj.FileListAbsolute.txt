@@ -3,3 +3,37 @@ C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\ob
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.cache
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.lref
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.AssemblyReference.cache
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\CustomDifficultySettings.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\HighScoresWindow.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\MainMenuWindow.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\PlayerSettingsWindow.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.cache
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter_MarkupCompile.lref
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\MainWindow.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.exe
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.deps.json
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.runtimeconfig.json
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.runtimeconfig.dev.json
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.pdb
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Microsoft.Toolkit.Mvvm.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\CustomDifficultySettings.baml
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\HighScoresWindow.baml
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\MainMenuWindow.baml
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\MainWindow.baml
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\PlayerSettingsWindow.baml
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.g.resources
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.AssemblyInfoInputs.cache
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.AssemblyInfo.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.CoreCompileInputs.cache
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.CopyComplete
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\refint\Space shooter.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.pdb
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.genruntimeconfig.cache
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\ref\Space shooter.dll

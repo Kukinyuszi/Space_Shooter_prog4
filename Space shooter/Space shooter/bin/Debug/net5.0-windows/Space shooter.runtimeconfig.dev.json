@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\aali-tra\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\aali-tra\\.nuget\\packages"
+    ]
+  }
+}

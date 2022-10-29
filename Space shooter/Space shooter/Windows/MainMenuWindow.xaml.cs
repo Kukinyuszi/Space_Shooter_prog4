@@ -32,7 +32,7 @@ namespace Space_shooter.Windows
             settings = new SpaceShooterLogic();
             InitializeComponent();
 
-            StartBackgroundMusic();
+            //StartBackgroundMusic();
         }
 
         public static void StartBackgroundMusic()
@@ -89,17 +89,22 @@ namespace Space_shooter.Windows
         //    }
         //}
 
-        private void HowToPlay_Button_Click(object sender, RoutedEventArgs e)
-        {
-            HowToPlayWindow howToPlay = new HowToPlayWindow(this);
-            this.Visibility = Visibility.Hidden;
-            howToPlay.Show();
-        }
+        //private void HowToPlay_Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    HowToPlayWindow howToPlay = new HowToPlayWindow(this);
+        //    this.Visibility = Visibility.Hidden;
+        //    howToPlay.Show();
+        //}
 
         private void ScoreBoard_Click(object sender, RoutedEventArgs e)
         {
             HighScoresWindow hsw = new HighScoresWindow();
             hsw.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
