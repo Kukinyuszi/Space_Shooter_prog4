@@ -646,7 +646,7 @@ namespace Space_shooter.Logic
             if (strongTime > 0) strongTime--;
             else Strong = false;
             if (weaponTime > 0) weaponTime--;
-            else Weaponon = false;
+            else { Weaponon = false; Player.Weapon = WeaponPowerup.WeaponType.None; }
         }
     }
 }

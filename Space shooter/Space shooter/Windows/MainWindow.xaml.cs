@@ -42,7 +42,11 @@ namespace Space_shooter
             logic = (SpaceShooterLogic)settings;
             gameMenu = menu;
             _backgroundMusic_Settings = _backgroundMusic;
+
+                
             InitializeComponent();
+            //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+            //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
