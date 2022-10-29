@@ -8,5 +8,6 @@ namespace Space_shooter.Logic
 {
     internal class SpaceShooterLogic
     {
+        public IEnumerable<object> Asteroids { get; internal set; }
     }
 }

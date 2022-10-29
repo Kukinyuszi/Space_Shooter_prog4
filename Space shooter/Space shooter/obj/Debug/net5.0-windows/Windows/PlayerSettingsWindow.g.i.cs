@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Space_shooter;
 using Space_shooter.Windows;
 using System;
 using System.Diagnostics;
