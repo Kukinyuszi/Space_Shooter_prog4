@@ -3,6 +3,7 @@ using Space_shooter.Models;
 using Space_shooter.Models.Powerups;
 using Space_shooter.Models.Powerups.Weapons;
 using Space_shooter.Services;
+using Space_shooter.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,23 +20,20 @@ namespace Space_shooter.Logic
     {
         public enum Controls
         {
-            Left, Right, Shoot, Escape, G, O, D
+            Left, Right, Shoot, G, O, D
         }
 
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
-        public event EventHandler Changed, GameOver, PowerUpPickedUp;
-        public int score = 0, health = 100, rpd = 0, strng = 0, wpn = 0;
-        private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40, enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, highscore, enemiescount = 2;
+        public event EventHandler Changed, GameOver, PowerUpPickedUp,GamePaused;
+        public int score = 0, health = 100;
+        private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
+            enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, highscore, enemiescount = 2, rapidfireTime, strongTime, weaponTime;
         private bool godmode, sound;
-        public bool shield, left, right, shoot, paused, g, o, d, rapid, strong, weapontime;
+        public bool shield, left, right, shoot, g, o, d, rapid, strong, weaponon;
         private string playername;
         private Difficulty difficulty;
         System.Windows.Size area;
-
-        DispatcherTimer rapidfireTimer;
-        DispatcherTimer weaponTimer;
-        DispatcherTimer stronglaserTimer;
 
         public List<Laser> Lasers { get; set; }
         public List<Asteroid> Asteroids { get; set; }
@@ -59,21 +57,15 @@ namespace Space_shooter.Logic
         public bool Godmode { get => godmode; set => godmode = value; }
         public bool Sound { get => sound; set => sound = value; }
         public Difficulty Difficultyness { get { return difficulty; } set { difficulty = value; } }
+        public int RapidfireTime { get => rapidfireTime; set => rapidfireTime = value; }
+        public int StrongTime { get => strongTime; set => strongTime = value; }
+        public int WeaponTime { get => WeaponTime; set => WeaponTime = value; }
 
         static Random random = new Random();
 
         // set up the properties and the basic game area
         public void SetupSizes(System.Windows.Size area)
         {
-            rapidfireTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(10) };
-            rapidfireTimer.Tick += (sender, eventargs) => { RapidFireTimeStep(); };
-
-            weaponTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(10) };
-            weaponTimer.Tick += (sender, eventargs) => { WeaponTimeStep(); };
-
-            stronglaserTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(10) };
-            stronglaserTimer.Tick += (sender, eventargs) => { StrongLaserTimeStep(); };
-
             this.area = area;
             highscore = new ScoreBoardService().GetHighScore();
             SetupDifficulty();
@@ -112,10 +104,6 @@ namespace Space_shooter.Logic
                 case Controls.Shoot:
                     shoot = true;
                     if (g || o || d) g = o = d = false;
-                    break;
-                case Controls.Escape:
-                    if (!paused) paused = true;
-                    else paused = false;
                     break;
                 case Controls.G:
                     g = true;
@@ -164,9 +152,7 @@ namespace Space_shooter.Logic
 
         public void TimeStep()
         {
-
-            if (!paused)
-            {
+            
                 System.Windows.Size size = new System.Windows.Size((int)area.Width, (int)area.Height);          // Screen size variable, it is for the objects to know if it leaves the screen
                 Rect playerrect = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);             // Generates the player hitbox
                 if (EnemyShips.Count > 0) EnemyShipsMovement(size);
@@ -215,7 +201,7 @@ namespace Space_shooter.Logic
                 {
                     health = 99999;
                 }
-            }
+            
         }
         private void SetupDifficulty()
         {
@@ -529,9 +515,7 @@ namespace Space_shooter.Logic
                                 break;
                             case Powerup.Type.RapidFire:
                                 rapid = true;
-                                if (rapidfireTimer.IsEnabled) rapidfireTimer.Stop();
-                                rapidfireTimer.Start();
-                                PlayerPowerups.Add(Powerups[i]);
+                                rapidfireTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Shield:
@@ -540,15 +524,12 @@ namespace Space_shooter.Logic
                                 break;
                             case Powerup.Type.Stronger:
                                 strong = true;
-                                if (stronglaserTimer.IsEnabled) stronglaserTimer.Stop();
-                                stronglaserTimer.Start();
-                                PlayerPowerups.Add(Powerups[i]);
+                                strongTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Weapon:
-                                weapontime = true;
-                                if (weaponTimer.IsEnabled) weaponTimer.Stop();
-                                weaponTimer.Start();
+                                weaponon = true;
+                                weaponTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 switch ((Powerups[i] as WeaponPowerup).TypeofWeapon)
                                 {
@@ -657,22 +638,14 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
-        private void RapidFireTimeStep()
+        public void Powerup_Timer_Step()
         {
-            rapid = false;
-            rapidfireTimer.Stop();
-        }
-        private void WeaponTimeStep()
-        {
-            weapontime = false;
-            Player.Weapon = WeaponPowerup.WeaponType.None;
-            weaponTimer.Stop();
-        }
-        private void StrongLaserTimeStep()
-        {
-            strong = false;
-            stronglaserTimer.Stop();
+            if (RapidfireTime > 0) rapidfireTime--;
+            else rapid = false;
+            if (strongTime > 0) strongTime--;
+            else strong = false;
+            if (weaponTime > 0) weaponTime--;
+            else weaponon = false;
         }
     }
 }

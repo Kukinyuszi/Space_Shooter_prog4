@@ -38,11 +38,16 @@ namespace Space_shooter.Windows
             this.DialogResult = false;
         }
 
-        private void save_Button_Click(object sender, RoutedEventArgs e)
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             Save_LoadGameService sgs = new Save_LoadGameService();
             sgs.SaveGame(model);
             lb_gamesaved.Content = "Game saved";
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape) this.DialogResult = true;
         }
     }
 }

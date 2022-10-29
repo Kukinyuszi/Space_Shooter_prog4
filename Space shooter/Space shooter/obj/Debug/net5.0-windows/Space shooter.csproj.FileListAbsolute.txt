@@ -37,3 +37,5 @@ C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj
 C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.pdb
 C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.genruntimeconfig.cache
 C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\ref\Space shooter.dll
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\GamePauseWindow.g.cs
+C:\Users\aali-tra\source\repos\Space Shooter git\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\GamePauseWindow.baml

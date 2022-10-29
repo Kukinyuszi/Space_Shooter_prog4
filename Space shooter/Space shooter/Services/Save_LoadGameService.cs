@@ -41,6 +41,9 @@ namespace Space_shooter.Services
             public bool Strong { get; set; }
             public bool Weapon { get; set; }
             public DateTime Date { get; set; }
+            public int RapidfireTime { get; set; }
+            public int StrongTime { get; set; }
+            public int WeaponTime { get; set; }
 
             public event EventHandler Changed;
         }

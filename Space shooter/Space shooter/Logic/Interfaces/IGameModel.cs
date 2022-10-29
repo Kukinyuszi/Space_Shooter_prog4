@@ -22,6 +22,9 @@ namespace Space_shooter.Logic.Interfaces
 
         int Health { get; }
         int Score { get; }
+        int RapidfireTime { get; set; }
+        int StrongTime { get; set; }
+        int WeaponTime { get; set; }
 
     }
 }

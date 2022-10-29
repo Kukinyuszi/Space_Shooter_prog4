@@ -31,6 +31,7 @@ namespace Space_shooter
         MediaPlayer _backgroundMusic_Settings;
         MainMenuWindow gameMenu;
         DispatcherTimer gameTimer;
+        DispatcherTimer PowerupTimer;
         public MainWindow()
         {
             InitializeComponent();
@@ -58,6 +59,14 @@ namespace Space_shooter
                 logic.TimeStep();
                 display.InvalidateVisual();
             };
+
+            PowerupTimer = new DispatcherTimer();
+            PowerupTimer.Interval = TimeSpan.FromSeconds(1);
+            PowerupTimer.Tick += (sender, eventargs) =>
+            {
+                logic.Powerup_Timer_Step();
+            };
+            PowerupTimer.Start();
             gameTimer.Start();
 
         }
@@ -96,7 +105,7 @@ namespace Space_shooter
             }
             else if (e.Key == Key.Escape)
             {
-                logic.Controldown(SpaceShooterLogic.Controls.Escape);
+                Paused();
             }
             else if (e.Key == Key.G)
             {
@@ -111,6 +120,23 @@ namespace Space_shooter
                 logic.Controldown(SpaceShooterLogic.Controls.D);
             }
         }
+
+        private void Paused()
+        {
+            gameTimer.Stop();
+            GamePauseWindow gpw = new GamePauseWindow(logic);
+            if (gpw.ShowDialog() == false)
+            {
+                MainMenuWindow mmw = new MainMenuWindow();
+                this.Close();
+                mmw.Show();
+            }
+            else
+            {
+                gameTimer.Start();
+            }
+        }
+
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Left)
@@ -126,11 +152,5 @@ namespace Space_shooter
                 logic.Controlup(SpaceShooterLogic.Controls.Shoot);
             }
         }
-        //private void Pause_Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    InGamePausePopUp pausePopUp = new InGamePausePopUp(this, gameTimer, gameMenu, _backgroundMusic_Settings);
-        //    pausePopUp.Show();
-
-        //}
     }
 }

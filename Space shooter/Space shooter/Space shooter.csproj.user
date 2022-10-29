@@ -10,6 +10,9 @@
     <Compile Update="Windows\CustomDifficultySettings.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\GamePauseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\HighScoresWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,6 +24,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Windows\GamePauseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
