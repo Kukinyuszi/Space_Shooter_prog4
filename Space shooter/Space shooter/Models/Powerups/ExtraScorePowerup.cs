@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Space_shooter.Models.Powerups
 {
-    internal class ExtraScorePowerup
+    public class ExtraScorePowerup : Powerup
     {
+
+        public override Type PowerupType { get { return Type.ExtraScore; } }
+
+        public ExtraScorePowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        {
+        }
+
     }
 }

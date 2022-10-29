@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Space_shooter.Models.Powerups.Weapons
 {
-    internal class BiggerAmmo
+    public class BiggerAmmo : WeaponPowerup
     {
+        public override WeaponType TypeofWeapon { get { return WeaponType.Biggerammo; } }
+        public BiggerAmmo(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        {
+        }
     }
 }
