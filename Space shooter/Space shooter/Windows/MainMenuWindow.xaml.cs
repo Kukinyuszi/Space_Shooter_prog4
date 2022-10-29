@@ -54,15 +54,15 @@ namespace Space_shooter.Windows
 
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
         {
-            HighScoresWindow hsw = new HighScoresWindow();
-            hsw.Show();
+            SettingsMenuWindow smw = new SettingsMenuWindow();
+            smw.Show();
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
             PlayerSettingsWindow psw = new PlayerSettingsWindow(this, _backgroundMusic, settings);
             this.Visibility = Visibility.Hidden;
-            psw.Show();
+            if(psw.ShowDialog() == true) this.Visibility = Visibility.Visible;
 
         }
 

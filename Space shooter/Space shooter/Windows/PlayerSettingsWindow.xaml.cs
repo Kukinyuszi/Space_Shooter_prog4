@@ -96,7 +96,8 @@ namespace Space_shooter.Windows
             }
             else if(e.Key == Key.Escape)
             {
-                this.Close();
+                this.Visibility = Visibility.Hidden;
+                this.DialogResult = true;
             }
 
         }

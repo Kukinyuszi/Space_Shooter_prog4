@@ -22,6 +22,9 @@
     <Compile Update="Windows\PlayerSettingsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SettingsMenuWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Windows\GamePauseWindow.xaml">
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PlayerSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SettingsMenuWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
