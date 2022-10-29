@@ -1,6 +1,10 @@
 ﻿using Space_shooter.Logic;
+using Space_shooter.Models;
+using Space_shooter.Models.Powerups;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +12,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using static Space_shooter.Models.Powerups.WeaponPowerup;
 
 namespace Space_shooter.Renderer
 {
@@ -515,40 +520,40 @@ namespace Space_shooter.Renderer
                 {
                     switch (item.PowerupType)
                     {
-                        case Poverups.Powerup.Type.ExtraScore:
+                        case Models.Powerups.Powerup.Type.ExtraScore:
                             drawingContext.DrawEllipse(CoinBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
-                        case Poverups.Powerup.Type.MoreHealth:
+                        case Models.Powerups.Powerup.Type.MoreHealth:
                             drawingContext.DrawEllipse(HealthBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
-                        case Poverups.Powerup.Type.RapidFire:
+                        case Models.Powerups.Powerup.Type.RapidFire:
                             drawingContext.DrawEllipse(FastBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
-                        case Poverups.Powerup.Type.Shield:
+                        case Models.Powerups.Powerup.Type.Shield:
                             drawingContext.DrawEllipse(ShieldBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
-                        case Poverups.Powerup.Type.Stronger:
+                        case Models.Powerups.Powerup.Type.Stronger:
                             drawingContext.DrawEllipse(StrongBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
-                        case Poverups.Powerup.Type.Weapon:
-                            switch ((item as Poverups.WeaponPowerup).TypeofWeapon)
+                        case Models.Powerups.Powerup.Type.Weapon:
+                            switch ((item as WeaponPowerup).TypeofWeapon)
                             {
-                                case Poverups.WeaponPowerup.WeaponType.Doubleshooter:
+                                case WeaponPowerup.WeaponType.Doubleshooter:
                                     drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
-                                case Poverups.WeaponPowerup.WeaponType.Tripplehooter:
+                                case WeaponPowerup.WeaponType.Tripplehooter:
                                     drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
-                                case Poverups.WeaponPowerup.WeaponType.Biggerammo:
+                                case WeaponPowerup.WeaponType.Biggerammo:
                                     drawingContext.DrawEllipse(BFGBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
-                                case Poverups.WeaponPowerup.WeaponType.None:
+                                case WeaponPowerup.WeaponType.None:
                                     drawingContext.DrawEllipse(Brushes.AntiqueWhite, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
                             }
 
                             break;
-                        case Poverups.Powerup.Type.None:
+                        case Powerup.Type.None:
                             drawingContext.DrawEllipse(Brushes.AntiqueWhite, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
                         default:
