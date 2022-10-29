@@ -1,7 +1,7 @@
 {
   "Lasers": [
     {
-      "Position": "38,142",
+      "Position": "428,87",
       "Laservector": "0,-5",
       "Angle": -90.0,
       "Speed": 0,
@@ -9,49 +9,148 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 96
+      "Counter": 107
     },
     {
-      "Position": "277,403",
-      "Laservector": "-9.725,12.25",
-      "Angle": 128.44527188959205,
+      "Position": "348,222",
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 80
+    },
+    {
+      "Position": "527,498",
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
       "Speed": 0,
       "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 67
+    },
+    {
+      "Position": "393,498",
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 67
+    },
+    {
+      "Position": "304,363",
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 67
+    },
+    {
+      "Position": "170,363",
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 67
+    },
+    {
+      "Position": "228,372",
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 50
+    },
+    {
+      "Position": "268,522",
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
       "Counter": 20
     },
     {
-      "Position": "170,403",
-      "Laservector": "-5.05,12.25",
-      "Angle": 112.40365548557806,
+      "Position": "509,198",
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 20
+      "Counter": 7
+    },
+    {
+      "Position": "495,198",
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 7
+    },
+    {
+      "Position": "277,198",
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 7
+    },
+    {
+      "Position": "263,198",
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 7
     }
   ],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "503,45"
+      "Position": "347,60"
     }
   ],
   "EnemyShips": [
     {
-      "Position": "477,140",
-      "Name": 2,
+      "Position": "495,140",
+      "Name": 1,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false
     },
     {
-      "Position": "250,140",
-      "Name": 2,
+      "Position": "277,140",
+      "Name": 1,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false
@@ -59,15 +158,15 @@
   ],
   "Powerups": [],
   "Player": {
-    "left": true,
-    "Position": "68,647",
+    "left": false,
+    "Position": "268,647",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false
   },
   "Boss": null,
-  "Health": 99999,
-  "Score": 620,
+  "Health": 90,
+  "Score": 950,
   "HighScore": 840,
   "PlayerName": "kuki",
   "Asteroidspeed": 5,
@@ -77,15 +176,15 @@
   "Bossshottimechange": 40,
   "EnemySpawnCount": 2,
   "BossHealth": 400,
-  "Godmode": true,
+  "Godmode": false,
   "Sound": false,
   "Difficultyness": 1,
-  "RapidfireTime": 8,
-  "StrongTime": 2,
+  "RapidfireTime": 0,
+  "StrongTime": 0,
   "WeaponTime": 0,
   "Shield": false,
-  "Rapid": true,
-  "Strong": true,
+  "Rapid": false,
+  "Strong": false,
   "Weaponon": false,
   "Area": "536,697.6"
 }
