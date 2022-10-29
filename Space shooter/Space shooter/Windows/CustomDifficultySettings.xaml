@@ -1,0 +1,48 @@
+﻿<Window x:Class="Space_shooter.Windows.CustomDifficultySettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Space_shooter.Windows"
+        mc:Ignorable="d"
+       Title="CustomDifficultySettings" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel x:Name="MyStackpanel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="15">
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Asteroids speed"/>
+                <TextBox Text="{Binding Asteroidspeed, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="2" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Label Content="Player firerate"/>
+                <TextBox Text="{Binding Firerate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Powerup dropping rate"/>
+                <TextBox Text="{Binding Poweruprate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="2" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Enemy shooting intensity"/>
+                <TextBox Text="{Binding Enemyshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="2" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Boss shooting intensity"/>
+                <TextBox Text="{Binding Bossshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="2" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Enemies on the field"/>
+                <TextBox Text="{Binding EnemySpawnCount, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="2" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Boss health"/>
+                <TextBox Text="{Binding BossHealth, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="3" HorizontalContentAlignment="Right" VerticalAlignment="Center" MinWidth="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Godmode ON/OFF"/>
+                <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Label Content="Sound ON/OFF"/>
+                <CheckBox IsChecked="{Binding Sound, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <Button Content="Save" Padding="10" Click="Button_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

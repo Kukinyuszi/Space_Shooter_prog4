@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Left="300" Top="50" Height="735" Width="550" KeyDown="Window_KeyDown"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyUp="Window_KeyUp">
+    <Grid Name="MyGrid" Focusable="True" Background="Black" >
+        <renderer:Display x:Name="display"/>
     </Grid>
 </Window>
