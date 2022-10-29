@@ -11,4 +11,11 @@
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logic\Interfaces\" />
+    <Folder Include="Renderer\" />
+    <Folder Include="Windows\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
