@@ -16,7 +16,7 @@ using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter.Logic
 {
-    public class SpaceShooterLogic : GameSave
+    public class SpaceShooterLogic : IGameModel
     {
         public enum Controls
         {
@@ -26,11 +26,9 @@ namespace Space_shooter.Logic
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
         public event EventHandler Changed, GameOver, PowerUpPickedUp,GamePaused;
-        public int score = 0, health = 100;
         private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
-            enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, highscore, enemiescount = 2, rapidfireTime, strongTime, weaponTime;
-        private bool godmode, sound;
-        public bool shield, left, right, shoot, g, o, d, rapid, strong, weaponon;
+        enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, enemiescount = 2, score = 0, highscore, health = 100, rapidfireTime, strongTime, weaponTime;
+        private bool godmode, sound, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
         private Difficulty difficulty;
         System.Windows.Size area;
@@ -39,14 +37,12 @@ namespace Space_shooter.Logic
         public List<Asteroid> Asteroids { get; set; }
         public List<EnemyShip> EnemyShips { get; set; }
         public List<Powerup> Powerups { get; set; }
-        public List<Powerup> PlayerPowerups { get; set; }
         public Player Player { get; set; }
         public Boss Boss { get; set; }
-        public int Health { get { return health; } }
-        public int Score { get { return score; } }
-        public int HighScore { get { return highscore; } }
-        public string PlayerName { get { return playername; } set { playername = value; } }
-
+        public int Health { get => health; set => health = value; }
+        public int Score { get => score; set => score = value; }
+        public int HighScore { get => highscore; set => highscore = value; }
+        public string PlayerName { get => playername; set => playername = value; }
         public int Asteroidspeed { get => asteroidspeed; set => asteroidspeed = value; }
         public int Firerate { get => firerate; set => firerate = value; }
         public int Poweruprate { get => poweruprate; set => poweruprate = value; }
@@ -59,7 +55,11 @@ namespace Space_shooter.Logic
         public Difficulty Difficultyness { get { return difficulty; } set { difficulty = value; } }
         public int RapidfireTime { get => rapidfireTime; set => rapidfireTime = value; }
         public int StrongTime { get => strongTime; set => strongTime = value; }
-        public int WeaponTime { get => WeaponTime; set => WeaponTime = value; }
+        public int WeaponTime { get => weaponTime; set => weaponTime = value; }
+        public bool Shield { get => shield; set => shield = value; }
+        public bool Rapid { get => rapid; set => rapid = value; }
+        public bool Strong { get => strong; set => strong = value; }
+        public bool Weaponon { get => weaponon; set => weaponon = value; }
 
         static Random random = new Random();
 
@@ -67,13 +67,12 @@ namespace Space_shooter.Logic
         public void SetupSizes(System.Windows.Size area)
         {
             this.area = area;
-            highscore = new ScoreBoardService().GetHighScore();
             SetupDifficulty();
+            highscore = new ScoreBoardService().GetHighScore();
             Lasers = new List<Laser>();
             Asteroids = new List<Asteroid>();
             EnemyShips = new List<EnemyShip>();
             Powerups = new List<Powerup>();
-            PlayerPowerups = new List<Powerup>();
             Player = new Player(new System.Windows.Point((int)area.Width / 2, (int)area.Height - 50));
             Asteroids.Add(new Asteroid(area, Asteroidspeed));
             SetupEnemyes(area);
@@ -84,6 +83,7 @@ namespace Space_shooter.Logic
 
         public SpaceShooterLogic()
         {
+
         }
 
         // controls left-right move shooting --> these are bools so it watches if you keep the key down --> if you relese it, than it becomes false and stops the action
@@ -298,7 +298,7 @@ namespace Space_shooter.Logic
             if (Collide(size, laserrect, bossrect) && laser.Fromplayer)
             {
                 Lasers[i].IsHit = true;
-                if (strong || Lasers[i].Big) Boss.Health -= 30;
+                if (Strong || Lasers[i].Big) Boss.Health -= 30;
                 else Boss.Health -= 10;
             }
         }
@@ -314,7 +314,7 @@ namespace Space_shooter.Logic
                 {
                     score += 30;
                     EnemyShips[j].IsHit = true;
-                    if (!strong) Lasers[i].IsHit = true;
+                    if (!Strong) Lasers[i].IsHit = true;
                 }
             }
         }
@@ -330,7 +330,7 @@ namespace Space_shooter.Logic
                     PowerupDrop(size, asteroid);
                     score += 10;
                     Asteroids[i].IsHit = true;
-                    if (!strong) Lasers[j].IsHit = true;
+                    if (!Strong) Lasers[j].IsHit = true;
                 }
                 else if (!asteroid.IsHit && Collide(size, playerrect, asteroidrect))
                 {
@@ -476,7 +476,7 @@ namespace Space_shooter.Logic
             if (shoot && playershottimer <= 0)
             {
                 NewPlayerShoot();
-                if (rapid)
+                if (Rapid)
                 {
                     playershottimer = 10;
                 }
@@ -514,7 +514,7 @@ namespace Space_shooter.Logic
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.RapidFire:
-                                rapid = true;
+                                Rapid = true;
                                 rapidfireTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
@@ -523,12 +523,12 @@ namespace Space_shooter.Logic
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Stronger:
-                                strong = true;
+                                Strong = true;
                                 strongTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Weapon:
-                                weaponon = true;
+                                Weaponon = true;
                                 weaponTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 switch ((Powerups[i] as WeaponPowerup).TypeofWeapon)
@@ -641,11 +641,11 @@ namespace Space_shooter.Logic
         public void Powerup_Timer_Step()
         {
             if (RapidfireTime > 0) rapidfireTime--;
-            else rapid = false;
+            else Rapid = false;
             if (strongTime > 0) strongTime--;
-            else strong = false;
+            else Strong = false;
             if (weaponTime > 0) weaponTime--;
-            else weaponon = false;
+            else Weaponon = false;
         }
     }
 }

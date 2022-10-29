@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Space_shooter.Logic.Interfaces
 {
-    public interface IGameModel
+    public interface IGameModel : ISettings
     {
 
         event EventHandler Changed;

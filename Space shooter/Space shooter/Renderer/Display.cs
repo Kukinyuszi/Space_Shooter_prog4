@@ -824,10 +824,10 @@ namespace Space_shooter.Renderer
                 drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
                 if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(5, 55));
 
-                if (model.strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width / 2, 30), 25, 25);
-                if (model.rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width / 3) * 2, 30), 25, 25);
-                if (model.shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width / 6) * 5, 30), 25, 25);
-                if (model.weaponon)
+                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width / 2, 30), 25, 25);
+                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width / 3) * 2, 30), 25, 25);
+                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width / 6) * 5, 30), 25, 25);
+                if (model.Weaponon)
                 {
                     switch (model.Player.Weapon)
                     {

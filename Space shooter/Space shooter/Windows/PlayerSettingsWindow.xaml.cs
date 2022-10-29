@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static Space_shooter.Logic.Interfaces.ISettings;
+using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter.Windows
 {
@@ -40,7 +41,8 @@ namespace Space_shooter.Windows
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();
                 MainWindow StartingTheGame = new MainWindow(_mainMenu, _backgroundMusic, settings);
-                this.Visibility = Visibility.Hidden;
+                _mainMenu.Close();
+                this.Close();
                 StartingTheGame.Show();
             }
         }
@@ -76,6 +78,27 @@ namespace Space_shooter.Windows
             CustomDifficultySettings sw = new CustomDifficultySettings(settings);
             sw.ShowDialog();
             sw.Close();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                if (tb_playername.Text != "" && tb_playername.Text != "Type here yout name")
+                {
+                    settings.PlayerName = tb_playername.Text;
+                    settings.Difficultyness = DifficultyChecker();
+                    MainWindow StartingTheGame = new MainWindow(_mainMenu, _backgroundMusic, settings);
+                    _mainMenu.Close();
+                    this.Close();
+                    StartingTheGame.Show();
+                }
+            }
+            else if(e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+
         }
     }
 }

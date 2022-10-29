@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="PlayerSettingsWindow" Height="448" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="PlayerSettingsWindow" Height="448" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
     <Grid x:Name="PlayerGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -14,7 +14,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" >
             <Label Content="Difficulty"/>
             <StackPanel x:Name="sp_difficulty" Orientation="Horizontal" HorizontalAlignment="Center">
                 <RadioButton x:Name="rb_easy" Content="Easy" MinHeight="20" Margin="1"/>

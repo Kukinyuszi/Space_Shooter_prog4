@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter
 {
@@ -46,10 +47,9 @@ namespace Space_shooter
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
             display.SetupModel(logic);
             display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
-            logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
             logic.GameOver += Logic_GameOver;
 
             gameTimer = new DispatcherTimer();
@@ -124,6 +124,7 @@ namespace Space_shooter
         private void Paused()
         {
             gameTimer.Stop();
+            PowerupTimer.Stop();
             GamePauseWindow gpw = new GamePauseWindow(logic);
             if (gpw.ShowDialog() == false)
             {
@@ -134,6 +135,7 @@ namespace Space_shooter
             else
             {
                 gameTimer.Start();
+                PowerupTimer.Start();
             }
         }
 
