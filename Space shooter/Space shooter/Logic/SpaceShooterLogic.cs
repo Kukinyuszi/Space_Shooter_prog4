@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using static Space_shooter.Logic.Interfaces.ISettings;
+using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter.Logic
 {
-    public class SpaceShooterLogic : IGameModel, ISettings
+    public class SpaceShooterLogic : GameSave
     {
         public enum Controls
         {

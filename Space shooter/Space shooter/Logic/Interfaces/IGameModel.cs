@@ -22,7 +22,6 @@ namespace Space_shooter.Logic.Interfaces
 
         int Health { get; }
         int Score { get; }
-        int HighScore { get; }
 
     }
 }

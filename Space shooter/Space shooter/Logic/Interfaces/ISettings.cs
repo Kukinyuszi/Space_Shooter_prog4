@@ -23,8 +23,6 @@ namespace Space_shooter.Logic.Interfaces
         string PlayerName { get; set; }
         int EnemySpawnCount { get; set; }
         int BossHealth { get; set; }
-
-
         Difficulty Difficultyness { get; set; }
     }
 }
