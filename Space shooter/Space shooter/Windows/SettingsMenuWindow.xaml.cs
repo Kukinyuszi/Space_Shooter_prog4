@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Space_shooter.Renderer;
+using Space_shooter.Renderer.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +21,29 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class SettingsMenuWindow : Window
     {
+        IDisplaySettings displaysettings;
         public SettingsMenuWindow()
         {
+            displaysettings = new Display();
             InitializeComponent();
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            foreach (var item in MyGrid.Children)
+            {
+                if (item is WrapPanel)
+                {
+                    foreach (var item2 in (item as WrapPanel).Children)
+                    {
+
+                        if (item2 is ComboBox t)
+                        {
+                            displaysettings.WindowResolution = (IDisplaySettings.Resolution)t.SelectedIndex;
+                        }
+                    }
+                }
+            }
             this.Close();
         }
     }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="SettingsMenuWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid x:Name="MyGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>

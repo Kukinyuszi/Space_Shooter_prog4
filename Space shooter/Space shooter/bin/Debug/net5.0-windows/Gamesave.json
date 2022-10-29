@@ -1,51 +1,7 @@
 {
   "Lasers": [
     {
-      "Position": "305,55",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 121
-    },
-    {
-      "Position": "325,45",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 123
-    },
-    {
-      "Position": "345,45",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 123
-    },
-    {
-      "Position": "205,195",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 93
-    },
-    {
-      "Position": "363,598",
+      "Position": "377,443",
       "Laservector": "0,5",
       "Angle": 90.0,
       "Speed": 0,
@@ -53,32 +9,10 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 85
+      "Counter": 56
     },
     {
-      "Position": "431,598",
-      "Laservector": "1,5",
-      "Angle": 78.69006752597979,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 85
-    },
-    {
-      "Position": "261,598",
-      "Laservector": "-1,5",
-      "Angle": 101.30993247402021,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 85
-    },
-    {
-      "Position": "225,345",
+      "Position": "235,380",
       "Laservector": "0,-5",
       "Angle": -90.0,
       "Speed": 0,
@@ -86,10 +20,10 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 63
+      "Counter": 56
     },
     {
-      "Position": "245,345",
+      "Position": "235,525",
       "Laservector": "0,-5",
       "Angle": -90.0,
       "Speed": 0,
@@ -97,182 +31,43 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 63
-    },
-    {
-      "Position": "265,345",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 63
-    },
-    {
-      "Position": "265,495",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 33
-    },
-    {
-      "Position": "285,495",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 33
-    },
-    {
-      "Position": "305,495",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 33
-    },
-    {
-      "Position": "423,298",
-      "Laservector": "0,5",
-      "Angle": 90.0,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 25
-    },
-    {
-      "Position": "123,268",
-      "Laservector": "1,10",
-      "Angle": 84.28940686250036,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 25
-    },
-    {
-      "Position": "265,545",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 23
-    },
-    {
-      "Position": "285,545",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 23
-    },
-    {
-      "Position": "305,545",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 23
-    },
-    {
-      "Position": "265,595",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 13
-    },
-    {
-      "Position": "285,595",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 13
-    },
-    {
-      "Position": "305,595",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 13
+      "Counter": 27
     }
   ],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "501,170"
+      "Position": "286,-20"
     }
   ],
   "EnemyShips": [
     {
-      "Position": "448,150",
+      "Position": "320,140",
       "Name": 0,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false
     },
     {
-      "Position": "98,120",
-      "Name": 3,
+      "Position": "452,140",
+      "Name": 2,
       "IsHit": false,
       "IsDead": false,
-      "IsMoving": true
+      "IsMoving": false
     }
   ],
-  "Powerups": [
-    {
-      "PowerupType": 3,
-      "Counter": 600,
-      "Speed": 5,
-      "Position": "252,585"
-    }
-  ],
+  "Powerups": [],
   "Player": {
     "left": false,
-    "Position": "285,685",
-    "Weapon": 1,
+    "Position": "235,685",
+    "Weapon": 3,
     "IsDead": false,
     "IsMoving": false
   },
   "Boss": null,
-  "Health": 70,
-  "Score": 2700,
+  "Health": 60,
+  "Score": 710,
   "HighScore": 840,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,
@@ -285,12 +80,12 @@
   "Godmode": false,
   "Sound": false,
   "Difficultyness": 1,
-  "RapidfireTime": 7,
+  "RapidfireTime": 0,
   "StrongTime": 0,
   "WeaponTime": 0,
-  "Shield": true,
-  "Rapid": true,
+  "Shield": false,
+  "Rapid": false,
   "Strong": false,
   "Weaponon": false,
-  "Area": "550,735"
+  "Area": "536,697.6"
 }

@@ -7,7 +7,7 @@
         xmlns:renderer="clr-namespace:Space_shooter.Renderer"
         mc:Ignorable="d"
         Title="MainWindow" Left="300" Top="50" Height="735" Width="550" KeyDown="Window_KeyDown" WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyUp="Window_KeyUp">
-    <Grid Name="MyGrid" Focusable="True" Background="Black" Height="735" Width="550" >
+    <Grid Name="MyGrid" Focusable="True" Background="Black" >
         <renderer:Display x:Name="display"/>
     </Grid>
 </Window>
