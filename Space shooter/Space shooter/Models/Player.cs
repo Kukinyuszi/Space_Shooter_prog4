@@ -19,6 +19,11 @@ namespace Space_shooter.Models
         public bool IsDead { get; set; }
         public bool IsMoving { get; set; }
 
+        public Player()
+        {
+
+        }
+
         public Player(Point position)
         {
             IsMoving = false;

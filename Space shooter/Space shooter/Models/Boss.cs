@@ -14,6 +14,10 @@ namespace Space_shooter.Models
         public int Health { get; set; }
         public override EnemyEnum Name { get; set; }
 
+        public Boss()
+        {
+
+        }
 
         public Boss(System.Windows.Size area, int health) : base(area)
         {

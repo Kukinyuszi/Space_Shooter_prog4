@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+       Title="CustomDifficultySettings" Height="400" Width="400" WindowStartupLocation="Manual">
     <Grid>
         <StackPanel x:Name="MyStackpanel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="15">
             <StackPanel Orientation="Horizontal" >

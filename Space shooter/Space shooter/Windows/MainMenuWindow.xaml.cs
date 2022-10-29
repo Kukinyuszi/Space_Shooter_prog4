@@ -1,5 +1,6 @@
 ﻿using Space_shooter.Logic;
 using Space_shooter.Logic.Interfaces;
+using Space_shooter.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -103,9 +104,22 @@ namespace Space_shooter.Windows
             hsw.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Quit_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Load_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Save_LoadGameService gls = new Save_LoadGameService();
+            
+            IGameModel model = gls.LoadGame();
+            if(settings != null)
+            {
+                MainWindow StartingTheGame = new MainWindow(this, _backgroundMusic, model);
+                this.Close();
+                StartingTheGame.Show();
+            }
         }
     }
 }

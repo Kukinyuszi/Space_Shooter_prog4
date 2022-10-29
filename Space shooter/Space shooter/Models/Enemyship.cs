@@ -27,6 +27,10 @@ namespace Space_shooter.Models
         public virtual bool IsMoving { get; set; }
 
         static Random random = new Random();
+        public EnemyShip()
+        {
+
+        }
 
         public EnemyShip(System.Windows.Size area)
         {

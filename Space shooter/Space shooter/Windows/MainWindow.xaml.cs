@@ -37,12 +37,12 @@ namespace Space_shooter
         {
             InitializeComponent();
         }
-        public MainWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, ISettings settings)
+        public MainWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, IGameModel settings)
         {
-            InitializeComponent();
-            logic = settings as SpaceShooterLogic;
+            logic = (SpaceShooterLogic)settings;
             gameMenu = menu;
             _backgroundMusic_Settings = _backgroundMusic;
+            InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

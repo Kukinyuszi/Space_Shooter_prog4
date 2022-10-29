@@ -18,6 +18,11 @@ namespace Space_shooter.Models.Powerups
         public Point Position { get => position; set => position = value; }
         public virtual Type PowerupType { get { return Type.None; } }
 
+        public Powerup()
+        {
+
+        }
+
         public Powerup(System.Windows.Size area, int speed, Point position)
         {
             this.Speed = speed;

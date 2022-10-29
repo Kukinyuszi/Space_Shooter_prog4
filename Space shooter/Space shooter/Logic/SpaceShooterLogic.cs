@@ -60,22 +60,23 @@ namespace Space_shooter.Logic
         public bool Rapid { get => rapid; set => rapid = value; }
         public bool Strong { get => strong; set => strong = value; }
         public bool Weaponon { get => weaponon; set => weaponon = value; }
+        public Size Area { get => area; set => area = value; }
 
         static Random random = new Random();
 
         // set up the properties and the basic game area
         public void SetupSizes(System.Windows.Size area)
         {
-            this.area = area;
+            this.Area = area;
             SetupDifficulty();
             highscore = new ScoreBoardService().GetHighScore();
-            Lasers = new List<Laser>();
-            Asteroids = new List<Asteroid>();
-            EnemyShips = new List<EnemyShip>();
-            Powerups = new List<Powerup>();
-            Player = new Player(new System.Windows.Point((int)area.Width / 2, (int)area.Height - 50));
-            Asteroids.Add(new Asteroid(area, Asteroidspeed));
-            SetupEnemyes(area);
+            if (Lasers == null) Lasers = new List<Laser>();
+            if (Asteroids == null) Asteroids = new List<Asteroid>();
+            if (EnemyShips == null) EnemyShips = new List<EnemyShip>();
+            if (Powerups == null) Powerups = new List<Powerup>();
+            if (Player == null) Player = new Player(new System.Windows.Point((int)area.Width / 2, (int)area.Height - 50));
+            if (Asteroids.Count == 0) Asteroids.Add(new Asteroid(area, Asteroidspeed));
+            if (EnemyShips.Count == 0) SetupEnemyes(area);
 
         }
 
@@ -153,7 +154,7 @@ namespace Space_shooter.Logic
         public void TimeStep()
         {
             
-                System.Windows.Size size = new System.Windows.Size((int)area.Width, (int)area.Height);          // Screen size variable, it is for the objects to know if it leaves the screen
+                System.Windows.Size size = new System.Windows.Size((int)Area.Width, (int)Area.Height);          // Screen size variable, it is for the objects to know if it leaves the screen
                 Rect playerrect = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);             // Generates the player hitbox
                 if (EnemyShips.Count > 0) EnemyShipsMovement(size);
                 if (Boss != null)                                                                               // If it is not a boss round, than the enemies move one time
@@ -406,7 +407,7 @@ namespace Space_shooter.Logic
             double y = ((Player.Position.Y - 40) - enemyship.Position.Y + 23) / 40;
 
             int x1;
-            if (enemyship.Position.X < area.Width / 2) x1 = random.Next(4);
+            if (enemyship.Position.X < Area.Width / 2) x1 = random.Next(4);
             else x1 = random.Next(-4, 0);
 
             switch (enemyship.Name)

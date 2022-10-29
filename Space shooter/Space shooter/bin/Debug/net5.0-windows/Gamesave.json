@@ -1,1 +1,91 @@
-{"Asteroids":[{"Speed":7,"IsHit":false,"Position":"59,213"}],"EnemyShips":[{"Position":"203,130","Name":0,"IsHit":false,"IsDead":false,"IsMoving":true},{"Position":"400,130","Name":2,"IsHit":false,"IsDead":false,"IsMoving":true},{"Position":"409,130","Name":2,"IsHit":false,"IsDead":false,"IsMoving":true}],"Powerups":[],"Lasers":[{"Position":"304,500","Laservector":"-3.3,16.625","Angle":101.22706331064046,"Speed":0,"Fromplayer":false,"Big":false,"IsHit":false,"Ammosize":5,"Counter":32},{"Position":"310,516","Laservector":"-3.525,16.625","Angle":101.97113542873433,"Speed":0,"Fromplayer":false,"Big":false,"IsHit":false,"Ammosize":5,"Counter":33}],"Player":{"left":false,"Position":"268,647","Weapon":3,"IsDead":false,"IsMoving":false},"Boss":null,"Score":0,"Health":100,"Asteroidspeed":7,"Firerate":30,"Poweruprate":30,"Enemyshottimechange":50,"Bossshottimechange":40,"Godmode":false,"Sound":false,"PlayerName":"Kuki","EnemySpawnCount":3,"BossHealth":500,"Difficultyness":2,"Date":"2022-10-29T00:00:00+02:00","RapidfireTime":0,"StrongTime":0,"WeaponTime":0}
+{
+  "Lasers": [
+    {
+      "Position": "38,142",
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 96
+    },
+    {
+      "Position": "277,403",
+      "Laservector": "-9.725,12.25",
+      "Angle": 128.44527188959205,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 20
+    },
+    {
+      "Position": "170,403",
+      "Laservector": "-5.05,12.25",
+      "Angle": 112.40365548557806,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 20
+    }
+  ],
+  "Asteroids": [
+    {
+      "Speed": 5,
+      "IsHit": false,
+      "Position": "503,45"
+    }
+  ],
+  "EnemyShips": [
+    {
+      "Position": "477,140",
+      "Name": 2,
+      "IsHit": false,
+      "IsDead": false,
+      "IsMoving": false
+    },
+    {
+      "Position": "250,140",
+      "Name": 2,
+      "IsHit": false,
+      "IsDead": false,
+      "IsMoving": false
+    }
+  ],
+  "Powerups": [],
+  "Player": {
+    "left": true,
+    "Position": "68,647",
+    "Weapon": 3,
+    "IsDead": false,
+    "IsMoving": false
+  },
+  "Boss": null,
+  "Health": 99999,
+  "Score": 620,
+  "HighScore": 840,
+  "PlayerName": "kuki",
+  "Asteroidspeed": 5,
+  "Firerate": 30,
+  "Poweruprate": 40,
+  "Enemyshottimechange": 60,
+  "Bossshottimechange": 40,
+  "EnemySpawnCount": 2,
+  "BossHealth": 400,
+  "Godmode": true,
+  "Sound": false,
+  "Difficultyness": 1,
+  "RapidfireTime": 8,
+  "StrongTime": 2,
+  "WeaponTime": 0,
+  "Shield": false,
+  "Rapid": true,
+  "Strong": true,
+  "Weaponon": false,
+  "Area": "536,697.6"
+}

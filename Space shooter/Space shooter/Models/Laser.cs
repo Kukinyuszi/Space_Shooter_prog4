@@ -39,6 +39,10 @@ namespace Space_shooter.Models
 
         public int Counter { get => counter; set => counter = value; }
 
+        public Laser()
+        {
+
+        }
         public Laser(System.Windows.Point position, Vector laservector, bool fromplayer, bool big)
         {
             Position = position;

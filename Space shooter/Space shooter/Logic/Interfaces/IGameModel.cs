@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Space_shooter.Logic.Interfaces
 {
@@ -12,7 +13,7 @@ namespace Space_shooter.Logic.Interfaces
     {
 
         event EventHandler Changed;
-
+        Size Area { get; set; }
         Player Player { get; set; }
         Boss Boss { get; set; }
         List<Laser> Lasers { get; set; }

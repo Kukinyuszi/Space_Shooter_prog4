@@ -19,6 +19,10 @@ namespace Space_shooter.Models
         public Point Position { get => position; set => position = value; }
 
         static Random r = new Random();
+        public Asteroid()
+        {
+
+        }
 
         public Asteroid(System.Windows.Size area, int speed)
         {

@@ -9,6 +9,7 @@ namespace Space_shooter.Models.Powerups.Weapons
     public class Shotgun : WeaponPowerup
     {
         public override WeaponType TypeofWeapon { get { return WeaponType.Doubleshooter; } }
+
         public Shotgun(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
         {
         }

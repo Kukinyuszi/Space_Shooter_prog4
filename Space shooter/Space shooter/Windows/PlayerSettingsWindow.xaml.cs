@@ -22,7 +22,7 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class PlayerSettingsWindow : Window
     {
-        ISettings settings;
+        IGameModel settings;
         MediaPlayer _backgroundMusic;
         MainMenuWindow _mainMenu;
         bool hasBeenClicked = false;
@@ -30,7 +30,7 @@ namespace Space_shooter.Windows
         {
             _mainMenu = menu;
             this._backgroundMusic = _backgroundMusic;
-            this.settings = settings;
+            this.settings = settings as IGameModel;
             InitializeComponent();
         }
 
