@@ -14,10 +14,12 @@ namespace Space_shooter.Models
 
         Point position;
         public bool left;
+        private Rect hitbox;
         public Point Position { get => position; set => position = value; }
         public WeaponType Weapon { get; set; }
         public bool IsDead { get; set; }
         public bool IsMoving { get; set; }
+        public Rect Hitbox { get => hitbox; set => hitbox = value; }
 
         public Player()
         {
@@ -28,6 +30,7 @@ namespace Space_shooter.Models
         {
             IsMoving = false;
             this.position = position;
+            hitbox = new Rect(position.X - 15, position.Y - 12, 30, 25);
             Weapon = WeaponType.None;
         }
         public void Move(System.Windows.Size area)
@@ -41,6 +44,7 @@ namespace Space_shooter.Models
             if (newposition.X >= 0)
             {
                 Position = newposition;
+                hitbox.X = hitbox.X - 10;
             }
         }
         public void MoveRight(System.Windows.Size area)
@@ -49,6 +53,7 @@ namespace Space_shooter.Models
             if (newposition.X <= area.Width)
             {
                 Position = newposition;
+                hitbox.X = hitbox.X + 10;
             }
         }
     }

@@ -19,12 +19,14 @@ namespace Space_shooter.Models
         private Point position;
         private bool left;
         private EnemyEnum name;
+        private Rect hitbox;
 
         public virtual Point Position { get => position; set => position = value; }
         public virtual EnemyEnum Name { get => name; set => name = value; }
         public virtual bool IsHit { get; set; }
         public bool IsDead { get; set; }
         public virtual bool IsMoving { get; set; }
+        public virtual Rect Hitbox { get => hitbox; set => hitbox = value; }
 
         static Random random = new Random();
         public EnemyShip()
@@ -34,7 +36,8 @@ namespace Space_shooter.Models
 
         public EnemyShip(System.Windows.Size area)
         {
-            Position = new System.Windows.Point(random.Next(25, (int)area.Width - 25), -40);
+            position = new System.Windows.Point(random.Next(25, (int)area.Width - 25), -40);
+            hitbox = new Rect(position.X - 25, position.Y - 20, 50, 40);
             IsMoving = true;
             int temp = random.Next(4);
             switch (temp)
@@ -63,6 +66,7 @@ namespace Space_shooter.Models
             {
                 newposition = new Point(position.X, position.Y + 5);
                 position = newposition;
+                hitbox.Y = hitbox.Y + 5;
             }
             else
             {
@@ -78,6 +82,7 @@ namespace Space_shooter.Models
                     if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 5 && newposition.Y <= area.Height / 3)
                     {
                         position = newposition;
+                        hitbox.X = hitbox.X - 1;
                     }
                 }
                 else
@@ -90,6 +95,7 @@ namespace Space_shooter.Models
                     if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 5 && newposition.Y <= area.Height / 3)
                     {
                         position = newposition;
+                        hitbox.X = hitbox.X + 1;
                     }
 
                 }

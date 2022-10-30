@@ -10,7 +10,7 @@ namespace Space_shooter.Models.Powerups
     {
         public override Type PowerupType { get { return Type.Shield; } }
 
-        public ShieldPowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        public ShieldPowerup(int speed, System.Windows.Point position) : base(speed, position)
         {
         }
     }

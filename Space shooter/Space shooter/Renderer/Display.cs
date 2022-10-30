@@ -558,7 +558,7 @@ namespace Space_shooter.Renderer
                         Explodings.Add(new Explosion(item.Position, 11, true, false));
                     }
                     else drawingContext.DrawEllipse(AsteroidBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
-
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
                 }
                 foreach (var item in model.Powerups)
                 {
@@ -603,6 +603,7 @@ namespace Space_shooter.Renderer
                         default:
                             break;
                     }
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
                 }
                 foreach (var item in model.Lasers)
                 {
@@ -693,7 +694,7 @@ namespace Space_shooter.Renderer
                             drawingContext.Pop();
                         }
                     }
-
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
                 }
 
 
@@ -766,11 +767,11 @@ namespace Space_shooter.Renderer
                                 break;
                         }
                     }
-
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
                 }
 
                 if (model.Player != null) drawingContext.DrawEllipse(ShipBrush, null, new Point(model.Player.Position.X, model.Player.Position.Y), 40, 40);
-               // drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), new Rect(model.Player.Position.X - 15, model.Player.Position.Y - 12, 30, 25));
+                drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), model.Player.Hitbox);
 
                 if (model.Boss != null) drawingContext.DrawEllipse(Ship6Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 100, 100);
 

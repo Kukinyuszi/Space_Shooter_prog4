@@ -12,7 +12,7 @@ namespace Space_shooter.Models.Powerups
         public override Type PowerupType { get { return Type.ExtraScore; } }
 
 
-        public ExtraScorePowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        public ExtraScorePowerup(int speed, System.Windows.Point position) : base(speed, position)
         {
         }
 

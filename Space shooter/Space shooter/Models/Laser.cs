@@ -9,9 +9,9 @@ namespace Space_shooter.Models
 {
     public class Laser
     {
-
-        public System.Windows.Point Position { get; set; }
+        private Point position;
         private int counter;
+        private Rect hitbox;
 
         public Vector Laservector { get; set; }
         public double Angle
@@ -38,6 +38,8 @@ namespace Space_shooter.Models
         }
 
         public int Counter { get => counter; set => counter = value; }
+        public Rect Hitbox { get => hitbox; set => hitbox = value; }
+        public Point Position { get => position; set => position = value; }
 
         public Laser()
         {
@@ -46,6 +48,7 @@ namespace Space_shooter.Models
         public Laser(System.Windows.Point position, Vector laservector, bool fromplayer, bool big)
         {
             Position = position;
+            hitbox = new Rect(position.X - (Ammosize / 2), position.Y - (Ammosize / 2), Ammosize, Ammosize);
             Laservector = laservector;
             Fromplayer = fromplayer;
             Big = big;
@@ -64,6 +67,8 @@ namespace Space_shooter.Models
                 )
             {
                 Position = newposition;
+                hitbox.X = hitbox.X + (int)Laservector.X;
+                hitbox.Y = hitbox.Y + (int)Laservector.Y;
                 return true;
             }
             else

@@ -10,7 +10,7 @@ namespace Space_shooter.Models.Powerups
     {
         public override Type PowerupType { get { return Type.Stronger; } }
 
-        public StrongerPowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        public StrongerPowerup(int speed, System.Windows.Point position) : base(speed, position)
         {
         }
     }

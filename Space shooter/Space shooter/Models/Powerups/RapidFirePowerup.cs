@@ -12,7 +12,7 @@ namespace Space_shooter.Models.Powerups
         public override Type PowerupType { get { return Type.RapidFire; } }
 
 
-        public RapidFirePowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        public RapidFirePowerup(int speed, System.Windows.Point position) : base(speed, position)
         {
         }
     }

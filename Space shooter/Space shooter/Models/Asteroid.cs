@@ -12,11 +12,13 @@ namespace Space_shooter.Models
 
         private int speed;
         private Point position;
+        private Rect hitbox;
         public int Speed { get => speed; set => speed = value; }
 
         public bool IsHit { get; set; }
 
         public Point Position { get => position; set => position = value; }
+        public Rect Hitbox { get => hitbox; set => hitbox = value; }
 
         static Random r = new Random();
         public Asteroid()
@@ -27,7 +29,8 @@ namespace Space_shooter.Models
         public Asteroid(System.Windows.Size area, int speed)
         {
             this.speed = speed;
-            Position = new System.Windows.Point(r.Next(25, (int)area.Width - 25), -25);
+            position = new System.Windows.Point(r.Next(25, (int)area.Width - 25), -25);
+            hitbox = new Rect(position.X - 25, position.Y - 20, 50, 40);
         }
 
         public bool Move(System.Windows.Size area)
@@ -40,6 +43,7 @@ namespace Space_shooter.Models
                 )
             {
                 Position = newposition;
+                hitbox.Y = hitbox.Y + speed;
                 return true;
             }
             else

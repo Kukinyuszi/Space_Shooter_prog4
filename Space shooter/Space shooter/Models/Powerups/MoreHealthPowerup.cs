@@ -11,7 +11,7 @@ namespace Space_shooter.Models.Powerups
         public override Type PowerupType { get { return Type.MoreHealth; } }
 
 
-        public MoreHealthPowerup(System.Windows.Size area, int speed, System.Windows.Point position) : base(area, speed, position)
+        public MoreHealthPowerup(int speed, System.Windows.Point position) : base(speed, position)
         {
         }
     }

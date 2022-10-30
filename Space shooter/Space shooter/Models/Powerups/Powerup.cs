@@ -7,26 +7,30 @@ using System.Windows;
 
 namespace Space_shooter.Models.Powerups
 {
-    public class Powerup
+    public abstract class Powerup
     {
         private int speed;
         private Point position;
         private int counter;
+        private Rect hitbox;
 
         public int Counter { get => counter; set => counter = value; }
         public int Speed { get => speed; set => speed = value; }
         public Point Position { get => position; set => position = value; }
         public virtual Type PowerupType { get { return Type.None; } }
 
+        public virtual Rect Hitbox { get => hitbox; set => hitbox = value; }
+
         public Powerup()
         {
 
         }
 
-        public Powerup(System.Windows.Size area, int speed, Point position)
+        public Powerup(int speed, Point position)
         {
             this.Speed = speed;
-            Position = position;
+            this.position = position;
+            hitbox = new Rect(position.X - 25, position.Y - 20, 50, 40);
             counter = 600;
         }
 
@@ -45,7 +49,8 @@ namespace Space_shooter.Models.Powerups
                 newposition.Y <= area.Height
                 )
             {
-                Position = newposition;
+                position = newposition;
+                hitbox.Y = hitbox.Y + speed;
                 return true;
             }
             else
