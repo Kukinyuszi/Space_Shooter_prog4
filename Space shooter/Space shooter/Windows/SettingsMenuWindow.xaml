@@ -19,10 +19,10 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Music" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Label Content="Hitboxes" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
         <Label Content="Resolution" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
         <Label Content="Animation" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
-        <CheckBox Content="ON/OFF" Margin="10,25,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="1"/>
+        <CheckBox Content="ON/OFF" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
         <ComboBox MinHeight="20" MinWidth="150" Margin="10,20,10,20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">
             <ComboBoxItem Content="High" IsSelected="True"/>
             <ComboBoxItem Content="Medium" />

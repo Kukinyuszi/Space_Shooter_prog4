@@ -1,153 +1,52 @@
 {
-  "Lasers": [
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 120,
-      "Hitbox": "156,20,5,5",
-      "Position": "158,22"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 93,
-      "Hitbox": "456,155,5,5",
-      "Position": "458,157"
-    },
-    {
-      "Laservector": "1,5",
-      "Angle": 78.69006752597979,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 80,
-      "Hitbox": "496,421,5,5",
-      "Position": "498,423"
-    },
-    {
-      "Laservector": "-1,5",
-      "Angle": 101.30993247402021,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 81,
-      "Hitbox": "335,426,5,5",
-      "Position": "337,428"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 63,
-      "Hitbox": "366,305,5,5",
-      "Position": "368,307"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 33,
-      "Hitbox": "386,455,5,5",
-      "Position": "388,457"
-    },
-    {
-      "Laservector": "0.4,12.25",
-      "Angle": 88.12978190425154,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 21,
-      "Hitbox": "430,413,5,5",
-      "Position": "432,415"
-    },
-    {
-      "Laservector": "1,5",
-      "Angle": 78.69006752597979,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 21,
-      "Hitbox": "469,266,5,5",
-      "Position": "471,268"
-    },
-    {
-      "Laservector": "-1,5",
-      "Angle": 101.30993247402021,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 21,
-      "Hitbox": "427,266,5,5",
-      "Position": "429,268"
-    }
-  ],
+  "Lasers": [],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "197,95",
-      "Hitbox": "172,75,50,40"
+      "Position": "173,165",
+      "Hitbox": "148,145,50,40"
     }
   ],
   "EnemyShips": [
     {
-      "Position": "471,140",
-      "Name": 1,
-      "IsHit": true,
-      "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "446,120,50,40"
-    },
-    {
-      "Position": "298,-40",
+      "Position": "422,140",
       "Name": 3,
       "IsHit": false,
       "IsDead": false,
-      "IsMoving": true,
-      "Hitbox": "273,-60,50,40"
+      "IsMoving": false,
+      "Hitbox": "397,120,50,40"
+    },
+    {
+      "Position": "450,140",
+      "Name": 2,
+      "IsHit": false,
+      "IsDead": false,
+      "IsMoving": false,
+      "Hitbox": "425,120,50,40"
     }
   ],
-  "Powerups": [],
+  "Powerups": [
+    {
+      "PowerupType": 0,
+      "Counter": 600,
+      "Speed": 5,
+      "Position": "356,580",
+      "Hitbox": "331,560,50,40"
+    }
+  ],
   "Player": {
-    "left": false,
-    "Position": "448,647",
+    "left": true,
+    "Position": "328,647",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "433,635,30,25"
+    "Hitbox": "313,635,30,25"
   },
   "Boss": null,
-  "Health": 70,
-  "Score": 320,
-  "HighScore": 750,
+  "Health": 30,
+  "Score": 430,
+  "HighScore": 560,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,
   "Firerate": 30,
@@ -160,11 +59,11 @@
   "Sound": false,
   "Difficultyness": 1,
   "RapidfireTime": 0,
-  "StrongTime": 4,
+  "StrongTime": 0,
   "WeaponTime": 0,
   "Shield": false,
   "Rapid": false,
-  "Strong": true,
+  "Strong": false,
   "Weaponon": false,
   "Area": "536,697.6"
 }

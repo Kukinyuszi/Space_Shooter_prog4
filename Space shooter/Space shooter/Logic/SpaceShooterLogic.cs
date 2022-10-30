@@ -553,7 +553,7 @@ namespace Space_shooter.Logic
 
         private void PowerupDrop(Asteroid asteroid)
         {
-            if (random.Next(100) < Poweruprate)
+            if (random.Next(99) < Poweruprate)
             {
                 int temprand = random.Next(101);
                 Point position = asteroid.Position;

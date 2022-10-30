@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Space_shooter.Models.Powerups
 {
-    public abstract class Powerup
+    public class Powerup
     {
         private int speed;
         private Point position;
@@ -17,7 +17,7 @@ namespace Space_shooter.Models.Powerups
         public int Counter { get => counter; set => counter = value; }
         public int Speed { get => speed; set => speed = value; }
         public Point Position { get => position; set => position = value; }
-        public virtual Type PowerupType { get { return Type.None; } }
+        public virtual Type PowerupType { get; set; }
 
         public virtual Rect Hitbox { get => hitbox; set => hitbox = value; }
 
@@ -32,6 +32,7 @@ namespace Space_shooter.Models.Powerups
             this.position = position;
             hitbox = new Rect(position.X - 25, position.Y - 20, 50, 40);
             counter = 600;
+
         }
 
         public enum Type
