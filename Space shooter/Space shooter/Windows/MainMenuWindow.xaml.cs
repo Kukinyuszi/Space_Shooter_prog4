@@ -1,5 +1,7 @@
 ﻿using Space_shooter.Logic;
 using Space_shooter.Logic.Interfaces;
+using Space_shooter.Renderer;
+using Space_shooter.Renderer.Interfaces;
 using Space_shooter.Services;
 using System;
 using System.Collections.Generic;
@@ -28,10 +30,12 @@ namespace Space_shooter.Windows
         DispatcherTimer videoTimer = new DispatcherTimer();
         static MediaPlayer _backgroundMusic = new MediaPlayer();
         ISettings settings;
+        IDisplaySettings displaySettings;
 
         public MainMenuWindow()
         {
             settings = new SpaceShooterLogic();
+            displaySettings = new Display();
             InitializeComponent();
 
             //StartBackgroundMusic();
@@ -54,13 +58,13 @@ namespace Space_shooter.Windows
 
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
         {
-            SettingsMenuWindow smw = new SettingsMenuWindow();
-            smw.Show();
+            SettingsMenuWindow smw = new SettingsMenuWindow(displaySettings);
+            smw.ShowDialog();
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
-            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, _backgroundMusic, settings);
+            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, _backgroundMusic, settings, displaySettings);
             this.Visibility = Visibility.Hidden;
             if(psw.ShowDialog() == true) this.Visibility = Visibility.Visible;
 
@@ -116,7 +120,7 @@ namespace Space_shooter.Windows
             IGameModel model = gls.LoadGame();
             if(settings != null)
             {
-                MainWindow StartingTheGame = new MainWindow(this, _backgroundMusic, model);
+                MainWindow StartingTheGame = new MainWindow(this, _backgroundMusic, model, displaySettings);
                 this.Close();
                 StartingTheGame.Show();
             }

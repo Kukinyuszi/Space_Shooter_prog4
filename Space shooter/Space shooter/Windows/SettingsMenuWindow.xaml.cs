@@ -1,5 +1,4 @@
-﻿using Space_shooter.Renderer;
-using Space_shooter.Renderer.Interfaces;
+﻿using Space_shooter.Renderer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +21,9 @@ namespace Space_shooter.Windows
     public partial class SettingsMenuWindow : Window
     {
         IDisplaySettings displaysettings;
-        public SettingsMenuWindow()
+        public SettingsMenuWindow(IDisplaySettings _displaysettings)
         {
-            displaysettings = new Display();
+            this.displaysettings = _displaysettings;
             InitializeComponent();
             this.DataContext = displaysettings;
         }
@@ -40,6 +39,7 @@ namespace Space_shooter.Windows
                 }
                 else if(item is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
             }
+            this.DialogResult = true;
             this.Close();
         }
     }

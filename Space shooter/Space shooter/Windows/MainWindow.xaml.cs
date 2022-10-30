@@ -1,5 +1,7 @@
 ﻿using Space_shooter.Logic;
 using Space_shooter.Logic.Interfaces;
+using Space_shooter.Renderer;
+using Space_shooter.Renderer.Interfaces;
 using Space_shooter.Windows;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,7 @@ namespace Space_shooter
     public partial class MainWindow : Window
     {
         SpaceShooterLogic logic;
+        IDisplaySettings displaySettings;
         public int score;
         public int health = 100;
         private int wait = 0;
@@ -37,22 +40,24 @@ namespace Space_shooter
         {
             InitializeComponent();
         }
-        public MainWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, IGameModel settings)
+        public MainWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, IGameModel settings, IDisplaySettings displaySettings)
         {
             logic = (SpaceShooterLogic)settings;
             gameMenu = menu;
             _backgroundMusic_Settings = _backgroundMusic;
-
-                
+            this.displaySettings = displaySettings;
             InitializeComponent();
+
             //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
             //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
             display.SetupModel(logic);
+            display.SetupSettings(displaySettings);
             display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
             logic.GameOver += Logic_GameOver;
 
@@ -87,6 +92,7 @@ namespace Space_shooter
             {
                 logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
                 display.SetupModel(logic);
+                display.SetupSettings(displaySettings);
                 display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
                 display.InvalidateVisual();
             }

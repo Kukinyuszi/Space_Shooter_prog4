@@ -30,6 +30,9 @@ namespace Space_shooter.Renderer
         private Resolution resolution;
         private bool animation = true;
 
+        public Resolution WindowResolution { get => resolution; set => resolution = value; }
+        public bool Animation { get => animation; set => animation = value; }
+
         public void SetupSizes(Size area)
         {
             this.area = area;
@@ -44,8 +47,12 @@ namespace Space_shooter.Renderer
             this.model = model;
             this.model.Changed += (sender, eventargs) => this.InvalidateVisual();
         }
-        public Resolution WindowResolution { get => resolution; set => resolution = value; }
-        public bool Animation { get => animation; set => animation = value; }
+        public void SetupSettings(IDisplaySettings displaySettings)
+        {
+            animation = displaySettings.Animation;
+            resolution = displaySettings.WindowResolution;
+        }
+
 
         public Brush SpaceBrushHigh
         {
@@ -523,8 +530,23 @@ namespace Space_shooter.Renderer
                 Rect background0 = new Rect(0, backgroundcounter, area.Width, area.Height);
                 Rect background1 = new Rect(0, background0.Y - area.Height, area.Width, area.Height);
 
-                drawingContext.DrawRectangle(SpaceBrushHigh, null, background0);
-                drawingContext.DrawRectangle(SpaceBrushHigh, null, background1);
+                switch (resolution)
+                {
+                    case Resolution.High:
+                        drawingContext.DrawRectangle(SpaceBrushHigh, null, background0);
+                        drawingContext.DrawRectangle(SpaceBrushHigh, null, background1);
+                        break;
+                    case Resolution.Medium:
+                        drawingContext.DrawRectangle(SpaceBrushMedium, null, background0);
+                        drawingContext.DrawRectangle(SpaceBrushMedium, null, background1);
+                        break;
+                    case Resolution.Low:
+                        drawingContext.DrawRectangle(SpaceBrushLow, null, background0);
+                        drawingContext.DrawRectangle(SpaceBrushLow, null, background1);
+                        break;
+                    default:
+                        break;
+                }
 
                 backgroundcounter++;
                 if (backgroundcounter > area.Height) backgroundcounter = 0;
