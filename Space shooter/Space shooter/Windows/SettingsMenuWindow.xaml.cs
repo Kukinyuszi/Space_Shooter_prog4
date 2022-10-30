@@ -26,23 +26,19 @@ namespace Space_shooter.Windows
         {
             displaysettings = new Display();
             InitializeComponent();
+            this.DataContext = displaysettings;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (var item in MyGrid.Children)
             {
-                if (item is WrapPanel)
-                {
-                    foreach (var item2 in (item as WrapPanel).Children)
-                    {
 
-                        if (item2 is ComboBox t)
-                        {
-                            displaysettings.WindowResolution = (IDisplaySettings.Resolution)t.SelectedIndex;
-                        }
-                    }
+                if (item is ComboBox t)
+                {
+                    displaysettings.WindowResolution = (IDisplaySettings.Resolution)t.SelectedIndex;
                 }
+                else if(item is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
             }
             this.Close();
         }
