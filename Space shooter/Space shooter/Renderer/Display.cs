@@ -558,7 +558,7 @@ namespace Space_shooter.Renderer
                         Explodings.Add(new Explosion(item.Position, 11, true, false));
                     }
                     else drawingContext.DrawEllipse(AsteroidBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
-                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Blue, 2), item.Hitbox);
                 }
                 foreach (var item in model.Powerups)
                 {
@@ -603,7 +603,7 @@ namespace Space_shooter.Renderer
                         default:
                             break;
                     }
-                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Yellow, 2), item.Hitbox);
                 }
                 foreach (var item in model.Lasers)
                 {
@@ -694,7 +694,7 @@ namespace Space_shooter.Renderer
                             drawingContext.Pop();
                         }
                     }
-                    drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), item.Hitbox);
+                    drawingContext.DrawRectangle(null, new Pen(Brushes.Orange, 2), item.Hitbox);
                 }
 
 
@@ -771,11 +771,12 @@ namespace Space_shooter.Renderer
                 }
 
                 if (model.Player != null) drawingContext.DrawEllipse(ShipBrush, null, new Point(model.Player.Position.X, model.Player.Position.Y), 40, 40);
-                drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), model.Player.Hitbox);
+                if (model.Player != null) drawingContext.DrawRectangle(null, new Pen(Brushes.Green, 2), model.Player.Hitbox);
 
                 if (model.Boss != null) drawingContext.DrawEllipse(Ship6Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 100, 100);
+                if (model.Boss != null) drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), model.Boss.Hitbox);
 
-                if(Animation)
+                if (Animation)
                 {
                     for (int i = 0; i < Explodings.Count; i++)
                     {

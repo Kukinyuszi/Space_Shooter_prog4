@@ -1,7 +1,6 @@
 {
   "Lasers": [
     {
-      "Position": "68,42",
       "Laservector": "0,-5",
       "Angle": -90.0,
       "Speed": 0,
@@ -9,10 +8,11 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 116
+      "Counter": 120,
+      "Hitbox": "156,20,5,5",
+      "Position": "158,22"
     },
     {
-      "Position": "88,27",
       "Laservector": "0,-5",
       "Angle": -90.0,
       "Speed": 0,
@@ -20,164 +20,133 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 119
+      "Counter": 93,
+      "Hitbox": "456,155,5,5",
+      "Position": "458,157"
     },
     {
-      "Position": "108,27",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 119
-    },
-    {
-      "Position": "58,177",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 89
-    },
-    {
-      "Position": "78,177",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 89
-    },
-    {
-      "Position": "68,332",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 58
-    },
-    {
-      "Position": "88,327",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 59
-    },
-    {
-      "Position": "108,327",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 59
-    },
-    {
-      "Position": "348,477",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 29
-    },
-    {
-      "Position": "368,477",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 29
-    },
-    {
-      "Position": "388,477",
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 29
-    },
-    {
-      "Position": "320,313",
-      "Laservector": "-4,10",
-      "Angle": 111.80140948635182,
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 15
+      "Counter": 80,
+      "Hitbox": "496,421,5,5",
+      "Position": "498,423"
     },
     {
-      "Position": "314,313",
-      "Laservector": "-1,10",
-      "Angle": 95.71059313749964,
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 15
+      "Counter": 81,
+      "Hitbox": "335,426,5,5",
+      "Position": "337,428"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 63,
+      "Hitbox": "366,305,5,5",
+      "Position": "368,307"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 33,
+      "Hitbox": "386,455,5,5",
+      "Position": "388,457"
+    },
+    {
+      "Laservector": "0.4,12.25",
+      "Angle": 88.12978190425154,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 21,
+      "Hitbox": "430,413,5,5",
+      "Position": "432,415"
+    },
+    {
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 21,
+      "Hitbox": "469,266,5,5",
+      "Position": "471,268"
+    },
+    {
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 21,
+      "Hitbox": "427,266,5,5",
+      "Position": "429,268"
     }
   ],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "291,235"
+      "Position": "197,95",
+      "Hitbox": "172,75,50,40"
     }
   ],
   "EnemyShips": [
     {
-      "Position": "395,140",
-      "Name": 3,
-      "IsHit": false,
+      "Position": "471,140",
+      "Name": 1,
+      "IsHit": true,
       "IsDead": false,
-      "IsMoving": false
+      "IsMoving": false,
+      "Hitbox": "446,120,50,40"
     },
     {
-      "Position": "344,140",
+      "Position": "298,-40",
       "Name": 3,
       "IsHit": false,
       "IsDead": false,
-      "IsMoving": false
+      "IsMoving": true,
+      "Hitbox": "273,-60,50,40"
     }
   ],
   "Powerups": [],
   "Player": {
     "left": false,
-    "Position": "368,647",
-    "Weapon": 1,
+    "Position": "448,647",
+    "Weapon": 3,
     "IsDead": false,
-    "IsMoving": false
+    "IsMoving": false,
+    "Hitbox": "433,635,30,25"
   },
   "Boss": null,
-  "Health": 100,
-  "Score": 510,
+  "Health": 70,
+  "Score": 320,
   "HighScore": 750,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,
@@ -191,11 +160,11 @@
   "Sound": false,
   "Difficultyness": 1,
   "RapidfireTime": 0,
-  "StrongTime": 0,
+  "StrongTime": 4,
   "WeaponTime": 0,
   "Shield": false,
   "Rapid": false,
-  "Strong": false,
-  "Weaponon": true,
+  "Strong": true,
+  "Weaponon": false,
   "Area": "536,697.6"
 }

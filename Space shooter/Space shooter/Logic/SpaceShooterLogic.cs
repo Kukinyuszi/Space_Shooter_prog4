@@ -155,7 +155,7 @@ namespace Space_shooter.Logic
         {
             
                 System.Windows.Size size = new System.Windows.Size((int)Area.Width, (int)Area.Height);          // Screen size variable, it is for the objects to know if it leaves the screen
-                //Rect playerrect = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);             // Generates the player hitbox
+                                                                                
                 if (EnemyShips.Count > 0) EnemyShipsMovement(size);
                 if (Boss != null)                                                                               // If it is not a boss round, than the enemies move one time
                 {
@@ -172,13 +172,13 @@ namespace Space_shooter.Logic
                 for (int i = 0; i < Lasers.Count; i++)
                 {                                                                                               // Goes through the lasers...
                     var laser = Lasers[i];
-                    //Rect laserrect = LaserFromWhom(laser);                                                      // ...checks if it is from a player, and creats it hitbox (if it doesnt from a player, than the asteroids dont blow up)
+                                                             
 
-                    AsteroidsCollison(size,/* Player.Hitbox,*/ laser, i/*, laser.Hitbox*/);                                   // ...checks if the laser hitbox intersected with one of the asteroids hitbox, than it sets them to get hited
+                    AsteroidsCollison(i);                                   // ...checks if the laser hitbox intersected with one of the asteroids hitbox, than it sets them to get hited
                                                                                                                 // also checks if the asteroid hitbox intersected with the player hitbox
-                    if (Boss == null) EnemyShipsCollisions(size, laser,/* laser.Hitbox,*/ i);                          // ...checks if it is a boss round and if laser hitbox intersected with one of the enemies hitbox, than it sets them to get hited
+                    if (Boss == null) EnemyShipsCollisions(i);                          // ...checks if it is a boss round and if laser hitbox intersected with one of the enemies hitbox, than it sets them to get hited
 
-                    else if (Boss != null) BossCollisions(size, /*laser.Hitbox,*/ laser, i);                           // ...if boss round, checks if it intersected with the boss hitbox, and removes bosses hp
+                    else if (Boss != null) BossCollisions(i);                           // ...if boss round, checks if it intersected with the boss hitbox, and removes bosses hp
 
                     if (Collide(laser.Hitbox, Player.Hitbox) && !laser.Fromplayer)                              // ...checks if laser hitbox intersected with the player hitbox 
                     {                                                                                           // If it did than sets the laser to get hit
@@ -191,7 +191,7 @@ namespace Space_shooter.Logic
 
                 else if (Boss != null && (bossshottimer == 0 || bossshottimer == Bossshottimechange / 2)) NewEnemyShoot(Boss as EnemyShip);  // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
                                                                                                                                              // --> so it can shoot again, than it shoots with the boss
-                PowerupPickup(size/*, Player.Hitbox*/);                                                                // If the player hitbox intersects with a powerup hitbox, than it picks up
+                PowerupPickup(size);                                                                // If the player hitbox intersects with a powerup hitbox, than it picks up
                 PlayerInteractions(size);                                                                       // Moves and shoots with the player
                 CountersTimeEllapses();                                                                         // All the counters step, if it is 0, than it resets
                 SeeIfGameEnds();                                                                                // Check if player health below 1, than the game ends
@@ -282,20 +282,10 @@ namespace Space_shooter.Logic
             }
         }
 
-        //private Rect LaserFromWhom(Laser laser)
-        //{
-        //    if (laser.Fromplayer)
-        //    {
-        //        return new Rect(laser.Position.X - (laser.Ammosize / 2), laser.Position.Y - (laser.Ammosize / 2), laser.Ammosize, laser.Ammosize);
-        //    }
-        //    else return new Rect(laser.Position.X - (laser.Ammosize / 2), laser.Position.Y - (laser.Ammosize / 2), laser.Ammosize, laser.Ammosize);
-        //}
-
-        private void BossCollisions(System.Windows.Size size, /*Rect laserrect,*/ Laser laser, int i)
+        private void BossCollisions(int i)
         {
 
-            //Rect bossrect = new Rect(Boss.Position.X - 50, Boss.Position.Y - 80, 100, 160);
-            if (Collide(laser.Hitbox, Boss.Hitbox) && laser.Fromplayer)
+            if (Collide(Lasers[i].Hitbox, Boss.Hitbox) && Lasers[i].Fromplayer)
             {
                 Lasers[i].IsHit = true;
                 if (Strong || Lasers[i].Big) Boss.Health -= 30;
@@ -303,14 +293,13 @@ namespace Space_shooter.Logic
             }
         }
 
-        private void EnemyShipsCollisions(System.Windows.Size size, Laser laser,/* Rect laserrect,*/ int i)
+        private void EnemyShipsCollisions(int i)
         {
             for (int j = 0; j < EnemyShips.Count; j++)
             {
                 var enemy = EnemyShips[j];
 
-                //Rect enemyrect = new Rect(enemy.Position.X - 25, enemy.Position.Y - 20, 50, 40);
-                if (laser.Fromplayer && !laser.IsHit && Collide(laser.Hitbox, enemy.Hitbox))
+                if (Lasers[i].Fromplayer && !Lasers[i].IsHit && Collide(Lasers[i].Hitbox, enemy.Hitbox))
                 {
                     score += 30;
                     EnemyShips[j].IsHit = true;
@@ -319,15 +308,14 @@ namespace Space_shooter.Logic
             }
         }
 
-        private void AsteroidsCollison(System.Windows.Size size,/* Rect playerrect,*/ Laser laser, int j/*, Rect laserrect*/)
+        private void AsteroidsCollison(int j)
         {
             for (int i = 0; i < Asteroids.Count; i++)
             {
                 var asteroid = Asteroids[i];
-                //Rect asteroidrect = new Rect(asteroid.Position.X - 25, asteroid.Position.Y - 20, 50, 40);
-                if (Collide(laser.Hitbox, asteroid.Hitbox) && laser.Fromplayer)
+                if (Collide(Lasers[j].Hitbox, asteroid.Hitbox) && Lasers[j].Fromplayer)
                 {
-                    PowerupDrop(size, asteroid);
+                    PowerupDrop(asteroid);
                     score += 10;
                     Asteroids[i].IsHit = true;
                     if (!Strong) Lasers[j].IsHit = true;
@@ -498,7 +486,6 @@ namespace Space_shooter.Logic
                 }
                 else
                 {
-                    //Rect poweruprect = new Rect(Powerups[i].Position.X - 25, Powerups[i].Position.Y - 20, 50, 40);
                     if (Powerups[i].Hitbox.IntersectsWith(Player.Hitbox))
                     {
 
@@ -564,7 +551,7 @@ namespace Space_shooter.Logic
             else return false;
         }
 
-        private void PowerupDrop(System.Windows.Size size, Asteroid asteroid)
+        private void PowerupDrop(Asteroid asteroid)
         {
             if (random.Next(100) < Poweruprate)
             {
