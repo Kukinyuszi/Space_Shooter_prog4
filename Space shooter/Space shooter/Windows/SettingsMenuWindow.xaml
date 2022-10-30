@@ -22,13 +22,13 @@
         <Label Content="Music" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
         <Label Content="Resolution" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
         <Label Content="Animation" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
-        <CheckBox Content="ON/OFF" Margin="10,25,10,15" IsChecked="True" Grid.Column="1" Grid.Row="1"/>
+        <CheckBox Content="ON/OFF" Margin="10,25,10,15" IsChecked="{Binding Animation, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="1"/>
         <ComboBox MinHeight="20" MinWidth="150" Margin="10,20,10,20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">
             <ComboBoxItem Content="High" IsSelected="True"/>
             <ComboBoxItem Content="Medium" />
             <ComboBoxItem Content="Low"/>
         </ComboBox>
-        <CheckBox  Content="ON/OFF" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="3"/>
+        <CheckBox  Content="ON/OFF" Margin="10,30,10,15" IsChecked="{Binding Animation, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="3"/>
         <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Margin="264,22,267,10" Grid.Row="4" />
     </Grid>
 </Window>
