@@ -139,6 +139,7 @@ namespace Space_shooter
             if (gpw.ShowDialog() == false)
             {
                 MainMenuWindow mmw = new MainMenuWindow();
+                mmw.DisplaySettings = displaySettings;
                 this.Close();
                 mmw.Show();
             }
