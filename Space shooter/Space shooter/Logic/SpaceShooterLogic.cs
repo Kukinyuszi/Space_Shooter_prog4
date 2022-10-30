@@ -28,7 +28,7 @@ namespace Space_shooter.Logic
         public event EventHandler Changed, GameOver, PowerUpPickedUp,GamePaused;
         private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
         enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, enemiescount = 2, score = 0, highscore, health = 100, rapidfireTime, strongTime, weaponTime;
-        private bool godmode, sound, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
+        private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
         private Difficulty difficulty;
         System.Windows.Size area;
@@ -51,7 +51,6 @@ namespace Space_shooter.Logic
         public int EnemySpawnCount { get => enemiescount; set => enemiescount = value; }
         public int BossHealth { get => bosshealth; set => bosshealth = value; }
         public bool Godmode { get => godmode; set => godmode = value; }
-        public bool Sound { get => sound; set => sound = value; }
         public Difficulty Difficultyness { get { return difficulty; } set { difficulty = value; } }
         public int RapidfireTime { get => rapidfireTime; set => rapidfireTime = value; }
         public int StrongTime { get => strongTime; set => strongTime = value; }

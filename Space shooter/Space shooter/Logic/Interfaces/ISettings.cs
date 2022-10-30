@@ -19,7 +19,6 @@ namespace Space_shooter.Logic.Interfaces
         int Enemyshottimechange { get; set; }
         int Bossshottimechange { get; set; }
         bool Godmode { get; set; }
-        bool Sound { get; set; }
         string PlayerName { get; set; }
         int EnemySpawnCount { get; set; }
         int BossHealth { get; set; }
