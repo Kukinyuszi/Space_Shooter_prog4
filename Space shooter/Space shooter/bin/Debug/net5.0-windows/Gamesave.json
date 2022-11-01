@@ -1,51 +1,107 @@
 {
-  "Lasers": [],
+  "Lasers": [
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 81,
+      "Hitbox": "286,215,5,5",
+      "Position": "288,217"
+    },
+    {
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 74,
+      "Hitbox": "305,531,5,5",
+      "Position": "307,533"
+    },
+    {
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 74,
+      "Hitbox": "157,531,5,5",
+      "Position": "159,533"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 50,
+      "Hitbox": "316,370,5,5",
+      "Position": "318,372"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 21,
+      "Hitbox": "456,515,5,5",
+      "Position": "458,517"
+    },
+    {
+      "Laservector": "7.5,25.5",
+      "Angle": 73.61045966596521,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 14,
+      "Hitbox": "364,373,5,5",
+      "Position": "366,375"
+    }
+  ],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "173,165",
-      "Hitbox": "148,145,50,40"
+      "Position": "473,430",
+      "Hitbox": "448,410,50,40"
     }
   ],
-  "EnemyShips": [
-    {
-      "Position": "422,140",
-      "Name": 3,
-      "IsHit": false,
-      "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "397,120,50,40"
-    },
-    {
-      "Position": "450,140",
-      "Name": 2,
-      "IsHit": false,
-      "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "425,120,50,40"
-    }
-  ],
-  "Powerups": [
-    {
-      "PowerupType": 0,
-      "Counter": 600,
-      "Speed": 5,
-      "Position": "356,580",
-      "Hitbox": "331,560,50,40"
-    }
-  ],
+  "EnemyShips": [],
+  "Powerups": [],
   "Player": {
-    "left": true,
-    "Position": "328,647",
+    "left": false,
+    "Position": "458,647",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "313,635,30,25"
+    "Hitbox": "443,635,30,25"
   },
-  "Boss": null,
-  "Health": 30,
-  "Score": 430,
+  "Boss": {
+    "Name": 4,
+    "Position": "268,35",
+    "Health": 400,
+    "Hitbox": "218,-45,100,160",
+    "IsHit": false,
+    "IsDead": false,
+    "IsMoving": true
+  },
+  "Health": 130,
+  "Score": 1010,
   "HighScore": 560,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,
@@ -56,7 +112,6 @@
   "EnemySpawnCount": 2,
   "BossHealth": 400,
   "Godmode": false,
-  "Sound": false,
   "Difficultyness": 1,
   "RapidfireTime": 0,
   "StrongTime": 0,

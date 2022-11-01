@@ -2,6 +2,7 @@
 using Space_shooter.Logic.Interfaces;
 using Space_shooter.Renderer;
 using Space_shooter.Renderer.Interfaces;
+using Space_shooter.Services;
 using Space_shooter.Windows;
 using System;
 using System.Collections.Generic;
@@ -36,15 +37,15 @@ namespace Space_shooter
         MainMenuWindow gameMenu;
         DispatcherTimer gameTimer;
         DispatcherTimer PowerupTimer;
+        SoundPlayerService sps = new SoundPlayerService();
         public MainWindow()
         {
             InitializeComponent();
         }
-        public MainWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, IGameModel settings, IDisplaySettings displaySettings)
+        public MainWindow(MainMenuWindow menu, IGameModel settings, IDisplaySettings displaySettings)
         {
             logic = (SpaceShooterLogic)settings;
             gameMenu = menu;
-            _backgroundMusic_Settings = _backgroundMusic;
             this.displaySettings = displaySettings;
             InitializeComponent();
 
@@ -60,6 +61,8 @@ namespace Space_shooter
             display.SetupSettings(displaySettings);
             display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
             logic.GameOver += Logic_GameOver;
+            logic.PlayerShoot += sps.PlayershotAudio_Start;
+            logic.EnemyShoot += sps.EnemyshotAudio_Start;
 
             gameTimer = new DispatcherTimer();
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);

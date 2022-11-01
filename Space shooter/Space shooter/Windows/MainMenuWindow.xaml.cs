@@ -28,7 +28,7 @@ namespace Space_shooter.Windows
     public partial class MainMenuWindow : Window
     {
         DispatcherTimer videoTimer = new DispatcherTimer();
-        static MediaPlayer _backgroundMusic = new MediaPlayer();
+        MediaPlayer _backgroundmusic;
         ISettings settings;
         IDisplaySettings displaySettings;
 
@@ -40,23 +40,10 @@ namespace Space_shooter.Windows
             displaySettings = new Display();
             InitializeComponent();
 
-            //StartBackgroundMusic();
+            SoundPlayerService sps = new SoundPlayerService();
+            _backgroundmusic = sps.StartBackgroundMusic();
         }
 
-        public static void StartBackgroundMusic()
-        {
-            var cd = Directory.GetCurrentDirectory();
-            _backgroundMusic.Open(new Uri(cd + @"\Menu\Musics\menu_music_cut_2_WAV.wav"));
-            _backgroundMusic.MediaEnded += new EventHandler(BackgroundMusic_Ended);
-            _backgroundMusic.Volume = 0.3;
-            _backgroundMusic.Play();
-        }
-
-        private static void BackgroundMusic_Ended(object sender, EventArgs e)
-        {
-            _backgroundMusic.Position = TimeSpan.Zero;
-            _backgroundMusic.Play();
-        }
 
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +53,7 @@ namespace Space_shooter.Windows
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
-            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, _backgroundMusic, settings, DisplaySettings);
+            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, settings, DisplaySettings);
             this.Visibility = Visibility.Hidden;
             if(psw.ShowDialog() == true) this.Visibility = Visibility.Visible;
 
@@ -122,7 +109,7 @@ namespace Space_shooter.Windows
             IGameModel model = gls.LoadGame();
             if(settings != null)
             {
-                MainWindow StartingTheGame = new MainWindow(this, _backgroundMusic, model, DisplaySettings);
+                MainWindow StartingTheGame = new MainWindow(this, model, DisplaySettings);
                 this.Close();
                 StartingTheGame.Show();
             }

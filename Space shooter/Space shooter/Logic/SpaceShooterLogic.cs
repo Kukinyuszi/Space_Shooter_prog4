@@ -25,7 +25,7 @@ namespace Space_shooter.Logic
 
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
-        public event EventHandler Changed, GameOver, PowerUpPickedUp,GamePaused;
+        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot;
         private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
         enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, enemiescount = 2, score = 0, highscore, health = 100, rapidfireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
@@ -423,6 +423,7 @@ namespace Space_shooter.Logic
                 default:
                     break;
             }
+            EnemyShoot?.Invoke(this,null);
         }
 
         private void CountersTimeEllapses()
@@ -463,6 +464,7 @@ namespace Space_shooter.Logic
             if (shoot && playershottimer <= 0)
             {
                 NewPlayerShoot();
+                PlayerShoot?.Invoke(this, null);
                 if (Rapid)
                 {
                     playershottimer = 10;

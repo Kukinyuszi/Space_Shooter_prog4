@@ -28,10 +28,9 @@ namespace Space_shooter.Windows
         MainMenuWindow _mainMenu;
         IDisplaySettings displaySettings;
         bool hasBeenClicked = false;
-        public PlayerSettingsWindow(MainMenuWindow menu, MediaPlayer _backgroundMusic, ISettings settings, IDisplaySettings displaySettings)
+        public PlayerSettingsWindow(MainMenuWindow menu, ISettings settings, IDisplaySettings displaySettings)
         {
             _mainMenu = menu;
-            this._backgroundMusic = _backgroundMusic;
             this.settings = settings as IGameModel;
             this.displaySettings = displaySettings;
             InitializeComponent();
@@ -44,7 +43,7 @@ namespace Space_shooter.Windows
             {
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();
-                MainWindow StartingTheGame = new MainWindow(_mainMenu, _backgroundMusic, settings, displaySettings);
+                MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings);
                 _mainMenu.Close();
                 this.Close();
                 StartingTheGame.Show();
@@ -92,7 +91,7 @@ namespace Space_shooter.Windows
                 {
                     settings.PlayerName = tb_playername.Text;
                     settings.Difficultyness = DifficultyChecker();
-                    MainWindow StartingTheGame = new MainWindow(_mainMenu, _backgroundMusic, settings, displaySettings);
+                    MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings);
                     _mainMenu.Close();
                     this.Close();
                     StartingTheGame.Show();
