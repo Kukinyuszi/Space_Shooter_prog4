@@ -182,7 +182,7 @@ namespace Space_shooter.Renderer
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroid.png"), UriKind.RelativeOrAbsolute)));
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Asteroid3.png"), UriKind.RelativeOrAbsolute)));
             }
         }
 
