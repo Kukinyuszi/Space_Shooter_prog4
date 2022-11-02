@@ -25,7 +25,7 @@ namespace Space_shooter.Logic
 
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
-        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot;
+        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion;
         private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
         enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, enemiescount = 2, score = 0, highscore, health = 100, rapidfireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
@@ -246,6 +246,7 @@ namespace Space_shooter.Logic
                 if (Asteroids[i].IsHit)
                 {
                     Asteroids.RemoveAt(i);
+                    Explosion?.Invoke(this, null);
                     Asteroids.Add(new Asteroid(size, Asteroidspeed));
                 }
             }
@@ -255,6 +256,7 @@ namespace Space_shooter.Logic
                 if (EnemyShips[i].IsHit)
                 {
                     EnemyShips.RemoveAt(i);
+                    Explosion?.Invoke(this, null);
                     EnemyShips.Add(new EnemyShip(size));
                 }
             }
@@ -496,29 +498,35 @@ namespace Space_shooter.Logic
                             case Powerup.Type.ExtraScore:
                                 score += 30;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Coin_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.MoreHealth:
                                 health += 20;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Health_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.RapidFire:
                                 Rapid = true;
                                 rapidfireTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Powerup_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Shield:
                                 shield = true;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Shield_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Stronger:
                                 Strong = true;
                                 strongTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Powerup_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.Weapon:
                                 Weaponon = true;
                                 weaponTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
+                                Powerup_Pickup?.Invoke(obj, null);
                                 switch ((Powerups[i] as WeaponPowerup).TypeofWeapon)
                                 {
                                     case WeaponPowerup.WeaponType.Doubleshooter:

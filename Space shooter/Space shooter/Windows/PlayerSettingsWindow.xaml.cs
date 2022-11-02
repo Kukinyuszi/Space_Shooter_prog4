@@ -1,5 +1,6 @@
 ﻿using Space_shooter.Logic.Interfaces;
 using Space_shooter.Renderer.Interfaces;
+using Space_shooter.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,15 +25,16 @@ namespace Space_shooter.Windows
     public partial class PlayerSettingsWindow : Window
     {
         IGameModel settings;
-        MediaPlayer _backgroundMusic;
+        SoundPlayerService sps;
         MainMenuWindow _mainMenu;
         IDisplaySettings displaySettings;
         bool hasBeenClicked = false;
-        public PlayerSettingsWindow(MainMenuWindow menu, ISettings settings, IDisplaySettings displaySettings)
+        public PlayerSettingsWindow(MainMenuWindow menu, ISettings settings, IDisplaySettings displaySettings, SoundPlayerService sps)
         {
             _mainMenu = menu;
             this.settings = settings as IGameModel;
             this.displaySettings = displaySettings;
+            this.sps = sps;
             InitializeComponent();
 
         }
@@ -43,7 +45,7 @@ namespace Space_shooter.Windows
             {
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();
-                MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings);
+                MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
                 _mainMenu.Close();
                 this.Close();
                 StartingTheGame.Show();
@@ -91,7 +93,7 @@ namespace Space_shooter.Windows
                 {
                     settings.PlayerName = tb_playername.Text;
                     settings.Difficultyness = DifficultyChecker();
-                    MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings);
+                    MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
                     _mainMenu.Close();
                     this.Close();
                     StartingTheGame.Show();

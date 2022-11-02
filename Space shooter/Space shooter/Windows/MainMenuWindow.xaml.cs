@@ -28,20 +28,19 @@ namespace Space_shooter.Windows
     public partial class MainMenuWindow : Window
     {
         DispatcherTimer videoTimer = new DispatcherTimer();
-        MediaPlayer _backgroundmusic;
+        SoundPlayerService sps = new SoundPlayerService();
         ISettings settings;
         IDisplaySettings displaySettings;
 
         public IDisplaySettings DisplaySettings { get => displaySettings; set => displaySettings = value; }
+        public SoundPlayerService Sps { get => sps; set => sps = value; }
 
         public MainMenuWindow()
         {
             settings = new SpaceShooterLogic();
             displaySettings = new Display();
             InitializeComponent();
-
-            SoundPlayerService sps = new SoundPlayerService();
-            _backgroundmusic = sps.StartBackgroundMusic();
+            Sps.StartBackgroundMusic();
         }
 
 
@@ -53,7 +52,7 @@ namespace Space_shooter.Windows
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
-            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, settings, DisplaySettings);
+            PlayerSettingsWindow psw = new PlayerSettingsWindow(this, settings, DisplaySettings, Sps);
             this.Visibility = Visibility.Hidden;
             if(psw.ShowDialog() == true) this.Visibility = Visibility.Visible;
 
@@ -109,7 +108,7 @@ namespace Space_shooter.Windows
             IGameModel model = gls.LoadGame();
             if(settings != null)
             {
-                MainWindow StartingTheGame = new MainWindow(this, model, DisplaySettings);
+                MainWindow StartingTheGame = new MainWindow(this, model, DisplaySettings, sps);
                 this.Close();
                 StartingTheGame.Show();
             }

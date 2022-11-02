@@ -30,23 +30,20 @@ namespace Space_shooter
     {
         SpaceShooterLogic logic;
         IDisplaySettings displaySettings;
-        public int score;
-        public int health = 100;
-        private int wait = 0;
-        MediaPlayer _backgroundMusic_Settings;
         MainMenuWindow gameMenu;
         DispatcherTimer gameTimer;
         DispatcherTimer PowerupTimer;
-        SoundPlayerService sps = new SoundPlayerService();
+        SoundPlayerService sps;
         public MainWindow()
         {
             InitializeComponent();
         }
-        public MainWindow(MainMenuWindow menu, IGameModel settings, IDisplaySettings displaySettings)
+        public MainWindow(MainMenuWindow menu, IGameModel settings, IDisplaySettings displaySettings, SoundPlayerService sps)
         {
             logic = (SpaceShooterLogic)settings;
             gameMenu = menu;
             this.displaySettings = displaySettings;
+            this.sps = sps;
             InitializeComponent();
 
             //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
@@ -60,9 +57,7 @@ namespace Space_shooter
             display.SetupModel(logic);
             display.SetupSettings(displaySettings);
             display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
-            logic.GameOver += Logic_GameOver;
-            logic.PlayerShoot += sps.PlayershotAudio_Start;
-            logic.EnemyShoot += sps.EnemyshotAudio_Start;
+            EventsSetup();
 
             gameTimer = new DispatcherTimer();
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);
@@ -83,9 +78,41 @@ namespace Space_shooter
 
         }
 
+        private void EventsSetup()
+        {
+            logic.GameOver += Logic_GameOver;
+            logic.PlayerShoot += sps.PlayershotAudio_Start;
+            logic.EnemyShoot += sps.EnemyshotAudio_Start;
+            logic.Coin_Pickup += sps.CoinAudio_Start;
+            logic.Health_Pickup += sps.HealthAudio_Start;
+            logic.Powerup_Pickup += sps.PowerupAudio_Start;
+            logic.Shield_Pickup += sps.ShieldAudio_Start;
+            logic.Explosion += sps.ExplosionAudio_Start;
+        }
+
         private void Logic_GameOver(object? sender, EventArgs e)
         {
             gameTimer.Stop();
+        }
+
+        private void Paused()
+        {
+            gameTimer.Stop();
+            PowerupTimer.Stop();
+            GamePauseWindow gpw = new GamePauseWindow(logic);
+            if (gpw.ShowDialog() == false)
+            {
+                MainMenuWindow mmw = new MainMenuWindow();
+                mmw.DisplaySettings = displaySettings;
+                mmw.Sps = sps;
+                this.Close();
+                mmw.Show();
+            }
+            else
+            {
+                gameTimer.Start();
+                PowerupTimer.Start();
+            }
         }
 
 
@@ -131,25 +158,6 @@ namespace Space_shooter
             else if (e.Key == Key.D)
             {
                 logic.Controldown(SpaceShooterLogic.Controls.D);
-            }
-        }
-
-        private void Paused()
-        {
-            gameTimer.Stop();
-            PowerupTimer.Stop();
-            GamePauseWindow gpw = new GamePauseWindow(logic);
-            if (gpw.ShowDialog() == false)
-            {
-                MainMenuWindow mmw = new MainMenuWindow();
-                mmw.DisplaySettings = displaySettings;
-                this.Close();
-                mmw.Show();
-            }
-            else
-            {
-                gameTimer.Start();
-                PowerupTimer.Start();
             }
         }
 
