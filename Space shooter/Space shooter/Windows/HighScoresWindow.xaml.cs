@@ -31,11 +31,11 @@ namespace Space_shooter.Windows
             List<string> scores = scoreBoardService.GetScoresList();
             if (scores.Count > 0)
             {
-                foreach (string score in scores)
+                for (int i = 0; i < 10; i++)
                 {
                     Label l = new Label()
                     {
-                        Content = score,
+                        Content = scores[i],
                         Margin = new Thickness(10, 1, 10, 1)
                     };
                     sp_scores.Children.Add(l);

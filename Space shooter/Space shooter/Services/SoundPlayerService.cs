@@ -186,7 +186,7 @@ namespace Space_shooter.Services
         {
             shieldAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            shieldAudio.Open(new Uri(cd + "/PowerupShield.wav"));
+            shieldAudio.Open(new Uri(cd + "/Audio/PowerupShield.wav"));
             shieldAudio.Volume = 0.3;
             shieldAudio.MediaEnded += ShieldAudio_MediaEnded;
         }

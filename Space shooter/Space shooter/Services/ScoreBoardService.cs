@@ -70,7 +70,8 @@ namespace Space_shooter.Services
             {
                 string jsonscores = File.ReadAllText("saves.json");
                 ScoreList sl = JsonConvert.DeserializeObject<ScoreList>(jsonscores);
-                return sl.Scores.Max().Scoreamount;
+                sl.Scores.Sort();
+                return sl.Scores[0].Scoreamount;
             }
             else return 0;
         }

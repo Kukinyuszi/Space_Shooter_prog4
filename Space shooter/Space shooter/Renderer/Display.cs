@@ -26,10 +26,15 @@ namespace Space_shooter.Renderer
         private int backgroundcounter = 0;
         private string chatpopup;
         private DispatcherTimer ChatPopupTimer;
+        private DispatcherTimer AnimationTimer;
         private List<Explosion> Explodings = new List<Explosion>();
         private Resolution resolution;
         private bool animation = true;
         private bool hitboxes;
+
+        private int exhaustCounter;
+
+
 
         public Resolution WindowResolution { get => resolution; set => resolution = value; }
         public bool Animation { get => animation; set => animation = value; }
@@ -42,7 +47,12 @@ namespace Space_shooter.Renderer
             model.PowerUpPickedUp += Model_PowerUpPickedUp;
             ChatPopupTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3) };
             ChatPopupTimer.Tick += ChatPopup;
+            AnimationTimer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(40) };
+            AnimationTimer.Tick +=  Animation_Time_Step;
+            AnimationTimer.Start();
         }
+
+
 
         public void SetupModel(SpaceShooterLogic model)
         {
@@ -79,6 +89,27 @@ namespace Space_shooter.Renderer
             }
 
 
+        }
+        public Brush BossHpLeft
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "BossHP1.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush BossHpMiddle
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "BossHP2.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush BossHpRight
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "BossHP3.png"), UriKind.RelativeOrAbsolute)));
+            }
         }
         public Brush AsteroidBrush1
         {
@@ -662,63 +693,63 @@ namespace Space_shooter.Renderer
                     }
                     else
                     {
-                        if (Animation)
-                        {
-                            switch (backgroundcounter % 64)
-                            {
-                                case < 4:
-                                    drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
-                                    break;
-                                case < 8:
-                                    drawingContext.DrawEllipse(AsteroidBrush2, null, item.Position, 50, 50);
-                                    break;
-                                case < 12:
-                                    drawingContext.DrawEllipse(AsteroidBrush3, null, item.Position, 50, 50);
-                                    break;
-                                case < 16:
-                                    drawingContext.DrawEllipse(AsteroidBrush4, null, item.Position, 50, 50);
-                                    break;
-                                case < 20:
-                                    drawingContext.DrawEllipse(AsteroidBrush5, null, item.Position, 50, 50);
-                                    break;
-                                case < 24:
-                                    drawingContext.DrawEllipse(AsteroidBrush6, null, item.Position, 50, 50);
-                                    break;
-                                case < 28:
-                                    drawingContext.DrawEllipse(AsteroidBrush7, null, item.Position, 50, 50);
-                                    break;
-                                case < 32:
-                                    drawingContext.DrawEllipse(AsteroidBrush8, null, item.Position, 50, 50);
-                                    break;
-                                case < 36:
-                                    drawingContext.DrawEllipse(AsteroidBrush9, null, item.Position, 50, 50);
-                                    break;
-                                case < 40:
-                                    drawingContext.DrawEllipse(AsteroidBrush10, null, item.Position, 50, 50);
-                                    break;
-                                case < 44:
-                                    drawingContext.DrawEllipse(AsteroidBrush11, null, item.Position, 50, 50);
-                                    break;
-                                case < 48:
-                                    drawingContext.DrawEllipse(AsteroidBrush12, null, item.Position, 50, 50);
-                                    break;
-                                case < 52:
-                                    drawingContext.DrawEllipse(AsteroidBrush13, null, item.Position, 50, 50);
-                                    break;
-                                case < 56:
-                                    drawingContext.DrawEllipse(AsteroidBrush14, null, item.Position, 50, 50);
-                                    break;
-                                case < 60:
-                                    drawingContext.DrawEllipse(AsteroidBrush15, null, item.Position, 50, 50);
-                                    break;
-                                case < 64:
-                                    drawingContext.DrawEllipse(AsteroidBrush16, null, item.Position, 50, 50);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        else drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
+                        //if (Animation)
+                        //{
+                        //    switch (exhaustCounter)
+                        //    {
+                        //        case < 2:
+                        //            drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 4:
+                        //            drawingContext.DrawEllipse(AsteroidBrush2, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 6:
+                        //            drawingContext.DrawEllipse(AsteroidBrush3, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 8:
+                        //            drawingContext.DrawEllipse(AsteroidBrush4, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 10:
+                        //            drawingContext.DrawEllipse(AsteroidBrush5, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 12:
+                        //            drawingContext.DrawEllipse(AsteroidBrush6, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 14:
+                        //            drawingContext.DrawEllipse(AsteroidBrush7, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 16:
+                        //            drawingContext.DrawEllipse(AsteroidBrush8, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 18:
+                        //            drawingContext.DrawEllipse(AsteroidBrush9, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 20:
+                        //            drawingContext.DrawEllipse(AsteroidBrush10, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 22:
+                        //            drawingContext.DrawEllipse(AsteroidBrush11, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 24:
+                        //            drawingContext.DrawEllipse(AsteroidBrush12, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 26:
+                        //            drawingContext.DrawEllipse(AsteroidBrush13, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 28:
+                        //            drawingContext.DrawEllipse(AsteroidBrush14, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 30:
+                        //            drawingContext.DrawEllipse(AsteroidBrush15, null, item.Position, 50, 50);
+                        //            break;
+                        //        case < 32:
+                        //            drawingContext.DrawEllipse(AsteroidBrush16, null, item.Position, 50, 50);
+                        //            break;
+                        //        default:
+                        //            break;
+                        //    }
+                        //}
+                        /*else*/ drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
 
                         }
                         if (hitboxes)drawingContext.DrawRectangle(null, new Pen(Brushes.Blue, 2), item.Hitbox);
@@ -870,18 +901,18 @@ namespace Space_shooter.Renderer
                     {
                         if (Animation && item.IsMoving)
                         {
-                            switch (backgroundcounter % 8)
+                            switch (exhaustCounter)
                             {
-                                case < 2:
+                                case 0:
                                     drawingContext.DrawEllipse(Exaust1Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 4:
+                                case 1:
                                     drawingContext.DrawEllipse(Exaust2Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 6:
+                                case 2:
                                     drawingContext.DrawEllipse(Exaust3Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 8:
+                                case 3:
                                     drawingContext.DrawEllipse(Exaust4Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
                                 default:
@@ -890,18 +921,18 @@ namespace Space_shooter.Renderer
                         }
                         else if(Animation)
                         {
-                            switch (backgroundcounter % 8)
+                            switch (exhaustCounter)
                             {
-                                case < 2:
+                                case 0:
                                     drawingContext.DrawEllipse(TurboExaust1Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 4:
+                                case 1:
                                     drawingContext.DrawEllipse(TurboExaust2Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 6:
+                                case 2:
                                     drawingContext.DrawEllipse(TurboExaust3Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
-                                case < 8:
+                                case 3:
                                     drawingContext.DrawEllipse(TurboExaust4Brush, null, new Point(item.Position.X, item.Position.Y - 50), 20, 20);
                                     break;
                                 default:
@@ -934,6 +965,13 @@ namespace Space_shooter.Renderer
 
                 if (model.Boss != null) drawingContext.DrawEllipse(Ship6Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 100, 100);
                 if (model.Boss != null && hitboxes) drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), model.Boss.Hitbox);
+                if(model.Boss != null && model.Boss.Health > 0)
+                {
+                    //drawingContext.DrawRectangle(BossHpLeft, null, new Rect(area.Width / 2 - model.Boss.Health / 4 - 10, 35, 10, 10));
+                    drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(area.Width / 2 - model.Boss.Health / 4, 35, model.Boss.Health / 2, 10));
+                    //drawingContext.DrawRectangle(BossHpRight, null, new Rect(area.Width / 2 + model.Boss.Health / 4 + 10, 35, 10, 10));
+                }
+
 
                 if (Animation)
                 {
@@ -1045,9 +1083,9 @@ namespace Space_shooter.Renderer
                 drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
                 if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(5, 55));
 
-                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width / 2, 30), 25, 25);
-                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width / 3) * 2, 30), 25, 25);
-                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width / 6) * 5, 30), 25, 25);
+                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -120 , 30), 25, 25);
+                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 90), 30), 25, 25);
+                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -60), 30), 25, 25);
                 if (model.Weaponon)
                 {
                     switch (model.Player.Weapon)
@@ -1067,13 +1105,13 @@ namespace Space_shooter.Renderer
                 }
 
 
-                }
-
             }
-            private FormattedText FormatText(string text)
-        {
-            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 20, Brushes.White);
+
         }
+            private FormattedText FormatText(string text)
+            {
+            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 20, Brushes.White);
+            }
         private void Model_PowerUpPickedUp(object? sender, EventArgs e)
         {
             if (sender != null)
@@ -1105,11 +1143,19 @@ namespace Space_shooter.Renderer
                 ChatPopupTimer.Start();
             }
         }
+        private void Animation_Time_Step(object sender, EventArgs e)
+        {
+            if (exhaustCounter == 3) exhaustCounter = 0;
+                exhaustCounter++;
+        }
         private void ChatPopup(object? sender, EventArgs e)
         {
             chatpopup = null;
             ChatPopupTimer.Stop();
         }
-        
+
+
+
+
     }
 }
