@@ -5,7 +5,12 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Space_shooter</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>spaceshooter.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="spaceshooter.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
