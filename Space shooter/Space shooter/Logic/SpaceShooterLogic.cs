@@ -314,7 +314,7 @@ namespace Space_shooter.Logic
             for (int i = 0; i < Asteroids.Count; i++)
             {
                 var asteroid = Asteroids[i];
-                if (Collide(Lasers[j].Hitbox, asteroid.Hitbox) && Lasers[j].Fromplayer)
+                if (!asteroid.IsHit && Collide(Lasers[j].Hitbox, asteroid.Hitbox) && Lasers[j].Fromplayer)
                 {
                     PowerupDrop(asteroid);
                     score += 10;

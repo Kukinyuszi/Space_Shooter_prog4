@@ -116,7 +116,7 @@ namespace Space_shooter
             }
             else
             {
-                MainMenuWindow mmw = new MainMenuWindow(logic, displaySettings, sps);
+                MainMenuWindow mmw = new MainMenuWindow(displaySettings, sps);
                 this.Close();
                 mmw.Show();
             }
@@ -138,7 +138,7 @@ namespace Space_shooter
             GamePauseWindow gpw = new GamePauseWindow(logic);
             if (gpw.ShowDialog() == false)
             {
-                MainMenuWindow mmw = new MainMenuWindow(logic, displaySettings, sps);
+                MainMenuWindow mmw = new MainMenuWindow(displaySettings, sps);
                 this.Close();
                 mmw.Show();
             }

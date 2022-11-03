@@ -39,8 +39,6 @@
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Godmode ON/OFF"/>
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Content="Sound ON/OFF"/>
-                <CheckBox IsChecked="{Binding Sound, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
             <Button Content="Save" Padding="10" Click="Button_Click"  />
         </StackPanel>

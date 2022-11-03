@@ -42,9 +42,9 @@ namespace Space_shooter.Windows
             InitializeComponent();
             Sps.StartBackgroundMusic();
         }
-        public MainMenuWindow(ISettings settings, IDisplaySettings displaySettings, SoundPlayerService sps)
+        public MainMenuWindow(IDisplaySettings displaySettings, SoundPlayerService sps)
         {
-            this.settings = settings;
+            settings = new SpaceShooterLogic();
             this.displaySettings = displaySettings;
             this.sps = sps;
             InitializeComponent();

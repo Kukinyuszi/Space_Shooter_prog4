@@ -1078,26 +1078,26 @@ namespace Space_shooter.Renderer
                 }
                 if (model.Health == 99999) drawingContext.DrawText(FormatText($"Health: ∞"), new Point(area.Width / 3, 5));
                 else drawingContext.DrawText(FormatText($"Health:{model.Health}"), new Point(area.Width / 3, 5));
-                drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(5, 5));
+                drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(area.Width - 140, 5));
 
                 drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
                 if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(5, 55));
 
-                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -120 , 30), 25, 25);
-                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 90), 30), 25, 25);
-                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -60), 30), 25, 25);
+                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -30 , 250), 25, 25);
+                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 30), 190), 25, 25);
+                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -30), 130), 25, 25);
                 if (model.Weaponon)
                 {
                     switch (model.Player.Weapon)
                     {
                         case WeaponType.Doubleshooter:
-                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 30, 30), 25, 25);
+                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 30, 70), 25, 25);
                             break;
                         case WeaponType.Tripplehooter:
-                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 30, 30), 25, 25);
+                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 30, 70), 25, 25);
                             break;
                         case WeaponType.Biggerammo:
-                            drawingContext.DrawEllipse(BFGBrush, null, new Point(area.Width - 30, 30), 25, 25);
+                            drawingContext.DrawEllipse(BFGBrush, null, new Point(area.Width - 30, 70), 25, 25);
                             break;
                         default:
                             break;
