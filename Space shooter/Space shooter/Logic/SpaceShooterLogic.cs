@@ -502,6 +502,7 @@ namespace Space_shooter.Logic
                                 break;
                             case Powerup.Type.MoreHealth:
                                 health += 20;
+                                if (health > 200) health = 200;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 Health_Pickup?.Invoke(obj, null);
                                 break;

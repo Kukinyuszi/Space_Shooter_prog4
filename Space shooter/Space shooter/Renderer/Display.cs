@@ -90,6 +90,27 @@ namespace Space_shooter.Renderer
 
 
         }
+        public Brush HealthBar
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "HealthBar.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush HealthDot
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "HealthDot.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush ExtraHealthDot
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "ExtraDot.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
         public Brush BossHpLeft
         {
             get
@@ -1076,8 +1097,28 @@ namespace Space_shooter.Renderer
                         if (item.Counter == 0) Explodings.RemoveAt(i);
                     }
                 }
-                if (model.Health == 99999) drawingContext.DrawText(FormatText($"Health: ∞"), new Point(area.Width / 3, 5));
-                else drawingContext.DrawText(FormatText($"Health:{model.Health}"), new Point(area.Width / 3, 5));
+
+                drawingContext.DrawRectangle(HealthBar, null, new Rect(10, 5, 194, 25));
+                if (model.Health == 99999) drawingContext.DrawText(FormatText($"∞"), new Point(150, 5));
+                else
+                {
+                    int i = 0;
+                    while (i < 10 && i < model.Health / 10)
+                    {
+                        drawingContext.DrawRectangle(HealthDot, null, new Rect(13 + i * 16, 8, 15, 19));
+                        i++;
+                    }
+                    if(model.Health > 100)
+                    {
+                        i = 0;
+                        while (i < 10 && i < (model.Health - 100) / 10)
+                        {
+                            drawingContext.DrawRectangle(ExtraHealthDot, null, new Rect(13 + i * 16, 8, 15, 19));
+                            i++;
+                        }
+                    }
+
+                }
                 drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(area.Width - 140, 5));
 
                 drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
