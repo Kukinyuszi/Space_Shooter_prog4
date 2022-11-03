@@ -54,28 +54,38 @@ namespace Space_shooter.Renderer
             animation = displaySettings.Animation;
             resolution = displaySettings.WindowResolution;
             hitboxes = displaySettings.Hitboxes;
+            GetResolution();
         }
 
+        Brush spaceBrush;
+        Brush ship1Brush;
 
-        public Brush SpaceBrushHigh
+        private void GetResolution()
         {
-            get
+            switch (resolution)
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space1080.png"), UriKind.RelativeOrAbsolute)));
+                case Resolution.High:
+                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space1080.png"), UriKind.RelativeOrAbsolute)));
+                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1.png"), UriKind.RelativeOrAbsolute)));
+                    break;
+                case Resolution.Medium:
+                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space480.png"), UriKind.RelativeOrAbsolute)));
+                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1medium.png"), UriKind.RelativeOrAbsolute)));
+                    break;
+                case Resolution.Low:
+                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space80.png"), UriKind.RelativeOrAbsolute)));
+                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1low.png"), UriKind.RelativeOrAbsolute)));
+                    break;
             }
+
+
         }
-        public Brush SpaceBrushMedium
+
+        public Brush SpaceBrush
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space480.png"), UriKind.RelativeOrAbsolute)));
-            }
-        }
-        public Brush SpaceBrushLow
-        {
-            get
-            {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space80.png"), UriKind.RelativeOrAbsolute)));
+                return spaceBrush;
             }
         }
         public Brush Exaust1Brush
@@ -153,7 +163,7 @@ namespace Space_shooter.Renderer
         {
             get
             {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1.png"), UriKind.RelativeOrAbsolute)));
+                return ship1Brush;
             }
         }
         public Brush enemy2Brush
@@ -533,23 +543,8 @@ namespace Space_shooter.Renderer
                 Rect background0 = new Rect(0, backgroundcounter, area.Width, area.Height);
                 Rect background1 = new Rect(0, background0.Y - area.Height, area.Width, area.Height);
 
-                switch (resolution)
-                {
-                    case Resolution.High:
-                        drawingContext.DrawRectangle(SpaceBrushHigh, null, background0);
-                        drawingContext.DrawRectangle(SpaceBrushHigh, null, background1);
-                        break;
-                    case Resolution.Medium:
-                        drawingContext.DrawRectangle(SpaceBrushMedium, null, background0);
-                        drawingContext.DrawRectangle(SpaceBrushMedium, null, background1);
-                        break;
-                    case Resolution.Low:
-                        drawingContext.DrawRectangle(SpaceBrushLow, null, background0);
-                        drawingContext.DrawRectangle(SpaceBrushLow, null, background1);
-                        break;
-                    default:
-                        break;
-                }
+                drawingContext.DrawRectangle(SpaceBrush, null, background0);
+                drawingContext.DrawRectangle(SpaceBrush, null, background1);
 
                 backgroundcounter++;
                 if (backgroundcounter > area.Height) backgroundcounter = 0;
@@ -955,4 +950,4 @@ namespace Space_shooter.Renderer
             ChatPopupTimer.Stop();
         }
     }
-    }
+}

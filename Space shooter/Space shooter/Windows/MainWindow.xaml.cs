@@ -93,6 +93,38 @@ namespace Space_shooter
         private void Logic_GameOver(object? sender, EventArgs e)
         {
             gameTimer.Stop();
+            PowerupTimer.Stop();
+            GameOverWindow gow = new GameOverWindow();
+            if(gow.ShowDialog() == true)
+            {
+                if (gow.Restart)
+                {
+                    IGameModel settings = new SpaceShooterLogic();
+                    MainWindow mw = new MainWindow(gameMenu, settings, displaySettings, sps);
+                    this.Close();
+                    mw.Show();
+                    
+                }
+                else
+                {
+                    Save_LoadGameService gls = new Save_LoadGameService();
+
+                    IGameModel model = gls.LoadGame();
+                    if (model != null)
+                    {
+                        MainWindow mw = new MainWindow(gameMenu, model, displaySettings, sps);
+                        this.Close();
+                        mw.Show();
+                    }
+                }
+            }
+            else
+            {
+                MainMenuWindow mmw = new MainMenuWindow(logic, displaySettings, sps);
+                this.Close();
+                mmw.Show();
+            }
+            gow.Close();
         }
 
         private void Paused()
@@ -102,9 +134,7 @@ namespace Space_shooter
             GamePauseWindow gpw = new GamePauseWindow(logic);
             if (gpw.ShowDialog() == false)
             {
-                MainMenuWindow mmw = new MainMenuWindow();
-                mmw.DisplaySettings = displaySettings;
-                mmw.Sps = sps;
+                MainMenuWindow mmw = new MainMenuWindow(logic, displaySettings, sps);
                 this.Close();
                 mmw.Show();
             }

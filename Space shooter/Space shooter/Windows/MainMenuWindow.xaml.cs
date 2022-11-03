@@ -42,6 +42,13 @@ namespace Space_shooter.Windows
             InitializeComponent();
             Sps.StartBackgroundMusic();
         }
+        public MainMenuWindow(ISettings settings, IDisplaySettings displaySettings, SoundPlayerService sps)
+        {
+            this.settings = settings;
+            this.displaySettings = displaySettings;
+            this.sps = sps;
+            InitializeComponent();
+        }
 
 
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
@@ -106,7 +113,7 @@ namespace Space_shooter.Windows
             Save_LoadGameService gls = new Save_LoadGameService();
             
             IGameModel model = gls.LoadGame();
-            if(settings != null)
+            if(model != null)
             {
                 MainWindow StartingTheGame = new MainWindow(this, model, DisplaySettings, sps);
                 this.Close();

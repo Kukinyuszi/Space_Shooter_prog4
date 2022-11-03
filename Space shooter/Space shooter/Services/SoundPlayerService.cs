@@ -36,6 +36,7 @@ namespace Space_shooter.Services
 
         public MediaPlayer StartBackgroundMusic()
         {
+
             gameMusicAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             gameMusicAudio.Open(new Uri(cd + "/Gamemusic.wav"));
