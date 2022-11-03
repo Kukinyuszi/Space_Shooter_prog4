@@ -39,7 +39,7 @@ namespace Space_shooter.Services
 
             gameMusicAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            gameMusicAudio.Open(new Uri(cd + "/Gamemusic.wav"));
+            gameMusicAudio.Open(new Uri(cd + "/Audio/Gamemusic.wav"));
             gameMusicAudio.MediaEnded += BackgroundMusic_Ended;
             gameMusicAudio.Volume = 0.3;
             gameMusicAudio.Play();
@@ -77,7 +77,7 @@ namespace Space_shooter.Services
         {
             playerShotAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            playerShotAudio.Open(new Uri(cd + "/Shoot3.wav"));
+            playerShotAudio.Open(new Uri(cd + "/Audio/Shoot3.wav"));
             playerShotAudio.Volume = 0.3;
             playerShotAudio.MediaEnded += PlayershotAudio_MediaEnded;
         }
@@ -96,7 +96,7 @@ namespace Space_shooter.Services
         {
             enemyShotAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            enemyShotAudio.Open(new Uri(cd + "/Shoot1.wav"));
+            enemyShotAudio.Open(new Uri(cd + "/Audio/Shoot1.wav"));
             enemyShotAudio.Volume = 0.3;
             enemyShotAudio.MediaEnded += EnemyshotAudio_MediaEnded;
         }
@@ -114,7 +114,7 @@ namespace Space_shooter.Services
         {
             coinAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            coinAudio.Open(new Uri(cd + "/PowerupCoin.wav"));
+            coinAudio.Open(new Uri(cd + "/Audio/PowerupCoin.wav"));
             coinAudio.Volume = 0.3;
             coinAudio.MediaEnded += CoinAudio_MediaEnded;
         }
@@ -132,7 +132,7 @@ namespace Space_shooter.Services
         {
             healthAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            healthAudio.Open(new Uri(cd + "/PowerupHealth.wav"));
+            healthAudio.Open(new Uri(cd + "/Audio/PowerupHealth.wav"));
             healthAudio.Volume = 0.3;
             healthAudio.MediaEnded += HealthAudio_MediaEnded;
         }
@@ -150,7 +150,7 @@ namespace Space_shooter.Services
         {
             powerupAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            powerupAudio.Open(new Uri(cd + "/Powerup.wav"));
+            powerupAudio.Open(new Uri(cd + "/Audio/Powerup.wav"));
             powerupAudio.Volume = 0.3;
             powerupAudio.MediaEnded += PowerupAudio_MediaEnded;
         }
@@ -168,7 +168,7 @@ namespace Space_shooter.Services
         {
             explosionAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
-            explosionAudio.Open(new Uri(cd + "/Exploding.wav"));
+            explosionAudio.Open(new Uri(cd + "/Audio/Exploding.wav"));
             explosionAudio.Volume = 0.3;
             explosionAudio.MediaEnded += ExplosionAudio_MediaEnded;
         }

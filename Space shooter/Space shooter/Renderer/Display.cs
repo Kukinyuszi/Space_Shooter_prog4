@@ -70,7 +70,7 @@ namespace Space_shooter.Renderer
                     break;
                 case Resolution.Medium:
                     spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space480.png"), UriKind.RelativeOrAbsolute)));
-                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1medium.png"), UriKind.RelativeOrAbsolute)));
+                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1medium2.png"), UriKind.RelativeOrAbsolute)));
                     break;
                 case Resolution.Low:
                     spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space80.png"), UriKind.RelativeOrAbsolute)));
@@ -79,6 +79,118 @@ namespace Space_shooter.Renderer
             }
 
 
+        }
+        public Brush AsteroidBrush1
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/medium/a10000.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush2
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10001.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush3
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10002.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush4
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10003.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush5
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10004.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush6
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10005.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush7
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10006.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush8
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10007.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush9
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10008.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush10
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10009.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush11
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10010.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush12
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10011.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush13
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10012.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush14
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10013.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush15
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10014.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush AsteroidBrush16
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10015.png"), UriKind.RelativeOrAbsolute)));
+            }
         }
 
         public Brush SpaceBrush
@@ -188,13 +300,6 @@ namespace Space_shooter.Renderer
             }
         }
 
-        public Brush AsteroidBrush
-        {
-            get
-            {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Asteroid3.png"), UriKind.RelativeOrAbsolute)));
-            }
-        }
 
         public Brush DoubleShooterBrush
         {
@@ -555,10 +660,70 @@ namespace Space_shooter.Renderer
                     {
                         Explodings.Add(new Explosion(item.Position, 11, true, false));
                     }
-                    else drawingContext.DrawEllipse(AsteroidBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
-                    if(hitboxes)drawingContext.DrawRectangle(null, new Pen(Brushes.Blue, 2), item.Hitbox);
-                }
-                foreach (var item in model.Powerups)
+                    else
+                    {
+                        if (Animation)
+                        {
+                            switch (backgroundcounter % 64)
+                            {
+                                case < 4:
+                                    drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
+                                    break;
+                                case < 8:
+                                    drawingContext.DrawEllipse(AsteroidBrush2, null, item.Position, 50, 50);
+                                    break;
+                                case < 12:
+                                    drawingContext.DrawEllipse(AsteroidBrush3, null, item.Position, 50, 50);
+                                    break;
+                                case < 16:
+                                    drawingContext.DrawEllipse(AsteroidBrush4, null, item.Position, 50, 50);
+                                    break;
+                                case < 20:
+                                    drawingContext.DrawEllipse(AsteroidBrush5, null, item.Position, 50, 50);
+                                    break;
+                                case < 24:
+                                    drawingContext.DrawEllipse(AsteroidBrush6, null, item.Position, 50, 50);
+                                    break;
+                                case < 28:
+                                    drawingContext.DrawEllipse(AsteroidBrush7, null, item.Position, 50, 50);
+                                    break;
+                                case < 32:
+                                    drawingContext.DrawEllipse(AsteroidBrush8, null, item.Position, 50, 50);
+                                    break;
+                                case < 36:
+                                    drawingContext.DrawEllipse(AsteroidBrush9, null, item.Position, 50, 50);
+                                    break;
+                                case < 40:
+                                    drawingContext.DrawEllipse(AsteroidBrush10, null, item.Position, 50, 50);
+                                    break;
+                                case < 44:
+                                    drawingContext.DrawEllipse(AsteroidBrush11, null, item.Position, 50, 50);
+                                    break;
+                                case < 48:
+                                    drawingContext.DrawEllipse(AsteroidBrush12, null, item.Position, 50, 50);
+                                    break;
+                                case < 52:
+                                    drawingContext.DrawEllipse(AsteroidBrush13, null, item.Position, 50, 50);
+                                    break;
+                                case < 56:
+                                    drawingContext.DrawEllipse(AsteroidBrush14, null, item.Position, 50, 50);
+                                    break;
+                                case < 60:
+                                    drawingContext.DrawEllipse(AsteroidBrush15, null, item.Position, 50, 50);
+                                    break;
+                                case < 64:
+                                    drawingContext.DrawEllipse(AsteroidBrush16, null, item.Position, 50, 50);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        else drawingContext.DrawEllipse(AsteroidBrush1, null, item.Position, 50, 50);
+
+                        }
+                        if (hitboxes)drawingContext.DrawRectangle(null, new Pen(Brushes.Blue, 2), item.Hitbox);
+                    }
+                    foreach (var item in model.Powerups)
                 {
                     switch (item.PowerupType)
                     {
@@ -695,10 +860,6 @@ namespace Space_shooter.Renderer
                     if (hitboxes) drawingContext.DrawRectangle(null, new Pen(Brushes.Orange, 2), item.Hitbox);
                 }
 
-
-                //drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(5, 5));
-                //drawingContext.DrawText(FormatText($"Health:{model.Health}"), new Point(150, 5));
-                //drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
                 foreach (var item in model.EnemyShips)
                 {
                     if (Animation && item.IsHit)
@@ -906,10 +1067,10 @@ namespace Space_shooter.Renderer
                 }
 
 
-            }
+                }
 
-        }
-        private FormattedText FormatText(string text)
+            }
+            private FormattedText FormatText(string text)
         {
             return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 20, Brushes.White);
         }
@@ -949,5 +1110,6 @@ namespace Space_shooter.Renderer
             chatpopup = null;
             ChatPopupTimer.Stop();
         }
+        
     }
 }
