@@ -99,11 +99,7 @@ namespace Space_shooter
             {
                 if (gow.Restart)
                 {
-                    IGameModel settings = new SpaceShooterLogic();
-                    MainWindow mw = new MainWindow(gameMenu, settings, displaySettings, sps);
-                    this.Close();
-                    mw.Show();
-                    
+                    Restart();
                 }
                 else
                 {
@@ -127,6 +123,14 @@ namespace Space_shooter
             gow.Close();
         }
 
+        private void Restart()
+        {
+            IGameModel settings = new SpaceShooterLogic();
+            MainWindow mw = new MainWindow(gameMenu, settings, displaySettings, sps);
+            this.Close();
+            mw.Show();
+        }
+
         private void Paused()
         {
             gameTimer.Stop();
@@ -140,8 +144,15 @@ namespace Space_shooter
             }
             else
             {
-                gameTimer.Start();
-                PowerupTimer.Start();
+                if(gpw.Restart)
+                {
+                    Restart();
+                }
+                else
+                {
+                    gameTimer.Start();
+                    PowerupTimer.Start();
+                }
             }
         }
 

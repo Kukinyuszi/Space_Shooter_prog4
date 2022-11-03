@@ -22,6 +22,10 @@ namespace Space_shooter.Windows
     public partial class GamePauseWindow : Window
     {
         SpaceShooterLogic model;
+        bool restart;
+
+        public bool Restart { get => restart; set => restart = value; }
+
         public GamePauseWindow(SpaceShooterLogic model)
         {
             this.model = model;
@@ -48,6 +52,12 @@ namespace Space_shooter.Windows
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape) this.DialogResult = true;
+        }
+
+        private void Restart_Button_Click(object sender, RoutedEventArgs e)
+        {
+            restart = true;
+            this.DialogResult |= true;
         }
     }
 }
