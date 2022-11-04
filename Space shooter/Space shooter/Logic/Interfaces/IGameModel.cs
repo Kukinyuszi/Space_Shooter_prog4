@@ -20,8 +20,6 @@ namespace Space_shooter.Logic.Interfaces
         List<Asteroid> Asteroids { get; set; }
         List<EnemyShip> EnemyShips { get; set; }
         List<Powerup> Powerups { get; set; }
-
-        int Health { get; }
         int Score { get; }
         int RapidfireTime { get; set; }
         int StrongTime { get; set; }

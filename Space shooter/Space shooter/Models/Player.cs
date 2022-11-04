@@ -15,11 +15,13 @@ namespace Space_shooter.Models
         Point position;
         public bool left;
         private Rect hitbox;
+        private int health = 100;
         public Point Position { get => position; set => position = value; }
         public WeaponType Weapon { get; set; }
         public bool IsDead { get; set; }
         public bool IsMoving { get; set; }
         public Rect Hitbox { get => hitbox; set => hitbox = value; }
+        public int Health { get => health; set => health = value; }
 
         public Player()
         {

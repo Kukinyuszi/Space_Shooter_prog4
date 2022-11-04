@@ -90,6 +90,13 @@ namespace Space_shooter.Renderer
 
 
         }
+        public Brush ChatboxBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Chatbox.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
         public Brush HealthBar
         {
             get
@@ -1099,19 +1106,19 @@ namespace Space_shooter.Renderer
                 }
 
                 drawingContext.DrawRectangle(HealthBar, null, new Rect(10, 5, 194, 25));
-                if (model.Health == 99999) drawingContext.DrawText(FormatText($"∞"), new Point(150, 5));
+                if (model.Player.Health == 99999) drawingContext.DrawText(FormatText($"∞"), new Point(150, 5));
                 else
                 {
                     int i = 0;
-                    while (i < 10 && i < model.Health / 10)
+                    while (i < 10 && i < model.Player.Health / 10)
                     {
                         drawingContext.DrawRectangle(HealthDot, null, new Rect(13 + i * 16, 8, 15, 19));
                         i++;
                     }
-                    if(model.Health > 100)
+                    if(model.Player.Health > 100)
                     {
                         i = 0;
-                        while (i < 10 && i < (model.Health - 100) / 10)
+                        while (i < 10 && i < (model.Player.Health - 100) / 10)
                         {
                             drawingContext.DrawRectangle(ExtraHealthDot, null, new Rect(13 + i * 16, 8, 15, 19));
                             i++;
@@ -1122,7 +1129,8 @@ namespace Space_shooter.Renderer
                 drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(area.Width - 140, 5));
 
                 drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
-                if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(5, 55));
+                drawingContext.DrawRectangle(ChatboxBrush, null, new Rect(4, 56, 200, 26));
+                if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(7, 55));
 
                 if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -30 , 250), 25, 25);
                 if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 30), 190), 25, 25);

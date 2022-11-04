@@ -26,8 +26,8 @@ namespace Space_shooter.Logic
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
         public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion;
-        private int asteroidspeed = 5, firerate = 30, poweruprate = 40, enemyfirerate = 60, bosshealth = 400, bossfirerate = 40,
-        enemyshottimer = 0, bossshottimer = 0, playershottimer = 0, enemiescount = 2, score = 0, highscore, health = 100, rapidfireTime, strongTime, weaponTime;
+        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 400, bossFireRate = 40,
+        enemyShotTimer = 0, bossShotTimer = 0, playerShotTimer = 0, enemiesSpawnCount = 2, score = 0, highScore, rapidFireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
         private Difficulty difficulty;
@@ -39,20 +39,19 @@ namespace Space_shooter.Logic
         public List<Powerup> Powerups { get; set; }
         public Player Player { get; set; }
         public Boss Boss { get; set; }
-        public int Health { get => health; set => health = value; }
         public int Score { get => score; set => score = value; }
-        public int HighScore { get => highscore; set => highscore = value; }
+        public int HighScore { get => highScore; set => highScore = value; }
         public string PlayerName { get => playername; set => playername = value; }
-        public int Asteroidspeed { get => asteroidspeed; set => asteroidspeed = value; }
-        public int Firerate { get => firerate; set => firerate = value; }
-        public int Poweruprate { get => poweruprate; set => poweruprate = value; }
-        public int Enemyshottimechange { get => enemyfirerate; set => enemyfirerate = value; }
-        public int Bossshottimechange { get => bossfirerate; set => bossfirerate = value; }
-        public int EnemySpawnCount { get => enemiescount; set => enemiescount = value; }
-        public int BossHealth { get => bosshealth; set => bosshealth = value; }
+        public int Asteroidspeed { get => asteroidSpeed; set => asteroidSpeed = value; }
+        public int Firerate { get => fireRate; set => fireRate = value; }
+        public int Poweruprate { get => powerupRate; set => powerupRate = value; }
+        public int Enemyshottimechange { get => enemyFireRate; set => enemyFireRate = value; }
+        public int Bossshottimechange { get => bossFireRate; set => bossFireRate = value; }
+        public int EnemySpawnCount { get => enemiesSpawnCount; set => enemiesSpawnCount = value; }
+        public int BossHealth { get => bossSpawnHealth; set => bossSpawnHealth = value; }
         public bool Godmode { get => godmode; set => godmode = value; }
         public Difficulty Difficultyness { get { return difficulty; } set { difficulty = value; } }
-        public int RapidfireTime { get => rapidfireTime; set => rapidfireTime = value; }
+        public int RapidfireTime { get => rapidFireTime; set => rapidFireTime = value; }
         public int StrongTime { get => strongTime; set => strongTime = value; }
         public int WeaponTime { get => weaponTime; set => weaponTime = value; }
         public bool Shield { get => shield; set => shield = value; }
@@ -68,7 +67,7 @@ namespace Space_shooter.Logic
         {
             this.Area = area;
             SetupDifficulty();
-            highscore = new ScoreBoardService().GetHighScore();
+            highScore = new ScoreBoardService().GetHighScore();
             if (Lasers == null) Lasers = new List<Laser>();
             if (Asteroids == null) Asteroids = new List<Asteroid>();
             if (EnemyShips == null) EnemyShips = new List<EnemyShip>();
@@ -117,7 +116,7 @@ namespace Space_shooter.Logic
                     {
                         d = true;
                         Godmode = !Godmode;
-                        if (!Godmode) health = 100;
+                        if (!Godmode) Player.Health = 100;
                     }
                     else g = o = false;
                     break;
@@ -183,12 +182,12 @@ namespace Space_shooter.Logic
                     {                                                                                           // If it did than sets the laser to get hit
                         Lasers[i].IsHit = true;                                                                 // If player has shield than it removes it and dont lose health
                         if (shield) shield = false;
-                        else health -= 10;
+                        else Player.Health -= 10;
                     }
                 }
                 if (EnemyShips.Count > 0) EnemiesShoot();                                                       // If there are enemies, than they shoot once
 
-                else if (Boss != null && (bossshottimer == 0 || bossshottimer == Bossshottimechange / 2)) NewEnemyShoot(Boss as EnemyShip);  // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
+                else if (Boss != null && (bossShotTimer == 0 || bossShotTimer == Bossshottimechange / 2)) NewEnemyShoot(Boss as EnemyShip);  // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
                                                                                                                                              // --> so it can shoot again, than it shoots with the boss
                 PowerupPickup(size);                                                                // If the player hitbox intersects with a powerup hitbox, than it picks up
                 PlayerInteractions(size);                                                                       // Moves and shoots with the player
@@ -199,7 +198,7 @@ namespace Space_shooter.Logic
 
                 if (godmode)
                 {
-                    health = 99999;
+                    Player.Health = 99999;
                 }
             
         }
@@ -208,31 +207,31 @@ namespace Space_shooter.Logic
             switch (Difficultyness)
             {
                 case Difficulty.Easy:
-                    enemiescount = 1;
-                    asteroidspeed = 5;
-                    firerate = 25;
-                    poweruprate = 50;
-                    enemyfirerate = 70;
-                    bossfirerate = 60;
-                    bosshealth = 300;
+                    enemiesSpawnCount = 1;
+                    asteroidSpeed = 5;
+                    fireRate = 25;
+                    powerupRate = 50;
+                    enemyFireRate = 70;
+                    bossFireRate = 60;
+                    bossSpawnHealth = 300;
                     break;
                 case Difficulty.Medium:
-                    enemiescount = 2;
-                    asteroidspeed = 5;
-                    firerate = 30;
-                    poweruprate = 40;
-                    enemyfirerate = 60;
-                    bossfirerate = 40;
-                    bosshealth = 400;
+                    enemiesSpawnCount = 2;
+                    asteroidSpeed = 5;
+                    fireRate = 30;
+                    powerupRate = 40;
+                    enemyFireRate = 60;
+                    bossFireRate = 40;
+                    bossSpawnHealth = 400;
                     break;
                 case Difficulty.Hard:
-                    enemiescount = 3;
-                    asteroidspeed = 7;
-                    firerate = 30;
-                    poweruprate = 30;
-                    enemyfirerate = 50;
-                    bossfirerate = 40;
-                    bosshealth = 500;
+                    enemiesSpawnCount = 3;
+                    asteroidSpeed = 7;
+                    fireRate = 30;
+                    powerupRate = 30;
+                    enemyFireRate = 50;
+                    bossFireRate = 40;
+                    bossSpawnHealth = 500;
                     break;
                 default:
                     break;
@@ -269,7 +268,7 @@ namespace Space_shooter.Logic
 
         private void SetupNewBoss(System.Windows.Size size)
         {
-            Boss = new Boss(size, bosshealth);
+            Boss = new Boss(size, bossSpawnHealth);
             EnemyShips.Clear();
         }
 
@@ -325,7 +324,7 @@ namespace Space_shooter.Logic
                 {
                     Asteroids[i].IsHit = true;
                     if (shield) shield = false;
-                    else health -= 10;
+                    else Player.Health -= 10;
                 }
             }
         }
@@ -334,7 +333,7 @@ namespace Space_shooter.Logic
         {
             for (int i = 0; i < EnemyShips.Count; i++)
             {
-                if (enemyshottimer == 0)
+                if (enemyShotTimer == 0)
                 {
                     NewEnemyShoot(EnemyShips[i]);
                 }
@@ -356,7 +355,7 @@ namespace Space_shooter.Logic
 
         private void SetupEnemyes(System.Windows.Size area)
         {
-            for (int i = 0; i < enemiescount; i++)
+            for (int i = 0; i < enemiesSpawnCount; i++)
             {
                 EnemyShips.Add(new EnemyShip(area));
             }
@@ -414,7 +413,7 @@ namespace Space_shooter.Logic
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x1, 10), false, false));
                     break;
                 case EnemyShip.EnemyEnum.boss:
-                    if (bossshottimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
+                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
                     else
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false));
@@ -430,19 +429,19 @@ namespace Space_shooter.Logic
 
         private void CountersTimeEllapses()
         {
-            if (enemyshottimer == 0) enemyshottimer = Enemyshottimechange;
-            if (enemyshottimer > 0) enemyshottimer--;
-            if (bossshottimer == 0) bossshottimer = Bossshottimechange;
-            if (bossshottimer > 0) bossshottimer--;
+            if (enemyShotTimer == 0) enemyShotTimer = Enemyshottimechange;
+            if (enemyShotTimer > 0) enemyShotTimer--;
+            if (bossShotTimer == 0) bossShotTimer = Bossshottimechange;
+            if (bossShotTimer > 0) bossShotTimer--;
 
-            if (playershottimer > 0) playershottimer--;
+            if (playerShotTimer > 0) playerShotTimer--;
         }
 
         private void SeeIfGameEnds()
         {
-            if (health <= 0)
+            if (Player.Health <= 0)
             {
-                health = 0;
+                Player.Health = 0;
                 new ScoreBoardService().SaveNewScore(Score, PlayerName);
                 GameOver?.Invoke(this, null);
 
@@ -463,17 +462,17 @@ namespace Space_shooter.Logic
                 Player.Move(size);
             }
 
-            if (shoot && playershottimer <= 0)
+            if (shoot && playerShotTimer <= 0)
             {
                 NewPlayerShoot();
                 PlayerShoot?.Invoke(this, null);
                 if (Rapid)
                 {
-                    playershottimer = 10;
+                    playerShotTimer = 10;
                 }
                 else
                 {
-                    playershottimer = Firerate;
+                    playerShotTimer = Firerate;
                 }
             }
         }
@@ -501,14 +500,14 @@ namespace Space_shooter.Logic
                                 Coin_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.MoreHealth:
-                                health += 20;
-                                if (health > 200) health = 200;
+                                Player.Health += 20;
+                                if (Player.Health > 200) Player.Health = 200;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 Health_Pickup?.Invoke(obj, null);
                                 break;
                             case Powerup.Type.RapidFire:
                                 Rapid = true;
-                                rapidfireTime = 9;
+                                rapidFireTime = 9;
                                 PowerUpPickedUp?.Invoke(obj, null);
                                 Powerup_Pickup?.Invoke(obj, null);
                                 break;
@@ -637,7 +636,7 @@ namespace Space_shooter.Logic
         }
         public void Powerup_Timer_Step()
         {
-            if (RapidfireTime > 0) rapidfireTime--;
+            if (RapidfireTime > 0) rapidFireTime--;
             else Rapid = false;
             if (strongTime > 0) strongTime--;
             else Strong = false;
