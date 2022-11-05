@@ -9,12 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Windows\Header.png" />
+    <None Remove="Windows\space1080.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="spaceshooter.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Windows\Header.png" />
+    <Resource Include="Windows\space1080.png" />
   </ItemGroup>
 
 </Project>

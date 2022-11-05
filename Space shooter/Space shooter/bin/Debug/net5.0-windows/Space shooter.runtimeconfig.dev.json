@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\aali-tra\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\aali-tra\\.nuget\\packages"
+      "C:\\Users\\dorka\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dorka\\.nuget\\packages"
     ]
   }
 }

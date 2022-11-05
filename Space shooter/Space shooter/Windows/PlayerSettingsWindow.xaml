@@ -5,27 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="PlayerSettingsWindow" Height="448" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="PlayerSettingsWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
     <Grid x:Name="PlayerGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windows/space1080.png"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" >
-            <Label Content="Difficulty"/>
+            <Label Content="difficulty" Foreground="Yellow" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" FontFamily="Impact"/>
             <StackPanel x:Name="sp_difficulty" Orientation="Horizontal" HorizontalAlignment="Center">
-                <RadioButton x:Name="rb_easy" Content="Easy" MinHeight="20" Margin="1"/>
-                <RadioButton x:Name="rb_medium" Content="Medium" MinHeight="20" Margin="1" IsChecked="True"/>
-                <RadioButton x:Name="rb_hard" Content="Hard" MinHeight="20" Margin="1"/>
-                <RadioButton x:Name="rb_custom" Content="Custom" Click="rb_custom_Click" MinHeight="20" Margin="1"/>
+                <RadioButton x:Name="rb_easy" Content="Easy" MinHeight="20" Margin="1" Foreground="White"/>
+                <RadioButton x:Name="rb_medium" Content="Medium" MinHeight="20" Margin="1" IsChecked="True" Foreground="White"/>
+                <RadioButton x:Name="rb_hard" Content="Hard" MinHeight="20" Margin="1" Foreground="White"/>
+                <RadioButton x:Name="rb_custom" Content="Custom" Click="rb_custom_Click" MinHeight="20" Margin="1" Foreground="White"/>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="tb_playername" Text="Type here yout name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" />
-        <Button Content="Start" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Click="Button_Click"/>
-
-
+        <TextBox x:Name="tb_playername" Text="Type here yout name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
+        <Button Content="Start" Click="Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

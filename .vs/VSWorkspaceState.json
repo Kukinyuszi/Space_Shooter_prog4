@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Space shooter",
+    "\\Space shooter\\Space shooter",
+    "\\Space shooter\\Space shooter\\Windows"
   ],
-  "SelectedNode": "\\Space shooter.sln",
+  "SelectedNode": "\\Space shooter\\Space shooter\\Windows\\SettingsMenuWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
