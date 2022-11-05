@@ -99,7 +99,7 @@ namespace Space_shooter.Windows
 
         private void ScoreBoard_Click(object sender, RoutedEventArgs e)
         {
-            HighScoresWindow hsw = new HighScoresWindow();
+            HighScoresWindow hsw = new HighScoresWindow(DisplaySettings);
             hsw.Show();
         }
 

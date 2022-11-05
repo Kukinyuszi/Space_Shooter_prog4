@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="SettingsMenuWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="SettingsMenuWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen">
     <Grid x:Name="MyGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windows/space1080.png"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -19,16 +22,16 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Hitboxes" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
-        <Label Content="Resolution" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
-        <Label Content="Animation" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
-        <CheckBox Content="ON/OFF" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
-        <ComboBox MinHeight="20" MinWidth="150" Margin="10,20,10,20" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">
+        <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
+        <Label Content="Resolution" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
+        <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
+        <CheckBox Content="ON/OFF" Foreground="White" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
+        <ComboBox MinHeight="20" MinWidth="150" Margin="10,20,0,78" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged" Opacity="0.75">
             <ComboBoxItem Content="High" IsSelected="True"/>
             <ComboBoxItem Content="Medium" />
             <ComboBoxItem Content="Low"/>
         </ComboBox>
-        <CheckBox  Content="ON/OFF" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="3"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Margin="264,22,267,10" Grid.Row="4" />
+        <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="3"/>
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="3" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,119,215,73" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>

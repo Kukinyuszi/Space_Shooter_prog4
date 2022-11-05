@@ -42,5 +42,10 @@ namespace Space_shooter.Windows
             this.DialogResult = true;
             this.Close();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
