@@ -31,6 +31,7 @@ namespace Space_shooter.Renderer
         private Resolution resolution;
         private bool animation = true;
         private bool hitboxes;
+        private bool fullScreen = true;
 
         private int exhaustCounter;
 
@@ -39,6 +40,8 @@ namespace Space_shooter.Renderer
         public Resolution WindowResolution { get => resolution; set => resolution = value; }
         public bool Animation { get => animation; set => animation = value; }
         public bool Hitboxes { get => hitboxes; set => hitboxes = value; }
+        public bool FullScreen { get => fullScreen; set => fullScreen = value; }
+
 
         public void SetupSizes(Size area)
         {
@@ -1132,21 +1135,21 @@ namespace Space_shooter.Renderer
                 drawingContext.DrawRectangle(ChatboxBrush, null, new Rect(4, 56, 200, 26));
                 if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(7, 55));
 
-                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -30 , 250), 25, 25);
-                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 30), 190), 25, 25);
-                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -30), 130), 25, 25);
+                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -40 , 250), 25, 25);
+                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 40), 190), 25, 25);
+                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -40), 130), 25, 25);
                 if (model.Weaponon)
                 {
                     switch (model.Player.Weapon)
                     {
                         case WeaponType.Doubleshooter:
-                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 30, 70), 25, 25);
+                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 40, 70), 25, 25);
                             break;
                         case WeaponType.Tripplehooter:
-                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 30, 70), 25, 25);
+                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 40, 70), 25, 25);
                             break;
                         case WeaponType.Biggerammo:
-                            drawingContext.DrawEllipse(BFGBrush, null, new Point(area.Width - 30, 70), 25, 25);
+                            drawingContext.DrawEllipse(BFGBrush, null, new Point(area.Width - 40, 70), 25, 25);
                             break;
                         default:
                             break;

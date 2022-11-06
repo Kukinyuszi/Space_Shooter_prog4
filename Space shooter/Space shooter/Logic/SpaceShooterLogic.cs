@@ -72,7 +72,7 @@ namespace Space_shooter.Logic
             if (Asteroids == null) Asteroids = new List<Asteroid>();
             if (EnemyShips == null) EnemyShips = new List<EnemyShip>();
             if (Powerups == null) Powerups = new List<Powerup>();
-            if (Player == null) Player = new Player(new System.Windows.Point((int)area.Width / 2, (int)area.Height - 50));
+            if (Player == null) Player = new Player(area);
             if (Asteroids.Count == 0) Asteroids.Add(new Asteroid(area, Asteroidspeed));
             if (EnemyShips.Count == 0) SetupEnemyes(area);
 
@@ -235,6 +235,18 @@ namespace Space_shooter.Logic
                     break;
                 default:
                     break;
+            }
+        }
+
+        public void RelocateObjects(Size area)
+        {
+            if(Player.Position.X >= area.Width - 25 )Player.Position = new Point(area.Width - 25, Player.Position.Y);
+            if (Player.Position.X <= 0) Player.Position = new Point(0, Player.Position.Y);
+            Player.Position = new Point(Player.Position.X, area.Height - 100);
+            Player.Hitbox = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);
+            foreach (var enemy in EnemyShips)
+            {
+                if (enemy.Position.X >= area.Width - 25) enemy.Position = new Point(random.Next(25, (int)area.Width - 25), enemy.Position.Y);
             }
         }
 

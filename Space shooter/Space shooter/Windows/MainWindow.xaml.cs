@@ -46,7 +46,18 @@ namespace Space_shooter
             this.sps = sps;
             InitializeComponent();
 
-            //MyGrid.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+            if(displaySettings.FullScreen)
+            {
+                this.WindowState = WindowState.Maximized;
+                MyGrid.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+                this.Height = MyGrid.Height;
+                this.Width = MyGrid.Width;
+            }
+
             //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
         }
 
@@ -161,10 +172,16 @@ namespace Space_shooter
         {
             if (logic != null)
             {
-                logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+                if(!displaySettings.FullScreen)
+                {
+                    MyGrid.Height = this.Height;
+                    MyGrid.Width = this.Width;
+                }
+                logic.SetupSizes(new System.Windows.Size(MyGrid.Width, MyGrid.Height));
+                logic.RelocateObjects(new Size(MyGrid.Width, MyGrid.Height));
                 display.SetupModel(logic);
                 display.SetupSettings(displaySettings);
-                display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+                display.SetupSizes(new Size(MyGrid.Width, MyGrid.Height));
                 display.InvalidateVisual();
             }
 

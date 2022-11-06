@@ -15,5 +15,6 @@ namespace Space_shooter.Renderer.Interfaces
         Resolution WindowResolution { get; set; }
         bool Animation { get; set; }
         bool Hitboxes { get; set; }
+        bool FullScreen { get; set; }
     }
 }

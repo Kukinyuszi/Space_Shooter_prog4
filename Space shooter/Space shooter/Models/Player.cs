@@ -28,10 +28,10 @@ namespace Space_shooter.Models
 
         }
 
-        public Player(Point position)
+        public Player(Size area)
         {
             IsMoving = false;
-            this.position = position;
+            this.position = new System.Windows.Point((int)area.Width / 2, (int)area.Height - 100);
             hitbox = new Rect(position.X - 15, position.Y - 12, 30, 25);
             Weapon = WeaponType.None;
         }
@@ -52,7 +52,7 @@ namespace Space_shooter.Models
         public void MoveRight(System.Windows.Size area)
         {
             Point newposition = new System.Windows.Point(position.X + 10, position.Y);
-            if (newposition.X <= area.Width-13)
+            if (newposition.X <= area.Width - 25)
             {
                 Position = newposition;
                 hitbox.X = hitbox.X + 10;

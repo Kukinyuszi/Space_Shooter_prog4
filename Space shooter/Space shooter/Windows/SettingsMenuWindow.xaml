@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="SettingsMenuWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen">
+        Title="SettingsMenuWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid x:Name="MyGrid">
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/space1080.png"/>
@@ -25,6 +25,7 @@
         <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
         <Label Content="Resolution" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
         <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
+        <Label Content="Fullscreen" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="4"/>
         <CheckBox Content="ON/OFF" Foreground="White" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
         <ComboBox MinHeight="20" MinWidth="150" Margin="10,20,0,78" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged" Opacity="0.75">
             <ComboBoxItem Content="High" IsSelected="True"/>
@@ -32,6 +33,7 @@
             <ComboBoxItem Content="Low"/>
         </ComboBox>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="3"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="3" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,119,215,73" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding FullScreen}" Grid.Column="1" Grid.Row="4"/>
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,99,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" />
     </Grid>
 </Window>
