@@ -51,5 +51,10 @@ namespace Space_shooter.Windows
                 this.Close();
             }
         }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
