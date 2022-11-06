@@ -46,7 +46,7 @@ namespace Space_shooter
             this.sps = sps;
             InitializeComponent();
 
-            //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+            //MyGrid.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
             //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
         }
 
