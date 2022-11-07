@@ -43,7 +43,7 @@ namespace Space_shooter.Models
         public void MoveLeft(System.Windows.Size area)
         {
             Point newposition = new System.Windows.Point(position.X - 10, position.Y);
-            if (newposition.X >= 13)
+            if (newposition.X >= 16)
             {
                 Position = newposition;
                 hitbox.X = hitbox.X - 10;
@@ -52,7 +52,7 @@ namespace Space_shooter.Models
         public void MoveRight(System.Windows.Size area)
         {
             Point newposition = new System.Windows.Point(position.X + 10, position.Y);
-            if (newposition.X <= area.Width - 25)
+            if (newposition.X <= area.Width - 16)
             {
                 Position = newposition;
                 hitbox.X = hitbox.X + 10;

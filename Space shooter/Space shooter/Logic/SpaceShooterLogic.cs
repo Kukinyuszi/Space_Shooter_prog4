@@ -282,18 +282,8 @@ namespace Space_shooter.Logic
 
         private void SetupNewBoss(System.Windows.Size size)
         {
-            Boss = new Boss2(area, bossSpawnHealth);
-            //switch (random.Next(2))
-            //{
-            //    case 0:
-            //        Boss = new Boss1(area, bossSpawnHealth);
-            //        break;
-            //    case 1:
-            //        Boss = new Boss2(area, bossSpawnHealth);
-            //        break;
-            //    default:
-            //        break;
-            //}
+            if((score % 2000) < 50) Boss = new Boss2(area, bossSpawnHealth);
+            else Boss = new Boss1(area, bossSpawnHealth);
             EnemyShips.Clear();
         }
 
@@ -469,7 +459,7 @@ namespace Space_shooter.Logic
             {
                 case BossName.Claec:
                     if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
-                    else if(bossShotTimer == Bossshottimechange)
+                    else if(bossShotTimer == 0)
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false));
                         Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false));
@@ -505,7 +495,7 @@ namespace Space_shooter.Logic
             if (Player.Health <= 0)
             {
                 Player.Health = 0;
-                new ScoreBoardService().SaveNewScore(Score, PlayerName);
+                new ScoreBoardService().SaveNewScore(Score, PlayerName, difficulty);
                 GameOver?.Invoke(this, null);
 
             }

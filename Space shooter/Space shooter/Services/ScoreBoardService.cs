@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Space_shooter.Logic.Interfaces.ISettings;
 
 namespace Space_shooter.Services
 {
@@ -20,12 +21,14 @@ namespace Space_shooter.Services
             public string PlayerName { get; set; }
             public int Scoreamount { get; set; }
             public string Time { get; set; }
+            public Difficulty Difficulty { get; set; }
 
-            public Score(string playerName, int scoreamount, string time)
+            public Score(string playerName, int scoreamount, string time, Difficulty difficulty)
             {
                 PlayerName = playerName;
                 Scoreamount = scoreamount;
                 Time = time;
+                Difficulty = difficulty;
             }
 
             public int CompareTo(object? obj)
@@ -36,7 +39,7 @@ namespace Space_shooter.Services
             }
             public override string ToString()
             {
-                return $"{Time}\t{PlayerName}\t{Scoreamount}";
+                return $"{Time}\t{Difficulty}\t{PlayerName}\t{Scoreamount}";
             }
         }
 
@@ -45,7 +48,7 @@ namespace Space_shooter.Services
         {
 
         }
-        public void SaveNewScore(int score, string playername)
+        public void SaveNewScore(int score, string playername, Difficulty difficulty)
         {
             List<Score> scorelist = new List<Score>();
             ScoreList sl;
@@ -53,12 +56,12 @@ namespace Space_shooter.Services
             {
                 string jsonscores = File.ReadAllText("saves.json");
                 sl = JsonConvert.DeserializeObject<ScoreList>(jsonscores);
-                sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString()));
+                sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString(), difficulty));
             }
             else
             {
                 sl = new ScoreList() { Scores = new List<Score>() };
-                sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString()));
+                sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString(), difficulty));
             }
             string json = JsonConvert.SerializeObject(sl);
             File.WriteAllText("saves.json", json);
