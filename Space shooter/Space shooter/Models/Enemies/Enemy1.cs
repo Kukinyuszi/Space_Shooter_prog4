@@ -13,5 +13,14 @@ namespace Space_shooter.Models
         {
             Name = EnemyEnum.one;
         }
+
+        public override List<Laser> Shoot(Size area , List<Laser> Lasers, Point playerPosition)
+        {
+            Point enemyshippositiontemp = new System.Windows.Point(Position.X, Position.Y + 23);
+
+            Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 5), false, false));
+
+            return Lasers;
+        }
     }
 }

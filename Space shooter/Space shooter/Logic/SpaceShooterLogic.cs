@@ -28,7 +28,7 @@ namespace Space_shooter.Logic
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
         public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion;
-        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 400, bossFireRate = 40,
+        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 400, bossFireRate = 40, angleCounter = -5,
         enemyShotTimer = 0, bossShotTimer = 0, playerShotTimer = 0, enemiesSpawnCount = 2, score = 0, highScore, rapidFireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
@@ -76,7 +76,7 @@ namespace Space_shooter.Logic
             if (Powerups == null) Powerups = new List<Powerup>();
             if (Player == null) Player = new Player(area);
             if (Asteroids.Count == 0) Asteroids.Add(new Asteroid(area, Asteroidspeed));
-            if (EnemyShips.Count == 0) SetupEnemyes(area);
+            if (EnemyShips.Count == 0 && Boss == null) SetupEnemyes(area);
 
         }
 
@@ -156,7 +156,11 @@ namespace Space_shooter.Logic
             
                 System.Windows.Size size = new System.Windows.Size((int)Area.Width, (int)Area.Height);          // Screen size variable, it is for the objects to know if it leaves the screen
                                                                                 
-                if (EnemyShips.Count > 0) EnemyShipsMovement(size);
+                if (EnemyShips.Count > 0)
+                {
+                     EnemyShipsMovement(size);
+                     if(EnemyShips.Count > 1) EnemyShipsClearance();
+                }
                 if (Boss != null)                                                                               // If it is not a boss round, than the enemies move one time
                 {
                     Boss.Move(size);                                                                            // If it is a boss round, than the boss moves, and checks if it is dead ( boss health less than 1) --> sets boss to null
@@ -166,7 +170,8 @@ namespace Space_shooter.Logic
                 if (DifficultyByScore() && Boss == null) SetupNewBoss(size);                                    // If the score is 1000-1050(if its 990 and you kill an enemy than it is 1020, so it skips 1000, also it is 1050 bc if you kill the boss you get 50 so at least you have 1050 points)
                                                                                                                 // and there is no boss round, than sets up a new boss, and removes all the enemy ships
                 LasersMovement(size);
-                AsteroidsMovement(size);                                                                        // All the asteroids and enemies move one time
+                AsteroidsMovement(size);
+                                                                                                                // All the asteroids and enemies move one time
                 HitCheck(size);                                                                                 // Goes through all the lasers, asteroids, enemies, if it got hit in the last timestep, than it deletes it
                                                                                                                 // it is for the animations --> if you just remove the object, than it dont goes to display class, and cant start the animation
                 for (int i = 0; i < Lasers.Count; i++)
@@ -174,11 +179,11 @@ namespace Space_shooter.Logic
                     var laser = Lasers[i];
                                                              
 
-                    AsteroidsCollison(i);                                   // ...checks if the laser hitbox intersected with one of the asteroids hitbox, than it sets them to get hited
+                    AsteroidsCollison(i);                                                                       // ...checks if the laser hitbox intersected with one of the asteroids hitbox, than it sets them to get hited
                                                                                                                 // also checks if the asteroid hitbox intersected with the player hitbox
-                    if (Boss == null) EnemyShipsCollisions(i);                          // ...checks if it is a boss round and if laser hitbox intersected with one of the enemies hitbox, than it sets them to get hited
+                    if (Boss == null) EnemyShipsCollisions(i);                                                  // ...checks if it is a boss round and if laser hitbox intersected with one of the enemies hitbox, than it sets them to get hited
 
-                    else if (Boss != null) BossCollisions(i);                           // ...if boss round, checks if it intersected with the boss hitbox, and removes bosses hp
+                    else if (Boss != null) BossCollisions(i);                                                   // ...if boss round, checks if it intersected with the boss hitbox, and removes bosses hp
 
                     if (Collide(laser.Hitbox, Player.Hitbox) && !laser.Fromplayer)                              // ...checks if laser hitbox intersected with the player hitbox 
                     {                                                                                           // If it did than sets the laser to get hit
@@ -189,7 +194,7 @@ namespace Space_shooter.Logic
                 }
                 if (EnemyShips.Count > 0) EnemiesShoot();                                                       // If there are enemies, than they shoot once
 
-                else if (Boss != null ) NewEnemyShoot(Boss as EnemyShip);                                       // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
+                else if (Boss != null ) NewEnemyShoot(Boss);                                                    // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
                                                                                                                                              // --> so it can shoot again, than it shoots with the boss
                 PowerupPickup(size);                                                                            // If the player hitbox intersects with a powerup hitbox, than it picks up
                 PlayerInteractions(size);                                                                       // Moves and shoots with the player
@@ -204,6 +209,15 @@ namespace Space_shooter.Logic
                 }
             
         }
+
+        private void EnemyShipsClearance()
+        {
+            for (int i = 1; i < EnemyShips.Count; i++)
+            {
+                if(Collide(EnemyShips[0].Hitbox,EnemyShips[i].Hitbox) && EnemyShips[0].left == EnemyShips[i].left) EnemyShips[0].left = !EnemyShips[0].left;
+            }
+        }
+
         private void SetupDifficulty()
         {
             switch (Difficultyness)
@@ -399,19 +413,19 @@ namespace Space_shooter.Logic
             switch (Player.Weapon)
             {
                 case WeaponPowerup.WeaponType.Doubleshooter:
-                    Lasers.Add(new Laser(playerpositiontemp, new Vector(-1, -5), true, false));
-                    Lasers.Add(new Laser(playerpositiontemp, new Vector(1, -5), true, false));
+                    Lasers.Add(new Laser(playerpositiontemp, new Vector(-1, -5), true));
+                    Lasers.Add(new Laser(playerpositiontemp, new Vector(1, -5), true));
                     break;
                 case WeaponPowerup.WeaponType.Tripplehooter:
-                    Lasers.Add(new Laser(new Point(playerpositiontemp.X - 20, playerpositiontemp.Y), new Vector(0, -5), true, false));
+                    Lasers.Add(new Laser(new Point(playerpositiontemp.X - 20, playerpositiontemp.Y), new Vector(0, -5), true));
                     Lasers.Add(new Laser(playerpositiontemp, new Vector(0, -5), true, false));
-                    Lasers.Add(new Laser(new Point(playerpositiontemp.X + 20, playerpositiontemp.Y), new Vector(0, -5), true, false));
+                    Lasers.Add(new Laser(new Point(playerpositiontemp.X + 20, playerpositiontemp.Y), new Vector(0, -5), true));
                     break;
                 case WeaponPowerup.WeaponType.Biggerammo:
                     Lasers.Add(new Laser(playerpositiontemp, new Vector(0, -5), true, true));
                     break;
                 case WeaponPowerup.WeaponType.None:
-                    Lasers.Add(new Laser(playerpositiontemp, new Vector(0, -5), true, false));
+                    Lasers.Add(new Laser(playerpositiontemp, new Vector(0, -5), true));
                     break;
                 default:
                     break;
@@ -420,6 +434,22 @@ namespace Space_shooter.Logic
 
         private void NewEnemyShoot(EnemyShip enemyship)
         {
+
+            //if (enemyship != Boss) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
+            //else
+            //{
+            //    switch ((enemyship as Boss).BossType)
+            //    {
+            //        case BossName.Claec:
+            //            if(bossShotTimer == Bossshottimechange / 2 || bossShotTimer == 0) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
+            //            break;
+            //        case BossName.Kasdeya:
+            //            if(bossShotTimer % (bossFireRate / 5) == 0) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
+            //            break;
+            //        case BossName.None:
+            //            break;
+            //    }
+            //}
             Point enemyshippositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 23);
             double x = ((Player.Position.X) - enemyship.Position.X) / 40;
             double y = ((Player.Position.Y - 40) - enemyship.Position.Y + 23) / 40;
@@ -431,17 +461,17 @@ namespace Space_shooter.Logic
             switch (enemyship.Name)
             {
                 case EnemyShip.EnemyEnum.one:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 5), false, false));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 5)));
                     break;
                 case EnemyShip.EnemyEnum.two:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(1, 5), false, false));
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(-1, 5), false, false));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(1, 5)));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(-1, 5)));
                     break;
                 case EnemyShip.EnemyEnum.three:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x, y), false, false));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x, y)));
                     break;
                 case EnemyShip.EnemyEnum.four:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x1, 10), false, false));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x1, 10)));
                     break;
                 case EnemyShip.EnemyEnum.boss:
                     BossShoot(enemyship, x, y);
@@ -452,33 +482,33 @@ namespace Space_shooter.Logic
             EnemyShoot?.Invoke(this,null);
         }
 
-        private void BossShoot(EnemyShip enemyship, double x, double y)
-        {
-            Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
-            switch ((enemyship as Boss).BossType)
+            private void BossShoot(EnemyShip enemyship, double x, double y)
             {
+               Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
+               switch ((enemyship as Boss).BossType)
+               {
                 case BossName.Claec:
-                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
+                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false, true));
                     else if(bossShotTimer == 0)
                     {
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false));
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false));
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) + 2, y * 1.5), false, false));
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false, true));
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false, true));
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) + 2, y * 1.5), false, false, true));
                     }
                     break;
                 case BossName.Kasdeya:
                     if (bossShotTimer % (bossFireRate / 5) == 0)
                     {
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector((enemyship as Boss2).Counter, 15), false, false));
-                        if ((enemyship as Boss2).Counter >= 5) (enemyship as Boss2).Counter = -5;
-                        else (enemyship as Boss2).Counter++;
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector(angleCounter, 15), false, false, true));
+                        if (angleCounter >= 5) angleCounter = -5;
+                        else angleCounter++;
                     }
 
                     break;
                 case BossName.None:
                     break;
+               }
             }
-        }
 
         private void CountersTimeEllapses()
         {
@@ -696,5 +726,6 @@ namespace Space_shooter.Logic
             if (weaponTime > 0) weaponTime--;
             else { Weaponon = false; Player.Weapon = WeaponPowerup.WeaponType.None; }
         }
+        
     }
 }

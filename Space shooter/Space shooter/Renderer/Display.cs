@@ -604,6 +604,112 @@ namespace Space_shooter.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot4/shot4_exp8.png"), UriKind.RelativeOrAbsolute)));
             }
         }
+        public Brush Shot6Brush1
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_1.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brush2
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_2.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brush3
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_3.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brush4
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_4.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brush5
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_5.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp1
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp1.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp2
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp2.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp3
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp3.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp4
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp4.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp5
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp5.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp6
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp6.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp7
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp7.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp8
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp8.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp9
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp9.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush Shot6Brushexp10
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot6/shot6_exp10.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+
         public Brush Shot2Brush1
         {
             get
@@ -809,8 +915,8 @@ namespace Space_shooter.Renderer
                 {
                     if (Animation && item.IsHit)
                     {
-                        if (item.Fromplayer) Explodings.Add(new Explosion(item.Position, 8, item.Fromplayer, true));
-                        else Explodings.Add(new Explosion(item.Position, 5, item.Fromplayer, true));
+                        if (item.Fromplayer) Explodings.Add(new Explosion(item.Position, 8, true, true));
+                        else Explodings.Add(new Explosion(item.Position, 5, item.Fromplayer, true, item.FromBoss));
                     }
                     else
                     {
@@ -859,7 +965,36 @@ namespace Space_shooter.Renderer
                                 else drawingContext.DrawEllipse(Shot2Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                             }
 
-                            drawingContext.Pop();
+
+
+                        }
+                        else if(item.FromBoss)
+                        {
+                            if (Animation)
+                            {
+                                switch (item.Counter)
+                                {
+                                    case < 2:
+                                        drawingContext.DrawEllipse(Shot6Brush1, null, new Point(item.Position.X + 35, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        break;
+                                    case < 4:
+                                        drawingContext.DrawEllipse(Shot6Brush2, null, new Point(item.Position.X + 25, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        break;
+                                    case < 6:
+                                        drawingContext.DrawEllipse(Shot6Brush3, null, new Point(item.Position.X + 15, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        break;
+                                    case < 8:
+                                        drawingContext.DrawEllipse(Shot6Brush4, null, new Point(item.Position.X + 5, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        drawingContext.DrawEllipse(Shot6Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        break;
+                                    case > 8:
+                                        drawingContext.DrawEllipse(Shot6Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else drawingContext.DrawEllipse(Shot6Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
 
                         }
 
@@ -891,9 +1026,11 @@ namespace Space_shooter.Renderer
                             }
                             else drawingContext.DrawEllipse(Shot1Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 30, item.Ammosize + 30);
 
-                            drawingContext.Pop();
+
                         }
+                        drawingContext.Pop();
                     }
+
                     if (hitboxes) drawingContext.DrawRectangle(null, new Pen(Brushes.Orange, 2), item.Hitbox);
                 }
 
@@ -974,7 +1111,7 @@ namespace Space_shooter.Renderer
                 if(model.Boss != null && model.Boss.Health > 0)
                 {
                     //drawingContext.DrawRectangle(BossHpLeft, null, new Rect(area.Width / 2 - model.Boss.Health / 4 - 10, 35, 10, 10));
-                    drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(area.Width / 2 - model.Boss.Health / 4, 35, model.Boss.Health / 2, 10));
+                    drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(model.Boss.Position.X - model.Boss.Health / 4, model.Boss.Position.Y - 100, model.Boss.Health / 2, 10));
                     //drawingContext.DrawRectangle(BossHpRight, null, new Rect(area.Width / 2 + model.Boss.Health / 4 + 10, 35, 10, 10));
                 }
                 if(model.Boss != null && model.Boss.Health <= 0)
@@ -1022,6 +1159,42 @@ namespace Space_shooter.Renderer
                                         break;
                                     default:
                                         drawingContext.DrawEllipse(Shot2Brushexp1, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                }
+                            }
+                            else if (item.FromBoss)
+                            {
+                                switch (item.Counter)
+                                {
+                                    case 1:
+                                        drawingContext.DrawEllipse(Shot6Brushexp10, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 2:
+                                        drawingContext.DrawEllipse(Shot6Brushexp9, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 3:
+                                        drawingContext.DrawEllipse(Shot6Brushexp8, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 4:
+                                        drawingContext.DrawEllipse(Shot6Brushexp7, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 5:
+                                        drawingContext.DrawEllipse(Shot6Brushexp6, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 6:
+                                        drawingContext.DrawEllipse(Shot6Brushexp5, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 7:
+                                        drawingContext.DrawEllipse(Shot6Brushexp4, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 8:
+                                        drawingContext.DrawEllipse(Shot6Brushexp3, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    case 9:
+                                        drawingContext.DrawEllipse(Shot6Brushexp2, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                        break;
+                                    default:
+                                        drawingContext.DrawEllipse(Shot6Brushexp1, null, new Point(item.Position.X, item.Position.Y), 30, 30);
                                         break;
                                 }
                             }

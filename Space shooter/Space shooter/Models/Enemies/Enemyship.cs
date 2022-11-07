@@ -17,7 +17,7 @@ namespace Space_shooter.Models
         }
 
         private Point position;
-        private bool left;
+        public bool left;
         private EnemyEnum name;
         private Rect hitbox;
 
@@ -44,7 +44,7 @@ namespace Space_shooter.Models
         public virtual void Move(System.Windows.Size area)
         {
             Point newposition;
-            if (position.Y <= area.Height / 5)
+            if (position.Y <= area.Height / 4)
             {
                 newposition = new Point(position.X, position.Y + 5);
                 position = newposition;
@@ -61,7 +61,7 @@ namespace Space_shooter.Models
                     {
                         left = false;
                     }
-                    if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 5 && newposition.Y <= area.Height / 3)
+                    if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 4 && newposition.Y <= area.Height / 2)
                     {
                         position = newposition;
                         hitbox.X = hitbox.X - 1;
@@ -74,7 +74,7 @@ namespace Space_shooter.Models
                     {
                         left = true;
                     }
-                    if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 5 && newposition.Y <= area.Height / 3)
+                    if (newposition.X >= 0 && newposition.X <= area.Width && newposition.Y >= area.Height / 4 && newposition.Y <= area.Height / 2)
                     {
                         position = newposition;
                         hitbox.X = hitbox.X + 1;
@@ -82,6 +82,10 @@ namespace Space_shooter.Models
 
                 }
             }
+        }
+        public virtual List<Laser> Shoot(Size area, List<Laser> Lasers, Point playerPosition)
+        {
+            throw new Exception("This type cant shoot");
         }
     }
 }

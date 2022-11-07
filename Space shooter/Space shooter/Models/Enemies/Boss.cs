@@ -26,7 +26,6 @@ namespace Space_shooter.Models
 
         public Boss()
         {
-
         }
 
         public Boss(System.Windows.Size area, int health) : base(area)

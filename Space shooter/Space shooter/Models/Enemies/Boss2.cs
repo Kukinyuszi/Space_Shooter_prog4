@@ -10,15 +10,12 @@ namespace Space_shooter.Models.Enemies
     public class Boss2 : Boss
     {
         private bool left;
-        private int counter;
         public Boss2(Size area, int health) : base(area, health)
         {
             BossType = BossName.Kasdeya;
             left = true;
-            counter = -3;
         }
 
-        public int Counter { get => counter; set => counter = value; }
 
         public override void Move(Size area)
         {
@@ -61,5 +58,15 @@ namespace Space_shooter.Models.Enemies
                 }
             }
         }
+        //public override List<Laser> Shoot(Size area, List<Laser> Lasers, Point playerPosition)
+        //{
+        //    Point bosspositiontemp = new System.Windows.Point(Position.X, Position.Y + 60);
+
+        //    Lasers.Add(new Laser(bosspositiontemp, new Vector(Counter, 15), false, false));
+        //    if (Counter >= 5) Counter = -5;
+        //    else Counter++;
+
+        //    return Lasers;
+        //}
     }
 }

@@ -12,13 +12,16 @@ namespace Space_shooter.Logic.Animation
         public Point Position { get; set; }
         public int Counter { get; set; }
         public bool FromPlayer { get; set; }
+        public bool FromBoss { get; set; }
+
         public bool IsLaser { get; set; }
 
-        public Explosion(Point position, int counter, bool fromplayer, bool islaser)
+        public Explosion(Point position, int counter, bool fromplayer, bool islaser, bool fromBoss = false)
         {
             Position = position;
             Counter = counter;
             FromPlayer = fromplayer;
+            FromBoss = fromBoss;
             IsLaser = islaser;
         }
     }
