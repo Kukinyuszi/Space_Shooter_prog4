@@ -67,31 +67,21 @@ namespace Space_shooter.Renderer
             animation = displaySettings.Animation;
             resolution = displaySettings.WindowResolution;
             hitboxes = displaySettings.Hitboxes;
-            GetResolution();
         }
 
-        Brush spaceBrush;
-        Brush ship1Brush;
-
-        private void GetResolution()
+        public Brush SpaceBrush
         {
-            switch (resolution)
+            get
             {
-                case Resolution.High:
-                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space1080.png"), UriKind.RelativeOrAbsolute)));
-                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1.png"), UriKind.RelativeOrAbsolute)));
-                    break;
-                case Resolution.Medium:
-                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space480.png"), UriKind.RelativeOrAbsolute)));
-                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1medium2.png"), UriKind.RelativeOrAbsolute)));
-                    break;
-                case Resolution.Low:
-                    spaceBrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space80.png"), UriKind.RelativeOrAbsolute)));
-                    ship1Brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1low.png"), UriKind.RelativeOrAbsolute)));
-                    break;
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "space1080.png"), UriKind.RelativeOrAbsolute)));
             }
-
-
+        }
+        public Brush Enemy1Brush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship1/Ship1.png"), UriKind.RelativeOrAbsolute)));
+            }
         }
         public Brush ChatboxBrush
         {
@@ -254,14 +244,6 @@ namespace Space_shooter.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "asteroids/small/a10015.png"), UriKind.RelativeOrAbsolute)));
             }
         }
-
-        public Brush SpaceBrush
-        {
-            get
-            {
-                return spaceBrush;
-            }
-        }
         public Brush Exaust1Brush
         {
             get
@@ -331,13 +313,6 @@ namespace Space_shooter.Renderer
             get
             {
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Ship5/Ship5.png"), UriKind.RelativeOrAbsolute)));
-            }
-        }
-        public Brush enemy1Brush
-        {
-            get
-            {
-                return ship1Brush;
             }
         }
         public Brush enemy2Brush
@@ -973,7 +948,7 @@ namespace Space_shooter.Renderer
                         switch (item.Name)
                         {
                             case EnemyShip.EnemyEnum.one:
-                                drawingContext.DrawEllipse(enemy1Brush, null, new Point(item.Position.X, item.Position.Y), 40, 40);
+                                drawingContext.DrawEllipse(Enemy1Brush, null, new Point(item.Position.X, item.Position.Y), 40, 40);
                                 break;
                             case EnemyShip.EnemyEnum.two:
                                 drawingContext.DrawEllipse(enemy4Brush, null, new Point(item.Position.X, item.Position.Y), 40, 40);
@@ -1001,6 +976,15 @@ namespace Space_shooter.Renderer
                     //drawingContext.DrawRectangle(BossHpLeft, null, new Rect(area.Width / 2 - model.Boss.Health / 4 - 10, 35, 10, 10));
                     drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(area.Width / 2 - model.Boss.Health / 4, 35, model.Boss.Health / 2, 10));
                     //drawingContext.DrawRectangle(BossHpRight, null, new Rect(area.Width / 2 + model.Boss.Health / 4 + 10, 35, 10, 10));
+                }
+                if(model.Boss != null && model.Boss.Health <= 0)
+                {
+                    Explodings.Add(new Explosion(model.Boss.Position, 11, true, false));
+                    Explodings.Add(new Explosion(new Point(model.Boss.Position.X - 20, model.Boss.Position.Y - 20), 13, true, false));
+                    Explodings.Add(new Explosion(new Point(model.Boss.Position.X + 20, model.Boss.Position.Y + 20), 17, true, false));
+                    Explodings.Add(new Explosion(new Point(model.Boss.Position.X - 25, model.Boss.Position.Y - 30), 23, true, false));
+                    Explodings.Add(new Explosion(new Point(model.Boss.Position.X + 30, model.Boss.Position.Y + 35), 30, true, false));
+
                 }
 
 
@@ -1097,8 +1081,10 @@ namespace Space_shooter.Renderer
                                 case 10:
                                     drawingContext.DrawEllipse(Exploding2, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                     break;
-                                default:
+                                case 11:
                                     drawingContext.DrawEllipse(Exploding1, null, new Point(item.Position.X, item.Position.Y), 50, 50);
+                                    break;
+                                default:
                                     break;
                             }
                         }
