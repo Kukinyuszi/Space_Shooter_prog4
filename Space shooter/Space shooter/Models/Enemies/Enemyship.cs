@@ -39,24 +39,6 @@ namespace Space_shooter.Models
             position = new System.Windows.Point(random.Next(25, (int)area.Width - 25), -40);
             hitbox = new Rect(position.X - 25, position.Y - 20, 50, 40);
             IsMoving = true;
-            int temp = random.Next(4);
-            switch (temp)
-            {
-                case 0:
-                    name = EnemyEnum.one;
-                    break;
-                case 1:
-                    name = EnemyEnum.two;
-                    break;
-                case 2:
-                    name = EnemyEnum.three;
-                    break;
-                case 3:
-                    name = EnemyEnum.four;
-                    break;
-                default:
-                    break;
-            }
         }
 
         public virtual void Move(System.Windows.Size area)
@@ -101,7 +83,5 @@ namespace Space_shooter.Models
                 }
             }
         }
-
-
     }
 }

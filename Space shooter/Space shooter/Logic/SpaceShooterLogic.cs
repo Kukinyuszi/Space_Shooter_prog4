@@ -268,7 +268,7 @@ namespace Space_shooter.Logic
                 {
                     EnemyShips.RemoveAt(i);
                     Explosion?.Invoke(this, null);
-                    EnemyShips.Add(new EnemyShip(size));
+                    SetupEnemyes(area);
                 }
             }
 
@@ -367,9 +367,26 @@ namespace Space_shooter.Logic
 
         private void SetupEnemyes(System.Windows.Size area)
         {
-            for (int i = 0; i < enemiesSpawnCount; i++)
+            int temp = random.Next(4);
+            while(EnemyShips.Count != enemiesSpawnCount)
             {
-                EnemyShips.Add(new EnemyShip(area));
+                switch (temp)
+                {
+                    case 0:
+                        EnemyShips.Add(new Enemy1(area));
+                        break;
+                    case 1:
+                        EnemyShips.Add(new Enemy2(area));
+                        break;
+                    case 2:
+                        EnemyShips.Add(new Enemy3(area));
+                        break;
+                    case 3:
+                        EnemyShips.Add(new Enemy4(area));
+                        break;
+                    default:
+                        throw new Exception("Enemy setup error");
+                }
             }
         }
 
