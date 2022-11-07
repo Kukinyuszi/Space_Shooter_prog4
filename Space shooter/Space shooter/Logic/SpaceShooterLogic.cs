@@ -461,11 +461,11 @@ namespace Space_shooter.Logic
             switch (enemyship.Name)
             {
                 case EnemyShip.EnemyEnum.one:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 5)));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 7)));
                     break;
                 case EnemyShip.EnemyEnum.two:
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(1, 5)));
-                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(-1, 5)));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(1, 6)));
+                    Lasers.Add(new Laser(enemyshippositiontemp, new Vector(-1, 6)));
                     break;
                 case EnemyShip.EnemyEnum.three:
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x, y)));
