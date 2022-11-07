@@ -1,5 +1,6 @@
 ﻿using Space_shooter.Logic.Interfaces;
 using Space_shooter.Models;
+using Space_shooter.Models.Enemies;
 using Space_shooter.Models.Powerups;
 using Space_shooter.Models.Powerups.Weapons;
 using Space_shooter.Services;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using static Space_shooter.Logic.Interfaces.ISettings;
+using static Space_shooter.Models.Boss;
 using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter.Logic
@@ -187,9 +189,9 @@ namespace Space_shooter.Logic
                 }
                 if (EnemyShips.Count > 0) EnemiesShoot();                                                       // If there are enemies, than they shoot once
 
-                else if (Boss != null && (bossShotTimer == 0 || bossShotTimer == Bossshottimechange / 2)) NewEnemyShoot(Boss as EnemyShip);  // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
+                else if (Boss != null ) NewEnemyShoot(Boss as EnemyShip);                                       // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
                                                                                                                                              // --> so it can shoot again, than it shoots with the boss
-                PowerupPickup(size);                                                                // If the player hitbox intersects with a powerup hitbox, than it picks up
+                PowerupPickup(size);                                                                            // If the player hitbox intersects with a powerup hitbox, than it picks up
                 PlayerInteractions(size);                                                                       // Moves and shoots with the player
                 CountersTimeEllapses();                                                                         // All the counters step, if it is 0, than it resets
                 SeeIfGameEnds();                                                                                // Check if player health below 1, than the game ends
@@ -280,7 +282,18 @@ namespace Space_shooter.Logic
 
         private void SetupNewBoss(System.Windows.Size size)
         {
-            Boss = new Boss(size, bossSpawnHealth);
+            Boss = new Boss2(area, bossSpawnHealth);
+            //switch (random.Next(2))
+            //{
+            //    case 0:
+            //        Boss = new Boss1(area, bossSpawnHealth);
+            //        break;
+            //    case 1:
+            //        Boss = new Boss2(area, bossSpawnHealth);
+            //        break;
+            //    default:
+            //        break;
+            //}
             EnemyShips.Clear();
         }
 
@@ -418,7 +431,6 @@ namespace Space_shooter.Logic
         private void NewEnemyShoot(EnemyShip enemyship)
         {
             Point enemyshippositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 23);
-            Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
             double x = ((Player.Position.X) - enemyship.Position.X) / 40;
             double y = ((Player.Position.Y - 40) - enemyship.Position.Y + 23) / 40;
 
@@ -442,13 +454,7 @@ namespace Space_shooter.Logic
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x1, 10), false, false));
                     break;
                 case EnemyShip.EnemyEnum.boss:
-                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
-                    else
-                    {
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false));
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false));
-                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) + 2, y * 1.5), false, false));
-                    }
+                    BossShoot(enemyship, x, y);
                     break;
                 default:
                     break;
@@ -456,11 +462,39 @@ namespace Space_shooter.Logic
             EnemyShoot?.Invoke(this,null);
         }
 
+        private void BossShoot(EnemyShip enemyship, double x, double y)
+        {
+            Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
+            switch ((enemyship as Boss).BossType)
+            {
+                case BossName.Claec:
+                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false));
+                    else if(bossShotTimer == Bossshottimechange)
+                    {
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false));
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false));
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) + 2, y * 1.5), false, false));
+                    }
+                    break;
+                case BossName.Kasdeya:
+                    if (bossShotTimer % (bossFireRate / 5) == 0)
+                    {
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector((enemyship as Boss2).Counter, 15), false, false));
+                        if ((enemyship as Boss2).Counter >= 5) (enemyship as Boss2).Counter = -5;
+                        else (enemyship as Boss2).Counter++;
+                    }
+
+                    break;
+                case BossName.None:
+                    break;
+            }
+        }
+
         private void CountersTimeEllapses()
         {
             if (enemyShotTimer == 0) enemyShotTimer = Enemyshottimechange;
             if (enemyShotTimer > 0) enemyShotTimer--;
-            if (bossShotTimer == 0) bossShotTimer = Bossshottimechange;
+            if (bossShotTimer == 0) bossShotTimer = bossFireRate;
             if (bossShotTimer > 0) bossShotTimer--;
 
             if (playerShotTimer > 0) playerShotTimer--;

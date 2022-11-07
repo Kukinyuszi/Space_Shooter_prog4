@@ -8,81 +8,9 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 143,
-      "Hitbox": "153,22,5,5",
-      "Position": "155,24"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 115,
-      "Hitbox": "183,162,5,5",
-      "Position": "185,164"
-    },
-    {
-      "Laservector": "1,5",
-      "Angle": 78.69006752597979,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 106,
-      "Hitbox": "159,726,5,5",
-      "Position": "161,728"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 84,
-      "Hitbox": "183,317,5,5",
-      "Position": "185,319"
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 55,
-      "Hitbox": "193,462,5,5",
-      "Position": "195,464"
-    },
-    {
-      "Laservector": "1,5",
-      "Angle": 78.69006752597979,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 47,
-      "Hitbox": "100,431,5,5",
-      "Position": "102,433"
-    },
-    {
-      "Laservector": "-1,5",
-      "Angle": 101.30993247402021,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 5,
-      "Counter": 47,
-      "Hitbox": "6,431,5,5",
-      "Position": "8,433"
+      "Counter": 141,
+      "Hitbox": "163,32,5,5",
+      "Position": "165,34"
     },
     {
       "Laservector": "0,5",
@@ -92,9 +20,9 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 47,
-      "Hitbox": "462,306,5,5",
-      "Position": "464,308"
+      "Counter": 136,
+      "Hitbox": "54,681,5,5",
+      "Position": "56,683"
     },
     {
       "Laservector": "0,-5",
@@ -104,49 +32,249 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 5,
-      "Counter": 25,
-      "Hitbox": "203,612,5,5",
-      "Position": "205,614"
+      "Counter": 132,
+      "Hitbox": "143,77,5,5",
+      "Position": "145,79"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 122,
+      "Hitbox": "143,127,5,5",
+      "Position": "145,129"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 112,
+      "Hitbox": "183,177,5,5",
+      "Position": "185,179"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 102,
+      "Hitbox": "183,227,5,5",
+      "Position": "185,229"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 92,
+      "Hitbox": "93,277,5,5",
+      "Position": "95,279"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 82,
+      "Hitbox": "13,327,5,5",
+      "Position": "15,329"
+    },
+    {
+      "Laservector": "0,5",
+      "Angle": 90.0,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 77,
+      "Hitbox": "75,581,5,5",
+      "Position": "77,583"
+    },
+    {
+      "Laservector": "1,5",
+      "Angle": 78.69006752597979,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 77,
+      "Hitbox": "158,581,5,5",
+      "Position": "160,583"
+    },
+    {
+      "Laservector": "-1,5",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 77,
+      "Hitbox": "4,581,5,5",
+      "Position": "6,583"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 72,
+      "Hitbox": "103,377,5,5",
+      "Position": "105,379"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 62,
+      "Hitbox": "143,427,5,5",
+      "Position": "145,429"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 52,
+      "Hitbox": "233,477,5,5",
+      "Position": "235,479"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 42,
+      "Hitbox": "233,527,5,5",
+      "Position": "235,529"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 32,
+      "Hitbox": "273,577,5,5",
+      "Position": "275,579"
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 22,
+      "Hitbox": "343,627,5,5",
+      "Position": "345,629"
+    },
+    {
+      "Laservector": "0,5",
+      "Angle": 90.0,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 17,
+      "Hitbox": "263,91,5,5",
+      "Position": "265,93"
+    },
+    {
+      "Laservector": "-2,10",
+      "Angle": 101.30993247402021,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 5,
+      "Counter": 17,
+      "Hitbox": "453,171,5,5",
+      "Position": "455,173"
     }
   ],
   "Asteroids": [
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "115,810",
-      "Hitbox": "90,790,50,40"
+      "Position": "351,295",
+      "Hitbox": "326,275,50,40"
     }
   ],
   "EnemyShips": [
     {
-      "Position": "102,175",
-      "Name": 1,
-      "IsHit": false,
-      "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "77,155,50,40"
-    },
-    {
-      "Position": "486,175",
+      "Position": "265,70",
       "Name": 0,
       "IsHit": false,
       "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "461,155,50,40"
+      "IsMoving": true,
+      "Hitbox": "240,50,50,40"
+    },
+    {
+      "Position": "489,65",
+      "Name": 3,
+      "IsHit": false,
+      "IsDead": false,
+      "IsMoving": true,
+      "Hitbox": "464,45,50,40"
     }
   ],
-  "Powerups": [],
+  "Powerups": [
+    {
+      "PowerupType": 0,
+      "Counter": 600,
+      "Speed": 5,
+      "Position": "390,415",
+      "Hitbox": "365,395,50,40"
+    }
+  ],
   "Player": {
     "left": false,
-    "Position": "305,764",
+    "Position": "345,764",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "290,752,30,25",
-    "Health": 200
+    "Hitbox": "330,752,30,25",
+    "Health": 170
   },
   "Boss": null,
-  "Score": 440,
+  "Score": 980,
   "HighScore": 6290,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,
@@ -159,11 +287,11 @@
   "Godmode": false,
   "Difficultyness": 1,
   "RapidfireTime": 0,
-  "StrongTime": 0,
+  "StrongTime": 5,
   "WeaponTime": 0,
-  "Shield": true,
-  "Rapid": false,
-  "Strong": false,
+  "Shield": false,
+  "Rapid": true,
+  "Strong": true,
   "Weaponon": false,
   "Area": "550,864.0000000000001"
 }
