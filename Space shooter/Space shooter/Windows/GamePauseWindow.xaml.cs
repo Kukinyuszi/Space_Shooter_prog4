@@ -44,9 +44,13 @@ namespace Space_shooter.Windows
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
-            Save_LoadGameService sgs = new Save_LoadGameService();
-            sgs.SaveGame(model);
-            lb_gamesaved.Content = "Game saved";
+            if(model.Boss != null) lb_gamesaved.Content = "Can't save while boss is alive";
+            else
+            {
+                Save_LoadGameService sgs = new Save_LoadGameService();
+                sgs.SaveGame(model);
+                lb_gamesaved.Content = "Game saved";
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)

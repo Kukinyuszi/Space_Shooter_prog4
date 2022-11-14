@@ -63,13 +63,6 @@ namespace Space_shooter
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
-            display.SetupModel(logic);
-            display.SetupSettings(displaySettings);
-            display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
-            EventsSetup();
-
             gameTimer = new DispatcherTimer();
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);
             gameTimer.Tick += (sender, eventargs) =>
@@ -87,6 +80,12 @@ namespace Space_shooter
             PowerupTimer.Start();
             gameTimer.Start();
 
+            EventsSetup();
+            logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+            display.SetupModel(logic);
+            display.SetupSettings(displaySettings);
+            display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+
         }
 
         private void EventsSetup()
@@ -99,6 +98,23 @@ namespace Space_shooter
             logic.Powerup_Pickup += sps.PowerupAudio_Start;
             logic.Shield_Pickup += sps.ShieldAudio_Start;
             logic.Explosion += sps.ExplosionAudio_Start;
+            logic.Godmode_activated += Logic_Godmode_activated;
+        }
+
+        private void Logic_Godmode_activated(object sender, EventArgs e)
+        {
+            if (logic.Godmode) PowerupTimer.Stop();
+            else PowerupTimer.Start();
+
+            foreach (var item in MyGrid.Children)
+            {
+                if (item is Button)
+                {
+                    Button b = (Button)item;
+                    if (logic.Godmode) b.Visibility = Visibility.Visible;
+                    else b.Visibility = Visibility.Hidden;
+                }
+            }
         }
 
         private void Logic_GameOver(object? sender, EventArgs e)
@@ -233,6 +249,37 @@ namespace Space_shooter
             {
                 logic.Controlup(SpaceShooterLogic.Controls.Shoot);
             }
+        }
+        private void Score_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            logic.Score += 20;
+        }
+        private void Rapid_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            logic.Rapid = !logic.Rapid;
+        }
+        private void Strong_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            logic.Strong = !logic.Strong;
+        }
+        private void Shield_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            logic.Shield = !logic.Shield;
+        }
+        private void Doubble_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (logic.Player.Weapon == Models.Powerups.WeaponPowerup.WeaponType.Doubleshooter) logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.None;
+            else logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.Doubleshooter;
+        }
+        private void Tripple_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (logic.Player.Weapon == Models.Powerups.WeaponPowerup.WeaponType.Tripplehooter) logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.None;
+            else logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.Tripplehooter;
+        }
+        private void BFG_Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (logic.Player.Weapon == Models.Powerups.WeaponPowerup.WeaponType.Biggerammo) logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.None;
+            else logic.Player.Weapon = Models.Powerups.WeaponPowerup.WeaponType.Biggerammo;
         }
     }
 }

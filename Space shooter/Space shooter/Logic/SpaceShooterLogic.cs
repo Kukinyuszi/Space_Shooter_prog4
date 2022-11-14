@@ -27,8 +27,8 @@ namespace Space_shooter.Logic
 
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
-        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion;
-        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 400, bossFireRate = 40, angleCounter = -5,
+        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion, Godmode_activated;
+        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 300, bossFireRate = 40, angleCounter = -5,
         enemyShotTimer = 0, bossShotTimer = 0, playerShotTimer = 0, enemiesSpawnCount = 2, score = 0, highScore, rapidFireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
@@ -77,6 +77,7 @@ namespace Space_shooter.Logic
             if (Player == null) Player = new Player(area);
             if (Asteroids.Count == 0) Asteroids.Add(new Asteroid(area, Asteroidspeed));
             if (EnemyShips.Count == 0 && Boss == null) SetupEnemyes(area);
+            Godmode_activated?.Invoke(this, null);
 
         }
 
@@ -118,6 +119,7 @@ namespace Space_shooter.Logic
                     {
                         d = true;
                         Godmode = !Godmode;
+                        Godmode_activated?.Invoke(this, null);
                         if (!Godmode) Player.Health = 100;
                     }
                     else g = o = false;
@@ -229,7 +231,7 @@ namespace Space_shooter.Logic
                     powerupRate = 50;
                     enemyFireRate = 70;
                     bossFireRate = 60;
-                    bossSpawnHealth = 300;
+                    bossSpawnHealth = 250;
                     break;
                 case Difficulty.Medium:
                     enemiesSpawnCount = 2;
@@ -238,7 +240,7 @@ namespace Space_shooter.Logic
                     powerupRate = 40;
                     enemyFireRate = 60;
                     bossFireRate = 40;
-                    bossSpawnHealth = 400;
+                    bossSpawnHealth = 300;
                     break;
                 case Difficulty.Hard:
                     enemiesSpawnCount = 3;
@@ -247,7 +249,7 @@ namespace Space_shooter.Logic
                     powerupRate = 30;
                     enemyFireRate = 50;
                     bossFireRate = 40;
-                    bossSpawnHealth = 500;
+                    bossSpawnHealth = 400;
                     break;
                 default:
                     break;

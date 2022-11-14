@@ -1,94 +1,42 @@
 {
   "Lasers": [
     {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 108,
-      "Hitbox": "270,194,10,10",
-      "Position": "275,199",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 48,
-      "Hitbox": "150,494,10,10",
-      "Position": "155,499",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "1,6",
-      "Angle": 80.53767779197439,
+      "Laservector": "0,7",
+      "Angle": 90.0,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 37,
-      "Hitbox": "503,370,10,10",
-      "Position": "508,375",
+      "Counter": 60,
+      "Hitbox": "201,658,10,10",
+      "Position": "206,663",
       "FromBoss": false
     },
     {
-      "Laservector": "-1,6",
-      "Angle": 99.46232220802561,
+      "Laservector": "0,7",
+      "Angle": 90.0,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 37,
-      "Hitbox": "429,370,10,10",
-      "Position": "434,375",
+      "Counter": 0,
+      "Hitbox": "141,238,10,10",
+      "Position": "146,243",
       "FromBoss": false
     },
     {
-      "Laservector": "1,6",
-      "Angle": 80.53767779197439,
+      "Laservector": "-0.825,13.175",
+      "Angle": 93.58310292541042,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 37,
-      "Hitbox": "303,370,10,10",
-      "Position": "308,375",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "-1,6",
-      "Angle": 99.46232220802561,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 37,
-      "Hitbox": "229,370,10,10",
-      "Position": "234,375",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "0,-5",
-      "Angle": -90.0,
-      "Speed": 0,
-      "Fromplayer": true,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 19,
-      "Hitbox": "260,639,10,10",
-      "Position": "265,644",
+      "Counter": 0,
+      "Hitbox": "303,238,10,10",
+      "Position": "308,243",
       "FromBoss": false
     }
   ],
@@ -96,42 +44,42 @@
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "436,150",
-      "Hitbox": "411,130,50,40"
+      "Position": "493,800",
+      "Hitbox": "468,780,50,40"
     }
   ],
   "EnemyShips": [
     {
-      "left": false,
-      "Position": "490,220",
-      "Name": 1,
+      "left": true,
+      "Position": "146,220",
+      "Name": 0,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "465,200,50,40"
+      "Hitbox": "121,200,50,40"
     },
     {
       "left": false,
-      "Position": "464,100",
+      "Position": "308,220",
       "Name": 2,
       "IsHit": false,
       "IsDead": false,
-      "IsMoving": true,
-      "Hitbox": "439,80,50,40"
+      "IsMoving": false,
+      "Hitbox": "283,200,50,40"
     }
   ],
   "Powerups": [],
   "Player": {
-    "left": false,
-    "Position": "285,764",
+    "left": true,
+    "Position": "275,764",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "270,752,30,25",
+    "Hitbox": "260,752,30,25",
     "Health": 99999
   },
   "Boss": null,
-  "Score": 3180,
+  "Score": 4810,
   "HighScore": 6290,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,

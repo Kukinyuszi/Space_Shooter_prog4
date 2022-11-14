@@ -8,6 +8,29 @@
         mc:Ignorable="d"
         Title="MainWindow" KeyDown="Window_KeyDown" MinHeight="600" MinWidth="400"  Background="Black" WindowStyle="None" WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" KeyUp="Window_KeyUp">
     <Grid Name="MyGrid" Height="735" Width="550" Focusable="True"  Background="Black" >
-        <renderer:Display x:Name="display"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <renderer:Display x:Name="display" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+        <Button Content="Score" Grid.Column="0" Grid.Row="2" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Score_Button_Click"/>
+        <Button Content="Rapid" Grid.Column="0" Grid.Row="3" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Rapid_Button_Click"/>
+        <Button Content="Strong" Grid.Column="0" Grid.Row="4" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Strong_Button_Click"/>
+        <Button Content="Shield" Grid.Column="0" Grid.Row="5" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Shield_Button_Click"/>
+        <Button Content="2x" Grid.Column="0" Grid.Row="6" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Doubble_Button_Click"/>
+        <Button Content="3x" Grid.Column="0" Grid.Row="7" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="Tripple_Button_Click"/>
+        <Button Content="BFG" Grid.Column="0" Grid.Row="8" Margin="6" Opacity="0.5" Visibility="Hidden" MouseLeftButtonDown="BFG_Button_Click"/>
     </Grid>
 </Window>
