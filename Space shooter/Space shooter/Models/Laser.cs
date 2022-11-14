@@ -50,11 +50,11 @@ namespace Space_shooter.Models
         public Laser(System.Windows.Point position, Vector laservector, bool fromplayer = false, bool big = false, bool fromBoss = false)
         {
             Position = position;
-            hitbox = new Rect(position.X - (Ammosize / 2), position.Y - (Ammosize / 2), Ammosize, Ammosize);
             Laservector = laservector;
             Fromplayer = fromplayer;
             this.fromBoss = fromBoss;
             Big = big;
+            hitbox = new Rect(position.X - (Ammosize / 2), position.Y - (Ammosize / 2), Ammosize, Ammosize);
         }
 
 

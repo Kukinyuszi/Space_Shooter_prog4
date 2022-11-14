@@ -728,6 +728,6 @@ namespace Space_shooter.Logic
             if (weaponTime > 0) weaponTime--;
             else { Weaponon = false; Player.Weapon = WeaponPowerup.WeaponType.None; }
         }
-        
+
     }
 }

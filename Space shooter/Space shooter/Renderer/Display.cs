@@ -352,7 +352,7 @@ namespace Space_shooter.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "tripple.jpg"), UriKind.RelativeOrAbsolute)));
             }
         }
-        public Brush BFGBrush
+        public Brush BiggerAmmoBrush
         {
             get
             {
@@ -906,6 +906,34 @@ namespace Space_shooter.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "PNG_Parts&Spriter_Animation/Shots/Shot5/shot5_exp8.png"), UriKind.RelativeOrAbsolute)));
             }
         }
+        public Brush WeaponbarBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Weapon_bar.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush StrongbarBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Strong_bar.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush RapidbarBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Rapid_bar.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public Brush ShieldAuraBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Shield_aura.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
 
 
 
@@ -1022,7 +1050,7 @@ namespace Space_shooter.Renderer
                                     drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
                                 case WeaponPowerup.WeaponType.Biggerammo:
-                                    drawingContext.DrawEllipse(BFGBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
+                                    drawingContext.DrawEllipse(BiggerAmmoBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                                     break;
                                 case WeaponPowerup.WeaponType.None:
                                     drawingContext.DrawEllipse(Brushes.AntiqueWhite, null, new Point(item.Position.X, item.Position.Y), 25, 25);
@@ -1055,22 +1083,22 @@ namespace Space_shooter.Renderer
                                 switch (item.Counter)
                                 {
                                     case < 2:
-                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush1, null, new Point(item.Position.X + 40, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
+                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush1, null, new Point(item.Position.X + 50, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
                                         else drawingContext.DrawEllipse(Shot2Brush1, null, new Point(item.Position.X + 45, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                                         break;
                                     case < 4:
-                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush2, null, new Point(item.Position.X + 30, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
+                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush2, null, new Point(item.Position.X + 40, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
                                         else drawingContext.DrawEllipse(Shot2Brush2, null, new Point(item.Position.X + 35, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                                         break;
                                     case < 6:
-                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush3, null, new Point(item.Position.X + 20, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
+                                        if (item.Big) drawingContext.DrawEllipse(Shot5Brush3, null, new Point(item.Position.X + 30, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
                                         else drawingContext.DrawEllipse(Shot2Brush3, null, new Point(item.Position.X + 25, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                                         break;
                                     case < 8:
                                         if (item.Big)
                                         {
-                                            drawingContext.DrawEllipse(Shot5Brush4, null, new Point(item.Position.X + 10, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
-                                            //drawingContext.DrawEllipse(Shot5Brush5, null, new Point(item.Position.X + 10, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
+                                            drawingContext.DrawEllipse(Shot5Brush4, null, new Point(item.Position.X + 15, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
+                                            drawingContext.DrawEllipse(Shot5Brush5, null, new Point(item.Position.X + 10, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
                                         }
                                         else
                                         {
@@ -1078,7 +1106,7 @@ namespace Space_shooter.Renderer
                                             drawingContext.DrawEllipse(Shot2Brush5, null, new Point(item.Position.X + 5, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                                         }
                                         break;
-                                    case > 8:
+                                    case >= 8:
                                         if (item.Big) drawingContext.DrawEllipse(Shot5Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 70, item.Ammosize + 70);
                                         else drawingContext.DrawEllipse(Shot2Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 50, item.Ammosize + 50);
                                         break;
@@ -1114,7 +1142,7 @@ namespace Space_shooter.Renderer
                                         drawingContext.DrawEllipse(Shot7Brush4, null, new Point(item.Position.X + 5, item.Position.Y), item.Ammosize + 25, item.Ammosize + 25);
                                         drawingContext.DrawEllipse(Shot7Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 25, item.Ammosize + 25);
                                         break;
-                                    case > 8:
+                                    case >= 8:
                                         drawingContext.DrawEllipse(Shot7Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 25, item.Ammosize + 25);
                                         break;
                                     default:
@@ -1144,7 +1172,7 @@ namespace Space_shooter.Renderer
                                         drawingContext.DrawEllipse(Shot1Brush4, null, new Point(item.Position.X + 5, item.Position.Y), item.Ammosize + 30, item.Ammosize + 30);
                                         drawingContext.DrawEllipse(Shot1Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 30, item.Ammosize + 30);
                                         break;
-                                    case > 8:
+                                    case >= 8:
                                         drawingContext.DrawEllipse(Shot1Brush5, null, new Point(item.Position.X, item.Position.Y), item.Ammosize + 30, item.Ammosize + 30);
                                         break;
                                     default:
@@ -1265,36 +1293,36 @@ namespace Space_shooter.Renderer
                                     {
                                         case 1:
                                             if(!item.Big) drawingContext.DrawEllipse(Shot2Brushexp8, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp8, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp8, null, new Point(item.Position.X, item.Position.Y), 50, 50);
 
                                         break;
                                         case 2:
                                             if(!item.Big) drawingContext.DrawEllipse(Shot2Brushexp7, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp7, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp7, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                         break;
                                         case 3:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp6, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp6, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp6, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                         case 4:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp5, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp5, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp5, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                         case 5:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp4, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp4, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp4, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                         case 6:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp3, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp3, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp3, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                         case 7:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp2, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp2, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp2, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                         default:
                                             if (!item.Big) drawingContext.DrawEllipse(Shot2Brushexp1, null, new Point(item.Position.X, item.Position.Y), 30, 30);
-                                            else drawingContext.DrawEllipse(Shot5Brushexp1, null, new Point(item.Position.X, item.Position.Y), 30, 30);
+                                            else drawingContext.DrawEllipse(Shot5Brushexp1, null, new Point(item.Position.X, item.Position.Y), 50, 50);
                                             break;
                                     }
                                 
@@ -1431,21 +1459,21 @@ namespace Space_shooter.Renderer
                 //drawingContext.DrawRectangle(ChatboxBrush, null, new Rect(4, 56, 200, 26));
                 if (chatpopup != null) drawingContext.DrawText(FormatText(chatpopup), new Point(7, 55));
 
-                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -40 , 250), 25, 25);
-                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 40), 190), 25, 25);
-                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -40), 130), 25, 25);
+                if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -40 , 145), 25, 25);
+                if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 40), 70), 25, 25);
+                if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -40), 295), 25, 25);
                 if (model.Weaponon)
                 {
                     switch (model.Player.Weapon)
                     {
                         case WeaponType.Doubleshooter:
-                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 40, 70), 25, 25);
+                            drawingContext.DrawEllipse(DoubleShooterBrush, null, new Point(area.Width - 40, 220), 25, 25);
                             break;
                         case WeaponType.Tripplehooter:
-                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 40, 70), 25, 25);
+                            drawingContext.DrawEllipse(TrippleShooterBrush, null, new Point(area.Width - 40, 220), 25, 25);
                             break;
                         case WeaponType.Biggerammo:
-                            drawingContext.DrawEllipse(BFGBrush, null, new Point(area.Width - 40, 70), 25, 25);
+                            drawingContext.DrawEllipse(BiggerAmmoBrush, null, new Point(area.Width - 40, 220), 25, 25);
                             break;
                         default:
                             break;
@@ -1453,15 +1481,21 @@ namespace Space_shooter.Renderer
                 }
                 if(model.RapidfireTime > 0) 
                 {
-
+                    drawingContext.DrawRectangle(RapidbarBrush, null, new Rect(area.Width - 65, 100, model.RapidfireTime * 5.5, 10));
                 }
                 if(model.StrongTime > 0)
                 {
-
+                    drawingContext.DrawRectangle(StrongbarBrush, null, new Rect(area.Width - 65, 175, model.StrongTime * 5.5, 10));
                 }
                 if(model.WeaponTime > 0)
                 {
-
+                    drawingContext.DrawRectangle(WeaponbarBrush, null, new Rect(area.Width - 65, 250, model.WeaponTime * 5.5, 10));
+                }
+                if (model.Shield)
+                {
+                    drawingContext.PushOpacity(0.5);
+                    drawingContext.DrawEllipse(ShieldAuraBrush, null, model.Player.Position, 50, 50);
+                    drawingContext.Pop();
                 }
 
 
