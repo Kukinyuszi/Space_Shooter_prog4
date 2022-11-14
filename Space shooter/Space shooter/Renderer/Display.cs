@@ -1451,6 +1451,18 @@ namespace Space_shooter.Renderer
                             break;
                     }
                 }
+                if(model.RapidfireTime > 0) 
+                {
+
+                }
+                if(model.StrongTime > 0)
+                {
+
+                }
+                if(model.WeaponTime > 0)
+                {
+
+                }
 
 
             }
