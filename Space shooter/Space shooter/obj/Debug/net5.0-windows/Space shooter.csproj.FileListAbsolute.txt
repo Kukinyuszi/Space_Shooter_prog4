@@ -51,7 +51,6 @@ C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\bi
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\bin\Debug\net5.0-windows\Space shooter.pdb
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\bin\Debug\net5.0-windows\Microsoft.Toolkit.Mvvm.dll
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.AssemblyReference.cache
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\CustomDifficultySettings.g.cs
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\GameOverWindow.g.cs
 C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\GamePauseWindow.g.cs
@@ -121,3 +120,4 @@ C:\Users\aali-tra\Source\Repos\Space Shooter git2\Space shooter\Space shooter\ob
 C:\Users\aali-tra\Source\Repos\Space Shooter git2\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.CopyComplete
 C:\Users\aali-tra\Source\Repos\Space Shooter git2\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.genruntimeconfig.cache
 C:\Users\aali-tra\Source\Repos\Space Shooter git2\Space shooter\Space shooter\obj\Debug\net5.0-windows\ref\Space shooter.dll
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.csproj.AssemblyReference.cache
