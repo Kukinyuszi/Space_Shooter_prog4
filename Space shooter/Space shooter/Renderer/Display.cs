@@ -1512,7 +1512,7 @@ namespace Space_shooter.Renderer
         }
             private FormattedText FormatText(string text)
             {
-            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Bauhaus 93"), 20, Brushes.White);
+            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Agency FB"), 20, Brushes.White);
             }
 
         //Bauhaus 93  Cooper Black  magneto
