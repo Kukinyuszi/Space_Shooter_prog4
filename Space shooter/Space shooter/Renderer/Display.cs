@@ -934,6 +934,13 @@ namespace Space_shooter.Renderer
                 return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Shield_aura.png"), UriKind.RelativeOrAbsolute)));
             }
         }
+        public Brush ScoreBrush
+        {
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Images", "Score.png"), UriKind.RelativeOrAbsolute)));
+            }
+        }
 
 
 
@@ -1453,7 +1460,8 @@ namespace Space_shooter.Renderer
                     }
 
                 }
-                drawingContext.DrawText(FormatText($"Score:{model.Score}"), new Point(area.Width - 140, 5));
+                drawingContext.DrawRectangle(ScoreBrush, null, new Rect(area.Width - 140, 10, 70, 15));
+                drawingContext.DrawText(FormatText($"{model.Score}"), new Point(area.Width - 65, 5));
 
                 //drawingContext.DrawText(FormatText($"HighScore:{model.HighScore}"), new Point(5, 30));
                 //drawingContext.DrawRectangle(ChatboxBrush, null, new Rect(4, 56, 200, 26));
@@ -1504,8 +1512,10 @@ namespace Space_shooter.Renderer
         }
             private FormattedText FormatText(string text)
             {
-            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("Verdana"), 20, Brushes.White);
+            return new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight, new Typeface("magneto"), 20, Brushes.White);
             }
+
+        //Bauhaus 93  Cooper Black  magneto
         private void Model_PowerUpPickedUp(object? sender, EventArgs e)
         {
             if (sender != null)
@@ -1514,7 +1524,7 @@ namespace Space_shooter.Renderer
                 switch (powerup.PowerupType)
                 {
                     case Powerup.Type.ExtraScore:
-                        chatpopup = "Coin picked up";
+                        chatpopup = "Score picked up";
                         break;
                     case Powerup.Type.MoreHealth:
                         chatpopup = "Health picked up";
