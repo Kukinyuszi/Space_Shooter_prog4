@@ -20,15 +20,15 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="1" Content="SPACE" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Impact" Background="{x:Null}" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" Grid.Row="1" Content="SHOOTER"  FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Impact" Background="{x:Null}" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="SPACE" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Bottom"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="SHOOTER"   FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top"/>
         <Label Grid.Row="1" Content="Try writing god while playing"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <Button Content="New game" Margin="10" Click="Start_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" />
-            <Button Content="Load" Margin="10" Click="Load_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White"/>
-            <Button Content="Score board" Margin="10" Click="ScoreBoard_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White"/>
-            <Button Content="Settings" Margin="10" Click="Settings_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White"/>
-            <Button Content="Quit"  Margin="10" Click="Quit_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White"/>
+            <Button Content="New game" Margin="10" Click="Start_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" />
+            <Button Content="Load" Margin="10" Click="Load_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
+            <Button Content="Score board" Margin="10" Click="ScoreBoard_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
+            <Button Content="Settings" Margin="10" Click="Settings_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
+            <Button Content="Quit"  Margin="10" Click="Quit_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
         </StackPanel>
     </Grid>
 </Window>
