@@ -7,20 +7,18 @@
         mc:Ignorable="d"
         Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windows/space1080.png" Opacity="0.9"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Button Content="Restart"  Grid.Column="1" Margin="10,15,10,15" Grid.Row="1" Click="Restart_Button_Click"/>
-        <Button Content="Load save"  Grid.Column="2" Margin="10,15,10,15" Grid.Row="1"  Click="Reload_Button_Click"/>
-        <Button Content="Back Menu"  Grid.Column="3" Margin="10,15,10,15" Grid.Row="1" Click="Menu_Button_Click"/>
+        <Image Source="/Windows/you_lose.png" Margin="26,28,26,116" Grid.RowSpan="2" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Restart"  Grid.Column="1" Margin="10,50,10,50" Grid.Row="1" Click="Restart_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
+            <Button Content="Load save"  Grid.Column="2" Margin="10,50,10,50" Grid.Row="1"  Click="Reload_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
+            <Button Content="Back Menu"  Grid.Column="3" Margin="10,50,10,50" Grid.Row="1" Click="Menu_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
+        </StackPanel>
     </Grid>
 </Window>

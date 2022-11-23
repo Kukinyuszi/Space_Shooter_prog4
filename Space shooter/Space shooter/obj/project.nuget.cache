@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oo/12Rb0Hh6jG/VYba3/DmnZ1S49I0GUtN3OUiBDNxVfSOvaRFkrGaXLNiLn0crBJ6dxfWElr/iu2K/9N+Qc6w==",
+  "dgSpecHash": "v6SBiJfzD/MaJREW8g4+ki8kNqUY74HthZUBkQnHuIbmguXNfXo2glu5bCY0vkW/QPsu2VGKc39+PF8WWDBNuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aali-tra\\source\\repos\\Space Shooter git2\\Space shooter\\Space shooter\\Space shooter.csproj",
+  "projectFilePath": "C:\\Users\\dorka\\source\\repos\\GUI_2022_23_01_B2291T\\Space shooter\\Space shooter\\Space shooter.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\aali-tra\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
-    "C:\\Users\\aali-tra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\dorka\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
+    "C:\\Users\\dorka\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

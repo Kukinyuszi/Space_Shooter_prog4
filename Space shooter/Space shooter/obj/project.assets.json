@@ -84,24 +84,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aali-tra\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\dorka\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aali-tra\\Source\\Repos\\Space Shooter git2\\Space shooter\\Space shooter\\Space shooter.csproj",
+      "projectUniqueName": "C:\\Users\\dorka\\source\\repos\\GUI_2022_23_01_B2291T\\Space shooter\\Space shooter\\Space shooter.csproj",
       "projectName": "Space shooter",
-      "projectPath": "C:\\Users\\aali-tra\\Source\\Repos\\Space Shooter git2\\Space shooter\\Space shooter\\Space shooter.csproj",
-      "packagesPath": "C:\\Users\\aali-tra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aali-tra\\Source\\Repos\\Space Shooter git2\\Space shooter\\Space shooter\\obj\\",
+      "projectPath": "C:\\Users\\dorka\\source\\repos\\GUI_2022_23_01_B2291T\\Space shooter\\Space shooter\\Space shooter.csproj",
+      "packagesPath": "C:\\Users\\dorka\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dorka\\source\\repos\\GUI_2022_23_01_B2291T\\Space shooter\\Space shooter\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aali-tra\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\dorka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -154,7 +149,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
       }
     }
   }
