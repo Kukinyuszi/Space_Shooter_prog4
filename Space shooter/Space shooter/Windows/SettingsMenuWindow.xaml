@@ -21,12 +21,12 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="1"/>
-        <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="2"/>
-        <Label Content="Fullscreen" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="20" HorizontalAlignment="Center" Grid.Row="3"/>
+        <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="25" HorizontalAlignment="Center" Grid.Row="1" FontFamily="Agency FB"/>
+        <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="25" HorizontalAlignment="Center" Grid.Row="2" FontFamily="Agency FB"/>
+        <Label Content="Fullscreen" Foreground="Yellow" FontWeight="Bold" Margin="15" FontSize="25" HorizontalAlignment="Center" Grid.Row="3" FontFamily="Agency FB"/>
         <CheckBox Content="ON/OFF" Foreground="White" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="2"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding FullScreen}" Grid.Column="1" Grid.Row="3"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,99,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,99,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Agency FB" />
     </Grid>
 </Window>

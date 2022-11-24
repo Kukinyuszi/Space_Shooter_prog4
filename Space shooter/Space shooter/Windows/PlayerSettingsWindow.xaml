@@ -25,7 +25,7 @@
                 <RadioButton x:Name="rb_custom" Content="Custom" Click="rb_custom_Click" MinHeight="20" Margin="1" Foreground="White"/>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="tb_playername" Text="Type here yout name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
-        <Button Content="Start" Click="Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
+        <Button Content="Start" Click="Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Agency FB"/>
     </Grid>
 </Window>
