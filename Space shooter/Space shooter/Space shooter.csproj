@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
+    <None Remove="Windows\How_to_play.png" />
     <None Remove="Windows\space1080.png" />
     <None Remove="Windows\you_lose.png" />
   </ItemGroup>
@@ -27,6 +28,7 @@
   <ItemGroup>
     <Resource Include="Windows\Header.png" />
     <Resource Include="Windows\HowToPlay.png" />
+    <Resource Include="Windows\How_to_play.png" />
     <Resource Include="Windows\space1080.png" />
     <Resource Include="Windows\you_lose.png" />
   </ItemGroup>
