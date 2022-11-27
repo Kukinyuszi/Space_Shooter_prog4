@@ -983,7 +983,8 @@ namespace Space_shooter.Renderer
                     switch (item.PowerupType)
                     {
                         case Models.Powerups.Powerup.Type.ExtraScore:
-                            drawingContext.DrawEllipse(CoinBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
+                            drawingContext.DrawRectangle(CoinBrush, null, new Rect(item.Position.X - 20, item.Position.Y - 25, 40, 50));
+                            //drawingContext.DrawEllipse(CoinBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
                             break;
                         case Models.Powerups.Powerup.Type.MoreHealth:
                             drawingContext.DrawEllipse(HealthBrush, null, new Point(item.Position.X, item.Position.Y), 25, 25);
@@ -1479,7 +1480,7 @@ namespace Space_shooter.Renderer
                 switch (powerup.PowerupType)
                 {
                     case Powerup.Type.ExtraScore:
-                        chatpopup = "Score picked up";
+                        chatpopup = "Points picked up";
                         break;
                     case Powerup.Type.MoreHealth:
                         chatpopup = "Health picked up";

@@ -1,16 +1,68 @@
 {
   "Lasers": [
     {
-      "Laservector": "0,7",
-      "Angle": 90.0,
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 128,
+      "Hitbox": "400,94,10,10",
+      "Position": "405,99",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 101,
+      "Hitbox": "480,229,10,10",
+      "Position": "485,234",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 70,
+      "Hitbox": "350,384,10,10",
+      "Position": "355,389",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "0,-5",
+      "Angle": -90.0,
+      "Speed": 0,
+      "Fromplayer": true,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 41,
+      "Hitbox": "280,529,10,10",
+      "Position": "285,534",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "-3,10",
+      "Angle": 106.69924423399362,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 84,
-      "Hitbox": "400,826,10,10",
-      "Position": "405,831",
+      "Counter": 39,
+      "Hitbox": "349,628,10,10",
+      "Position": "354,633",
       "FromBoss": false
     },
     {
@@ -21,35 +73,9 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 24,
-      "Hitbox": "460,406,10,10",
-      "Position": "465,411",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "1,6",
-      "Angle": 80.53767779197439,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 24,
-      "Hitbox": "163,317,10,10",
-      "Position": "168,322",
-      "FromBoss": false
-    },
-    {
-      "Laservector": "-1,6",
-      "Angle": 99.46232220802561,
-      "Speed": 0,
-      "Fromplayer": false,
-      "Big": false,
-      "IsHit": false,
-      "Ammosize": 10,
-      "Counter": 24,
-      "Hitbox": "115,317,10,10",
-      "Position": "120,322",
+      "Counter": 39,
+      "Hitbox": "137,511,10,10",
+      "Position": "142,516",
       "FromBoss": false
     }
   ],
@@ -57,42 +83,57 @@
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "276,790",
-      "Hitbox": "251,770,50,40"
+      "Position": "489,180",
+      "Hitbox": "464,160,50,40"
     }
   ],
   "EnemyShips": [
     {
+      "left": true,
+      "Position": "432,220",
+      "Name": 3,
+      "IsHit": false,
+      "IsDead": false,
+      "IsMoving": false,
+      "Hitbox": "407,200,50,40"
+    },
+    {
       "left": false,
-      "Position": "489,220",
+      "Position": "181,220",
       "Name": 0,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "464,200,50,40"
-    },
-    {
-      "left": false,
-      "Position": "155,220",
-      "Name": 1,
-      "IsHit": false,
-      "IsDead": false,
-      "IsMoving": false,
-      "Hitbox": "130,200,50,40"
+      "Hitbox": "156,200,50,40"
     }
   ],
-  "Powerups": [],
+  "Powerups": [
+    {
+      "PowerupType": 0,
+      "Counter": 600,
+      "Speed": 5,
+      "Position": "363,640",
+      "Hitbox": "338,620,50,40"
+    },
+    {
+      "PowerupType": 0,
+      "Counter": 600,
+      "Speed": 5,
+      "Position": "366,335",
+      "Hitbox": "341,315,50,40"
+    }
+  ],
   "Player": {
     "left": false,
-    "Position": "345,764",
+    "Position": "305,764",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "330,752,30,25",
-    "Health": 20
+    "Hitbox": "290,752,30,25",
+    "Health": 40
   },
   "Boss": null,
-  "Score": 15300,
+  "Score": 16850,
   "HighScore": 16040,
   "PlayerName": "Kuki",
   "Asteroidspeed": 5,

@@ -27,7 +27,7 @@ namespace Space_shooter.Logic
 
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
-        public event EventHandler Changed, GameOver, PowerUpPickedUp, GamePaused, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion, Godmode_activated;
+        public event EventHandler Changed, GameOver, PowerUpPickedUp, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion, Godmode_activated;
         private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 300, bossFireRate = 40, angleCounter = -5,
         enemyShotTimer = 0, bossShotTimer = 0, playerShotTimer = 0, enemiesSpawnCount = 2, score = 0, highScore, rapidFireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
@@ -436,22 +436,6 @@ namespace Space_shooter.Logic
 
         private void NewEnemyShoot(EnemyShip enemyship)
         {
-
-            //if (enemyship != Boss) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
-            //else
-            //{
-            //    switch ((enemyship as Boss).BossType)
-            //    {
-            //        case BossName.Claec:
-            //            if(bossShotTimer == Bossshottimechange / 2 || bossShotTimer == 0) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
-            //            break;
-            //        case BossName.Kasdeya:
-            //            if(bossShotTimer % (bossFireRate / 5) == 0) Lasers.AddRange(enemyship.Shoot(area, new List<Laser>(), Player.Position));
-            //            break;
-            //        case BossName.None:
-            //            break;
-            //    }
-            //}
             Point enemyshippositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 23);
             double x = ((Player.Position.X) - enemyship.Position.X) / 40;
             double y = ((Player.Position.Y - 40) - enemyship.Position.Y + 23) / 40;
@@ -700,7 +684,7 @@ namespace Space_shooter.Logic
         private bool DifficultyByScore()
         {
 
-            if (score > 1000 && score % 1000 <= 50)
+            if (score > 1000 && score % 1000 < 50)
             {
                 return true;
             }
