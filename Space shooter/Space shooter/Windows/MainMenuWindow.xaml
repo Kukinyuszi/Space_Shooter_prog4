@@ -31,7 +31,7 @@
                             <Trigger Property="IsMouseOver" 
                           Value="True">
                                 <Setter Property="Foreground" 
-                           Value="Orange"/>
+                           Value="Yellow"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

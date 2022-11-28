@@ -6,6 +6,39 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="PlayerSettingsWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid x:Name="PlayerGrid">
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/space1080.png"/>
@@ -17,7 +50,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" >
-            <Label Content="difficulty" Foreground="Yellow" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" FontFamily="Impact"/>
+            <Label Content="Difficulty" Foreground="Yellow" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" FontFamily="Impact"/>
             <StackPanel x:Name="sp_difficulty" Orientation="Horizontal" HorizontalAlignment="Center">
                 <RadioButton x:Name="rb_easy" Content="Easy" MinHeight="20" Margin="1" Foreground="White"/>
                 <RadioButton x:Name="rb_medium" Content="Medium" MinHeight="20" Margin="1" IsChecked="True" Foreground="White"/>
@@ -26,6 +59,6 @@
             </StackPanel>
         </StackPanel>
         <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
-        <Button Content="Start" Click="Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Agency FB"/>
+        <Button Content="Start" Click="Button_Click"  Grid.Row="3" VerticalAlignment="Top"  FontFamily="Agency FB"/>
     </Grid>
 </Window>

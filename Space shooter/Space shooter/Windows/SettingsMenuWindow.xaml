@@ -6,6 +6,39 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="SettingsMenuWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid x:Name="MyGrid">
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/space1080.png"/>
@@ -27,6 +60,6 @@
         <CheckBox Content="ON/OFF" Foreground="White" Margin="10,25,10,15" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="2"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,10,15" IsChecked="{Binding FullScreen}" Grid.Column="1" Grid.Row="3"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" Margin="215,99,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Agency FB" />
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Grid.RowSpan="2"  VerticalAlignment="Top" FontFamily="Agency FB" />
     </Grid>
 </Window>

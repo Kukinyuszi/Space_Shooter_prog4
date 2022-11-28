@@ -6,6 +6,39 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/space1080.png" Opacity="0.9"/>
@@ -16,9 +49,9 @@
         </Grid.RowDefinitions>
         <Image Source="/Windows/you_lose.png" Margin="26,28,26,116" Grid.RowSpan="2" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Restart"  Grid.Column="1" Margin="10,50,10,50" Grid.Row="1" Click="Restart_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
-            <Button Content="Load save"  Grid.Column="2" Margin="10,50,10,50" Grid.Row="1"  Click="Reload_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
-            <Button Content="Back Menu"  Grid.Column="3" Margin="10,50,10,50" Grid.Row="1" Click="Menu_Button_Click" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" Width="70"/>
+            <Button Content="Restart"  Grid.Column="1" Grid.Row="1" Click="Restart_Button_Click"  FontFamily="Agency FB" />
+            <Button Content="Load save"  Grid.Column="2"  Grid.Row="1"  Click="Reload_Button_Click"  FontFamily="Agency FB" />
+            <Button Content="Back Menu"  Grid.Column="3"  Grid.Row="1" Click="Menu_Button_Click"  FontFamily="Agency FB" />
         </StackPanel>
     </Grid>
 </Window>
