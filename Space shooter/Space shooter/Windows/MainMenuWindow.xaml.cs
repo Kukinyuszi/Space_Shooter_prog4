@@ -53,7 +53,7 @@ namespace Space_shooter.Windows
 
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
         {
-            SettingsMenuWindow smw = new SettingsMenuWindow(DisplaySettings);
+            SettingsMenuWindow smw = new SettingsMenuWindow(DisplaySettings, sps);
             smw.ShowDialog();
         }
 
@@ -64,31 +64,6 @@ namespace Space_shooter.Windows
             if(psw.ShowDialog() == true) this.Visibility = Visibility.Visible;
 
         }
-
-        //private void Window_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    backgroundvideo.Play();
-        //    videoTimer.Interval = TimeSpan.FromSeconds(22);
-
-        //    videoTimer.Tick += (sender, eventargs) =>
-        //    {
-        //        backgroundvideo.Stop();
-        //        backgroundvideo.Play();
-
-        //    };
-        //    videoTimer.Start();
-
-        //    if (File.Exists("highscore.txt"))
-        //    {
-        //        string[] tmp = File.ReadAllLines("highscore.txt");
-        //        lb_score.Content = tmp[0];
-        //        lb_money.Content = tmp[1];
-        //    }
-        //    else
-        //    {
-        //        lb_score.Content = 0;
-        //    }
-        //}
 
         private void HowToPlay_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -119,11 +94,6 @@ namespace Space_shooter.Windows
                 this.Close();
                 StartingTheGame.Show();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

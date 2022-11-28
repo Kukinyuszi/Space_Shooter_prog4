@@ -19,12 +19,19 @@ namespace Space_shooter.Services
         MediaPlayer shieldAudio;
         MediaPlayer explosionAudio;
 
-        private bool playing;
+        private bool music = true, sound = true;
+        private double musicVolume, soundVolume;
 
-        public bool Playing { get => playing; set => playing = value; }
+        public bool Music { get => music; set => music = value; }
+        public bool Sound { get => sound; set => sound = value; }
+        public double MusicVolume { get => musicVolume; set => musicVolume = value; }
+        public double SoundVolume { get => soundVolume; set => soundVolume = value; }
 
         public SoundPlayerService()
         {
+            musicVolume = 0.3;
+            soundVolume = 0.3;
+
             PlayerShotAudioSetup();
             EnemyShotAudioSetup();
             CoinAudioSetup();
@@ -41,36 +48,21 @@ namespace Space_shooter.Services
             var cd = Directory.GetCurrentDirectory();
             gameMusicAudio.Open(new Uri(cd + "/Audio/Gamemusic.wav"));
             gameMusicAudio.MediaEnded += BackgroundMusic_Ended;
-            gameMusicAudio.Volume = 0.3;
+            gameMusicAudio.Volume = musicVolume;
             gameMusicAudio.Play();
             return gameMusicAudio;
         }
 
         private void BackgroundMusic_Ended(object sender, EventArgs e)
         {
+            gameMusicAudio.Volume = musicVolume;
             gameMusicAudio.Position = TimeSpan.Zero;
             gameMusicAudio.Play();
         }
-
-
-        public void Mute(object sender, EventArgs e)
+        public void MusicVolumeChange(double volume)
         {
-            gameMusicAudio.Pause();
-        }
-
-        public void UnMute(object sender, EventArgs e)
-        {
-            gameMusicAudio.Play();
-        }
-
-        public void VolumeUp(object sender, EventArgs e)
-        {
-            gameMusicAudio.Volume += 0.1;
-        }
-
-        public void VolumeDown(object sender, EventArgs e)
-        {
-            gameMusicAudio.Volume -= 0.1;
+            musicVolume = volume;
+            gameMusicAudio.Volume = volume;
         }
 
         private void PlayerShotAudioSetup()
@@ -78,11 +70,12 @@ namespace Space_shooter.Services
             playerShotAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             playerShotAudio.Open(new Uri(cd + "/Audio/Shoot3.wav"));
-            playerShotAudio.Volume = 0.3;
+            playerShotAudio.Volume = soundVolume;
             playerShotAudio.MediaEnded += PlayershotAudio_MediaEnded;
         }
         public void PlayershotAudio_Start(object sender, EventArgs e)
         {
+            playerShotAudio.Volume = soundVolume;
             playerShotAudio.Stop();
             playerShotAudio.Play();
         }
@@ -97,11 +90,12 @@ namespace Space_shooter.Services
             enemyShotAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             enemyShotAudio.Open(new Uri(cd + "/Audio/Shoot1.wav"));
-            enemyShotAudio.Volume = 0.3;
+            enemyShotAudio.Volume = soundVolume;
             enemyShotAudio.MediaEnded += EnemyshotAudio_MediaEnded;
         }
         public void EnemyshotAudio_Start(object sender, EventArgs e)
         {
+            enemyShotAudio.Volume = soundVolume;
             enemyShotAudio.Stop();
             enemyShotAudio.Play();
         }
@@ -115,11 +109,12 @@ namespace Space_shooter.Services
             coinAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             coinAudio.Open(new Uri(cd + "/Audio/PowerupCoin.wav"));
-            coinAudio.Volume = 0.3;
+            coinAudio.Volume = soundVolume;
             coinAudio.MediaEnded += CoinAudio_MediaEnded;
         }
         public void CoinAudio_Start(object sender, EventArgs e)
         {
+            coinAudio.Volume = soundVolume;
             coinAudio.Stop();
             coinAudio.Play();
         }
@@ -133,11 +128,12 @@ namespace Space_shooter.Services
             healthAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             healthAudio.Open(new Uri(cd + "/Audio/PowerupHealth.wav"));
-            healthAudio.Volume = 0.3;
+            healthAudio.Volume = soundVolume;
             healthAudio.MediaEnded += HealthAudio_MediaEnded;
         }
         public void HealthAudio_Start(object sender, EventArgs e)
         {
+            healthAudio.Volume = soundVolume;
             healthAudio.Stop();
             healthAudio.Play();
         }
@@ -151,11 +147,12 @@ namespace Space_shooter.Services
             powerupAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             powerupAudio.Open(new Uri(cd + "/Audio/Powerup.wav"));
-            powerupAudio.Volume = 0.3;
+            powerupAudio.Volume = soundVolume;
             powerupAudio.MediaEnded += PowerupAudio_MediaEnded;
         }
         public void PowerupAudio_Start(object sender, EventArgs e)
         {
+            powerupAudio.Volume = soundVolume;
             powerupAudio.Stop();
             powerupAudio.Play();
         }
@@ -169,11 +166,12 @@ namespace Space_shooter.Services
             explosionAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             explosionAudio.Open(new Uri(cd + "/Audio/Exploding.wav"));
-            explosionAudio.Volume = 0.3;
+            explosionAudio.Volume = soundVolume;
             explosionAudio.MediaEnded += ExplosionAudio_MediaEnded;
         }
         public void ExplosionAudio_Start(object sender, EventArgs e)
         {
+            explosionAudio.Volume = soundVolume;
             explosionAudio.Stop();
             explosionAudio.Play();
         }
@@ -187,11 +185,12 @@ namespace Space_shooter.Services
             shieldAudio = new MediaPlayer();
             var cd = Directory.GetCurrentDirectory();
             shieldAudio.Open(new Uri(cd + "/Audio/PowerupShield.wav"));
-            shieldAudio.Volume = 0.3;
+            shieldAudio.Volume = soundVolume;
             shieldAudio.MediaEnded += ShieldAudio_MediaEnded;
         }
         public void ShieldAudio_Start(object sender, EventArgs e)
         {
+            shieldAudio.Volume = soundVolume;
             shieldAudio.Stop();
             shieldAudio.Play();
         }
