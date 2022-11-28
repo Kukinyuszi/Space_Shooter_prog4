@@ -6,6 +6,41 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
        Title="Main Menu" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Orange"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/space1080.png"/>
@@ -24,12 +59,12 @@
         <Label Grid.Column="1" Grid.Row="1" Content="SHOOTER" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top"/>
         <Label Grid.Row="1" Content="Try writing god while playing"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <Button Content="New game" Margin="10" Click="Start_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB" />
-            <Button Content="Load" Margin="10" Click="Load_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
-            <Button Content="How to play" Margin="10" Click="HowToPlay_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
-            <Button Content="Score board" Margin="10" Click="ScoreBoard_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
-            <Button Content="Settings" Margin="10" Click="Settings_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
-            <Button Content="Quit"  Margin="10" Click="Quit_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
+            <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
+            <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>
+            <Button Content="How to play"  Click="HowToPlay_Button_Click"   FontFamily="Agency FB" />
+            <Button Content="Score board"  Click="ScoreBoard_Click"   FontFamily="Agency FB"/>
+            <Button Content="Settings"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
+            <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
         </StackPanel>
     </Grid>
 </Window>

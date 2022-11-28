@@ -120,5 +120,10 @@ namespace Space_shooter.Windows
                 StartingTheGame.Show();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
