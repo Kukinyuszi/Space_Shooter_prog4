@@ -44,7 +44,7 @@ namespace Space_shooter.Windows
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
-            if(model.Boss != null) lb_gamesaved.Content = "Can't save while boss is alive";
+            if(model.Boss != null) lb_gamesaved.Content = "Can't save in bosswave";
             else
             {
                 Save_LoadGameService sgs = new Save_LoadGameService();

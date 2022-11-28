@@ -39,7 +39,7 @@ namespace Space_shooter.Services
             }
             public override string ToString()
             {
-                return $"{Time}\t{Difficulty}\t{PlayerName}\t{Scoreamount}";
+                return $"{Time}\t{Difficulty}\t\t{PlayerName}\t{Scoreamount}";
             }
         }
 

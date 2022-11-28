@@ -29,6 +29,15 @@ namespace Space_shooter.Windows
         {
             ScoreBoardService scoreBoardService = new ScoreBoardService();
             List<string> scores = scoreBoardService.GetScoresList();
+            Label label = new Label()
+            {
+                Content = "   Date  \t        Difficulty\t   Player\t    Score",
+                FontSize = 15,
+                Foreground = Brushes.Black,
+                Margin = new Thickness(10, 10, 10, 10),
+                FontWeight = FontWeights.Bold
+            };
+            sp_scores.Children.Add(label);
             if (scores.Count > 0)
             {
                 for (int i = 0; i < 10; i++)
@@ -36,7 +45,9 @@ namespace Space_shooter.Windows
                     Label l = new Label()
                     {
                         Content = scores[i],
-                        Margin = new Thickness(10, 1, 10, 1)
+                        FontSize = 13,
+                        Margin = new Thickness(10, 10, 10, 10),
+                        FontWeight = FontWeights.Bold
                     };
                     sp_scores.Children.Add(l);
                 }
