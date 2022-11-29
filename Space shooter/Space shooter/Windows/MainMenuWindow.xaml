@@ -31,5 +31,6 @@
             <Button Content="Settings" Margin="10" Click="Settings_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
             <Button Content="Quit"  Margin="10" Click="Quit_Button_Click" Padding="10" Width="120" Background="#FF3F3F3F" BorderBrush="#FF3F3F3F" Foreground="White" FontFamily="Agency FB"/>
         </StackPanel>
+        <Grid x:Name="MainArea" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

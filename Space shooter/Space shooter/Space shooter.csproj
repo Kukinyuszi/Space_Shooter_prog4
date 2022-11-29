@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Windows\1.png" />
+    <None Remove="Windows\2.png" />
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
     <None Remove="Windows\How_to_play.png" />
@@ -26,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Windows\1.png" />
+    <Resource Include="Windows\2.png" />
     <Resource Include="Windows\Header.png" />
     <Resource Include="Windows\HowToPlay.png" />
     <Resource Include="Windows\How_to_play.png" />

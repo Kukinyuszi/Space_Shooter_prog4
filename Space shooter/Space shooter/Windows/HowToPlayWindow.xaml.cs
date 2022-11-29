@@ -23,5 +23,11 @@ namespace Space_shooter.Windows
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HowToPlayPage2Window howToPlay = new HowToPlayPage2Window();
+            howToPlay.Show();
+        }
     }
 }
