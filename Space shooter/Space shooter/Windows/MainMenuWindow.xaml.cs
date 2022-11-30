@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+
 using static Space_shooter.Services.Save_LoadGameService;
 
 namespace Space_shooter.Windows
@@ -31,7 +32,6 @@ namespace Space_shooter.Windows
         SoundPlayerService sps = new SoundPlayerService();
         ISettings settings;
         IDisplaySettings displaySettings;
-
         public IDisplaySettings DisplaySettings { get => displaySettings; set => displaySettings = value; }
         public SoundPlayerService Sps { get => sps; set => sps = value; }
 

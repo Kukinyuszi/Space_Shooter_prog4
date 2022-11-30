@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="Main Menu" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None">
+       Title="Main Menu" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
 
 
     <Window.Resources>
@@ -43,7 +44,13 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/space1080.png"/>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <Image Stretch="Fill"
+                           gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif"
+                           gif:AnimationBehavior.AnimateInDesignMode="False"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
@@ -57,12 +64,12 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Column="1" Content="SPACE" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Bottom"/>
         <Label Grid.Column="1" Grid.Row="1" Content="SHOOTER" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top"/>
-        <Label Foreground="White" Margin="56,396,44,14" Grid.Row="2" HorizontalContentAlignment="Center" Grid.Column="1">
+        <Label Foreground="White" Margin="56,396,35,14" Grid.Row="2" HorizontalContentAlignment="Center" Grid.Column="1">
             <Label.Content>
-                <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing" Width="176" />
+                <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
             </Label.Content>
         </Label>
-        <Label  Content="V4.01" Foreground="White" Margin="96,431,0,0" Grid.Row="2" Grid.Column="2"/>
+        <Label  Content="V4.01" Foreground="White" Margin="86,429,0,0" Height="30" Grid.Row="2" Grid.Column="2"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
             <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>

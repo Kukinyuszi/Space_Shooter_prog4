@@ -14,6 +14,9 @@
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
     <None Remove="Windows\How_to_play.png" />
+    <None Remove="Windows\Menu_Background.gif" />
+    <None Remove="Windows\Menu_Background_cat.gif" />
+    <None Remove="Windows\Menu_Background_light.gif" />
     <None Remove="Windows\Sound_BTN.png" />
     <None Remove="Windows\space1080.png" />
     <None Remove="Windows\you_lose.png" />
@@ -26,6 +29,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +38,9 @@
     <Resource Include="Windows\Header.png" />
     <Resource Include="Windows\HowToPlay.png" />
     <Resource Include="Windows\How_to_play.png" />
+    <Resource Include="Windows\Menu_Background.gif" />
+    <Resource Include="Windows\Menu_Background_cat.gif" />
+    <Resource Include="Windows\Menu_Background_light.gif" />
     <Resource Include="Windows\Sound_BTN.png" />
     <Resource Include="Windows\space1080.png" />
     <Resource Include="Windows\you_lose.png" />
