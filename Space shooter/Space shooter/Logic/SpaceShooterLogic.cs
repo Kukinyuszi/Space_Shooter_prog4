@@ -298,7 +298,7 @@ namespace Space_shooter.Logic
 
         private void SetupNewBoss(System.Windows.Size size)
         {
-            if((score % 2000) < 50) Boss = new Boss2(area, bossSpawnHealth);
+            if((score % 2000) < 90) Boss = new Boss2(area, bossSpawnHealth);
             else Boss = new Boss1(area, bossSpawnHealth);
             EnemyShips.Clear();
         }
@@ -307,7 +307,7 @@ namespace Space_shooter.Logic
         {
             if (Boss.Health <= 0)
             {
-                score += 50;
+                score += 100;
                 Boss = null;
                 SetupEnemyes(size);
             }
@@ -319,7 +319,7 @@ namespace Space_shooter.Logic
             if (Collide(Lasers[i].Hitbox, Boss.Hitbox) && Lasers[i].Fromplayer)
             {
                 Lasers[i].IsHit = true;
-                if (Strong || Lasers[i].Big) Boss.Health -= 30;
+                if (Strong || Lasers[i].Big) Boss.Health -= 20;
                 else Boss.Health -= 10;
             }
         }
@@ -695,7 +695,7 @@ namespace Space_shooter.Logic
         private bool DifficultyByScore()
         {
 
-            if (score > 1000 && score % 1000 < 50)
+            if (score > 1000 && score % 1000 < 90)
             {
                 return true;
             }
