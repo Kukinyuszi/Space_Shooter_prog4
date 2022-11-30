@@ -1318,7 +1318,7 @@ namespace Space_shooter.Renderer
                 if (model.Strong) drawingContext.DrawEllipse(StrongBrush, null, new Point(area.Width -40 , 145), 25, 25);
                 if (model.Rapid) drawingContext.DrawEllipse(FastBrush, null, new Point((area.Width - 40), 70), 25, 25);
                 if (model.Shield) drawingContext.DrawEllipse(ShieldBrush, null, new Point((area.Width -40), 295), 25, 25);
-                if (model.Weaponon)
+                if (model.Player.Weapon != WeaponType.None)
                 {
                     switch (model.Player.Weapon)
                     {

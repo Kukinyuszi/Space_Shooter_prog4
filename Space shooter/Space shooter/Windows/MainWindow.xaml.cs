@@ -108,13 +108,7 @@ namespace Space_shooter
 
             foreach (var item in MyGrid.Children)
             {
-                if (item is Button)
-                {
-                    Button b = (Button)item;
-                    if (logic.Godmode) b.Visibility = Visibility.Visible;
-                    else b.Visibility = Visibility.Hidden;
-                }
-                else if(item is Label)
+                 if(item is Label)
                 {
                     Label l = (Label)item;
                     if (logic.Godmode) l.Visibility = Visibility.Visible;
