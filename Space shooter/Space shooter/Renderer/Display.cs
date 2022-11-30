@@ -1335,15 +1335,15 @@ namespace Space_shooter.Renderer
                             break;
                     }
                 }
-                if(model.RapidfireTime > 0) 
+                if(model.RapidfireTime > 0 && !model.Godmode) 
                 {
                     drawingContext.DrawRectangle(RapidbarBrush, null, new Rect(area.Width - 65, 100, model.RapidfireTime * 5.5, 10));
                 }
-                if(model.StrongTime > 0)
+                if(model.StrongTime > 0 && !model.Godmode)
                 {
                     drawingContext.DrawRectangle(StrongbarBrush, null, new Rect(area.Width - 65, 175, model.StrongTime * 5.5, 10));
                 }
-                if(model.WeaponTime > 0)
+                if(model.WeaponTime > 0 && !model.Godmode)
                 {
                     drawingContext.DrawRectangle(WeaponbarBrush, null, new Rect(area.Width - 65, 250, model.WeaponTime * 5.5, 10));
                 }

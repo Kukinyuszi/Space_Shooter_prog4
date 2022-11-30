@@ -30,7 +30,6 @@ namespace Space_shooter.Windows
             this.Left = SystemParameters.PrimaryScreenWidth / 7 * 4;
             this.Top = SystemParameters.PrimaryScreenHeight / 4;
             this.DataContext = settings;
-
         }
 
         public bool Music { get => music; set => music = value; }

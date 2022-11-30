@@ -2,6 +2,7 @@
 using Space_shooter.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,11 @@ namespace Space_shooter.Windows
     public partial class SettingsMenuWindow : Window
     {
         IDisplaySettings displaysettings;
-        SoundPlayerService sounds;
-        public SettingsMenuWindow(IDisplaySettings _displaysettings, SoundPlayerService sounds)
+        SoundPlayerService sps;
+        public SettingsMenuWindow(IDisplaySettings _displaysettings, SoundPlayerService sps)
         {
             this.displaysettings = _displaysettings;
-            this.sounds = sounds;
+            this.sps = sps;
             InitializeComponent();
             SetupSounds();
             this.DataContext = displaysettings;
@@ -35,12 +36,12 @@ namespace Space_shooter.Windows
         }
         private void SetupSounds()
         {
-            if (sounds.MusicVolume == 0) lb_music.Background = Brushes.Red;
-            else lb_music.Background = Brushes.Green;
-            if (sounds.SoundVolume == 0) lb_sound.Background = Brushes.Red;
-            else lb_sound.Background = Brushes.Green;
-            sd_music.Value = sounds.MusicVolume;
-            sd_sound.Value = sounds.SoundVolume;
+            if (sps.MusicVolume == 0) img_music.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Music_BTN_up.png", UriKind.RelativeOrAbsolute));
+            else img_music.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Music_BTN.png", UriKind.RelativeOrAbsolute));
+            if (sps.SoundVolume == 0) img_sound.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Sound_BTN_up.png", UriKind.RelativeOrAbsolute));
+            else img_sound.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Sound_BTN.png", UriKind.RelativeOrAbsolute));
+            sd_music.Value = sps.MusicVolume;
+            sd_sound.Value = sps.SoundVolume;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -60,16 +61,15 @@ namespace Space_shooter.Windows
 
         private void sd_music_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            sounds.MusicVolumeChange(sd_music.Value);
-            if (sd_music.Value != 0) lb_music.Background = Brushes.Green;
-            else lb_music.Background = Brushes.Red;
+            sps.MusicVolumeChange(sd_music.Value);
+            SetupSounds();
+
         }
 
         private void sd_sound_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            sounds.SoundVolume = sd_sound.Value;
-            if(sd_sound.Value != 0) lb_sound.Background = Brushes.Green;
-            else lb_sound.Background = Brushes.Red;
+            sps.SoundVolume = sd_sound.Value;
+            SetupSounds();
         }
     }
 }

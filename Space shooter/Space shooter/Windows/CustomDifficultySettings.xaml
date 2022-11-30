@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="300" Width="400" WindowStartupLocation="Manual" WindowStyle="SingleBorderWindow">
+       Title="CustomDifficultySettings" Height="300" Width="400" WindowStartupLocation="Manual"  WindowStyle="SingleBorderWindow">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

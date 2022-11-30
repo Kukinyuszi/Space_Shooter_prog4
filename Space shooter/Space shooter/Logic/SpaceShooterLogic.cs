@@ -196,8 +196,8 @@ namespace Space_shooter.Logic
                 }
                 if (EnemyShips.Count > 0) EnemiesShoot();                                                       // If there are enemies, than they shoot once
 
-                else if (Boss != null ) NewEnemyShoot(Boss);                                                    // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
-                                                                                                                                             // --> so it can shoot again, than it shoots with the boss
+                else if (Boss != null) NewEnemyShoot(Boss);                                                     // If the bosses firerate counter is 0 (or its 2. shot counter is 0) --> 
+                                                                                                                // --> so it can shoot again, than it shoots with the boss
                 PowerupPickup(size);                                                                            // If the player hitbox intersects with a powerup hitbox, than it picks up
                 PlayerInteractions(size);                                                                       // Moves and shoots with the player
                 CountersTimeEllapses();                                                                         // All the counters step, if it is 0, than it resets
@@ -448,24 +448,29 @@ namespace Space_shooter.Logic
             {
                 case EnemyShip.EnemyEnum.one:
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(0, 7)));
+                    EnemyShoot?.Invoke(this, null);
                     break;
                 case EnemyShip.EnemyEnum.two:
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(1, 6)));
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(-1, 6)));
+                    EnemyShoot?.Invoke(this, null);
                     break;
                 case EnemyShip.EnemyEnum.three:
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x, y)));
+                    EnemyShoot?.Invoke(this, null);
                     break;
                 case EnemyShip.EnemyEnum.four:
                     Lasers.Add(new Laser(enemyshippositiontemp, new Vector(x1, 10)));
+                    EnemyShoot?.Invoke(this, null);
                     break;
                 case EnemyShip.EnemyEnum.boss:
-                    BossShoot(enemyship, x, y);
+                     BossShoot(enemyship, x, y);
                     break;
                 default:
                     break;
             }
-            EnemyShoot?.Invoke(this,null);
+            
+
         }
 
             private void BossShoot(EnemyShip enemyship, double x, double y)
@@ -474,18 +479,24 @@ namespace Space_shooter.Logic
                switch ((enemyship as Boss).BossType)
                {
                 case BossName.Claec:
-                    if (bossShotTimer == Bossshottimechange / 2) Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false, true));
+                    if (bossShotTimer == Bossshottimechange / 2)
+                    {
+                        Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false, true));
+                        EnemyShoot?.Invoke(this, null);
+                    }
                     else if(bossShotTimer == 0)
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false, true));
                         Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false, true));
                         Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) + 2, y * 1.5), false, false, true));
+                        EnemyShoot?.Invoke(this, null);
                     }
                     break;
                 case BossName.Kasdeya:
                     if (bossShotTimer % (bossFireRate / 5) == 0)
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector(angleCounter, 15), false, false, true));
+                        EnemyShoot?.Invoke(this, null);
                         if (angleCounter >= 5) angleCounter = -5;
                         else angleCounter++;
                     }

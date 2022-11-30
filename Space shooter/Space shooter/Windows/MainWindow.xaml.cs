@@ -114,6 +114,12 @@ namespace Space_shooter
                     if (logic.Godmode) b.Visibility = Visibility.Visible;
                     else b.Visibility = Visibility.Hidden;
                 }
+                else if(item is Label)
+                {
+                    Label l = (Label)item;
+                    if (logic.Godmode) l.Visibility = Visibility.Visible;
+                    else l.Visibility = Visibility.Hidden;
+                }
             }
         }
 
