@@ -6,6 +6,37 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="HowToPlayWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/1.png"/>
@@ -16,12 +47,9 @@
             <RowDefinition Height="4.5*"/>
         </Grid.RowDefinitions>
         <Label Content="How to play" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top" Margin="161,-11,0,0" Grid.ColumnSpan="2"/>
-        <Label Content="Goal" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Left" FontSize="36" Margin="99,71,0,199" Grid.RowSpan="2"/>
-        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Left" FontSize="36" Margin="99,73,0,199" Grid.RowSpan="2" Grid.Column="1"/>
-        <Label Content="Collectibles" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,241,0,347" Grid.Row="1" Grid.RowSpan="2"/>
-        <Label Content="Enemies" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,241,0,347" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1"/>
         <Label Content="Goal" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,34,0,294" Grid.Row="1" Grid.RowSpan="2" />
-        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,30,0,222" Grid.Row="2 "/>
-        <Button Content="Next" Click="Button_Click" Grid.Row="1" VerticalAlignment="Top" Margin="446,288,10,0" Padding="10" Grid.RowSpan="2" Foreground="Yellow" FontFamily="Agency FB" FontWeight="Bold" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36"  Margin="0,30,0,222" Grid.Row="2 "/>
+        <Button Content="Next" Click="Next_Button_Click" FontFamily="Agency FB" Margin="400,322,0,262" Grid.Row="1" Grid.RowSpan="2" />
+        <Button Content="Close" FontFamily="Agency FB" Click="Close_Button_Click"   Grid.RowSpan="2" Margin="-26,161,426,101" Grid.Row="1"/>
     </Grid>
 </Window>

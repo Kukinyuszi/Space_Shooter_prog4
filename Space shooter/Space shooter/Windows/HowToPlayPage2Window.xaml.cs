@@ -24,9 +24,14 @@ namespace Space_shooter.Windows
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.DialogResult = true;
+        }
+
+        private void Close_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
         }
     }
 }

@@ -5,7 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="HowToPlayPage2Window" Height="735" Width="550" >
+        Title="HowToPlayPage2Window" Height="735" Width="550" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Foreground" 
+                           Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/2.png"/>
@@ -15,7 +46,8 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label Content="Enemies" FontSize="36" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top" Margin="218,10,0,0"/>
-        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,30,0,222" Grid.Row="2"/>
-        <Button Content="Back" Foreground="Yellow" FontFamily="Agency FB" FontSize="36" FontWeight="Bold" Click="Button_Click" VerticalAlignment="Top" Margin="0,344,456,0" Padding="10" Background="{x:Null}" Grid.RowSpan="2" BorderBrush="{x:Null}"/>
+        <Label Content="Collectables" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,30,0,222" Grid.Row="2"/>
+        <Button Content="Back"  FontFamily="Agency FB"  Click="Back_Button_Click" Margin="-25,243,425,126" Grid.RowSpan="2" />
+        <Button Content="Close" FontFamily="Agency FB" Click="Close_Button_Click" Margin="400,243,0,126" Grid.RowSpan="2"/>
     </Grid>
 </Window>
