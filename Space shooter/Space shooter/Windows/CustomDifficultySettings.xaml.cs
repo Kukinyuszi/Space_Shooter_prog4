@@ -27,14 +27,12 @@ namespace Space_shooter.Windows
         public CustomDifficultySettings(ISettings settings)
         {
             InitializeComponent();
-            this.Left = SystemParameters.PrimaryScreenWidth / 7 * 4;
-            this.Top = SystemParameters.PrimaryScreenHeight / 4;
             this.DataContext = settings;
         }
 
         public bool Music { get => music; set => music = value; }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (var item in MyStackpanel.Children)
             {
@@ -56,6 +54,11 @@ namespace Space_shooter.Windows
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
         }
     }
 }

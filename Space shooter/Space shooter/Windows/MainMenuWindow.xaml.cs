@@ -77,9 +77,15 @@ namespace Space_shooter.Windows
             hsw.Show();
         }
 
+
         private void Quit_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void Credits_Button_Click(object sender, RoutedEventArgs e)
+        {
+            CreditsWindow cw = new CreditsWindow();
+            cw.Show();
         }
 
         private void Load_Button_Click(object sender, RoutedEventArgs e)

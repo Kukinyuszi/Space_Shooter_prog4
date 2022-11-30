@@ -6,7 +6,7 @@
         xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="Main Menu" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black">
+       Title="Main Menu" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black" ResizeMode="NoResize">
 
 
     <Window.Resources>
@@ -76,7 +76,7 @@
             <Button Content="How to play"  Click="HowToPlay_Button_Click"   FontFamily="Agency FB" />
             <Button Content="Score board"  Click="ScoreBoard_Click"   FontFamily="Agency FB"/>
             <Button Content="Settings"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
-            <Button Content="Credits"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
+            <Button Content="Credits"  Click="Credits_Button_Click"    FontFamily="Agency FB"/>
             <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
         </StackPanel>
         <Grid x:Name="MainArea" Grid.RowSpan="3" Grid.ColumnSpan="3"/>

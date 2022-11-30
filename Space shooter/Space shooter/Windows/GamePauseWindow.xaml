@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="GamePauseWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="GamePauseWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

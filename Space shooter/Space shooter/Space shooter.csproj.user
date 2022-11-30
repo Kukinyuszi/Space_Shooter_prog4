@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\CreditsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\CustomDifficultySettings.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -36,6 +39,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Windows\CreditsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\GameOverWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

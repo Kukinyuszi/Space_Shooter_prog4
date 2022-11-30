@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="300" Width="400" WindowStartupLocation="Manual"  WindowStyle="SingleBorderWindow">
+       Title="CustomDifficultySettings" Height="300" Width="300" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
-            <Setter Property="Margin" Value="5" />
             <Setter Property="MaxHeight" Value="60" />
             <Setter Property="Width" Value="150" />
             <Setter Property="Background" Value="Transparent" />
@@ -76,7 +75,8 @@
                 <Label Content="Godmode ON/OFF" Foreground="Yellow" FontFamily="Impact"/>
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
-            <Button Padding="10" Content="Save" Click="Button_Click" FontFamily="Agency FB"/>
+            <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="0,5,0,0"/>
+            <Button Content="Back" Click="Back_Button_Click"  FontFamily="Agency FB"/>
 
         </StackPanel>
     </Grid>

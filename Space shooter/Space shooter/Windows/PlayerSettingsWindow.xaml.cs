@@ -39,7 +39,7 @@ namespace Space_shooter.Windows
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
             if (tb_playername.Text != "")
             {
@@ -89,7 +89,7 @@ namespace Space_shooter.Windows
         {
             if(e.Key == Key.Enter)
             {
-                if (tb_playername.Text != "" && tb_playername.Text != "Type here yout name")
+                if (tb_playername.Text != "" && tb_playername.Text != "Type here your name")
                 {
                     settings.PlayerName = tb_playername.Text;
                     settings.Difficultyness = DifficultyChecker();
@@ -105,6 +105,11 @@ namespace Space_shooter.Windows
                 this.DialogResult = true;
             }
 
+        }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

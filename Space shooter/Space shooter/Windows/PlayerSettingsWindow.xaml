@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="PlayerSettingsWindow" Left="300" Top="50" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="PlayerSettingsWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
@@ -59,6 +59,7 @@
             </StackPanel>
         </StackPanel>
         <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
-        <Button Content="Start" Click="Button_Click"  Grid.Row="3" VerticalAlignment="Top"  FontFamily="Agency FB"/>
+        <Button Content="Start" Click="Start_Button_Click"  Grid.Row="3" VerticalAlignment="Top"  FontFamily="Agency FB"/>
+        <Button Content="Back" Click="Back_Button_Click"  Grid.Row="3"  FontFamily="Agency FB" Margin="428,214,22,10"/>
     </Grid>
 </Window>
