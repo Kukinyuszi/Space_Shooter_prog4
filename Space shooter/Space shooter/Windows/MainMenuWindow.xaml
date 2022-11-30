@@ -66,5 +66,6 @@
             <Button Content="Settings"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
             <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
         </StackPanel>
+        <Grid x:Name="MainArea" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

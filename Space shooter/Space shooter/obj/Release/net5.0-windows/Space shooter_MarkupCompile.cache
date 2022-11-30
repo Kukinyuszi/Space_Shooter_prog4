@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 C:\Users\dorka\Source\Repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\App.xaml
-8-187190703
+92135523950
 1-151225254
-351401999096
+421442717955
 193-1891726104
-Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
+Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\HowToPlayWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
 
 True
 

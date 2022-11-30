@@ -68,8 +68,7 @@ namespace Space_shooter.Windows
         private void HowToPlay_Button_Click(object sender, RoutedEventArgs e)
         {
             HowToPlayWindow howToPlay = new HowToPlayWindow();
-            //this.Visibility = Visibility.Hidden;
-            howToPlay.ShowDialog();
+            howToPlay.Show();
         }
 
         private void ScoreBoard_Click(object sender, RoutedEventArgs e)

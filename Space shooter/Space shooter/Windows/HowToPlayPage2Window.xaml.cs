@@ -15,19 +15,18 @@ using System.Windows.Shapes;
 namespace Space_shooter.Windows
 {
     /// <summary>
-    /// Interaction logic for HowToPlayWindow.xaml
+    /// Interaction logic for HowToPlayPage2Window.xaml
     /// </summary>
-    public partial class HowToPlayWindow : Window
+    public partial class HowToPlayPage2Window : Window
     {
-        public HowToPlayWindow()
+        public HowToPlayPage2Window()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HowToPlayPage2Window howToPlay = new HowToPlayPage2Window();
-            howToPlay.Show();
+            this.Close();
         }
     }
 }

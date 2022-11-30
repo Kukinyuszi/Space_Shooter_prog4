@@ -1,0 +1,21 @@
+﻿<Window x:Class="Space_shooter.Windows.HowToPlayPage2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Space_shooter.Windows"
+        mc:Ignorable="d"
+        Title="HowToPlayPage2Window" Height="735" Width="550" >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windows/2.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Enemies" FontSize="36" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top" Margin="218,10,0,0"/>
+        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,30,0,222" Grid.Row="2"/>
+        <Button Content="Back" Foreground="Yellow" FontFamily="Agency FB" FontSize="36" FontWeight="Bold" Click="Button_Click" VerticalAlignment="Top" Margin="0,344,456,0" Padding="10" Background="{x:Null}" Grid.RowSpan="2" BorderBrush="{x:Null}"/>
+    </Grid>
+</Window>

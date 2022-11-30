@@ -166,3 +166,5 @@ C:\Users\aali-tra\Source\Repos\Git3\Space shooter\Space shooter\obj\Debug\net5.0
 C:\Users\aali-tra\Source\Repos\Git3\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.pdb
 C:\Users\aali-tra\Source\Repos\Git3\Space shooter\Space shooter\obj\Debug\net5.0-windows\Space shooter.genruntimeconfig.cache
 C:\Users\aali-tra\Source\Repos\Git3\Space shooter\Space shooter\obj\Debug\net5.0-windows\ref\Space shooter.dll
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\HowToPlayPage2Window.g.cs
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\HowToPlayPage2Window.baml
