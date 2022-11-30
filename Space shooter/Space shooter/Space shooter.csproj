@@ -19,6 +19,7 @@
     <None Remove="Windows\Menu_Background_light.gif" />
     <None Remove="Windows\Sound_BTN.png" />
     <None Remove="Windows\space1080.png" />
+    <None Remove="Windows\Window_Background.png" />
     <None Remove="Windows\you_lose.png" />
   </ItemGroup>
 
@@ -43,6 +44,7 @@
     <Resource Include="Windows\Menu_Background_light.gif" />
     <Resource Include="Windows\Sound_BTN.png" />
     <Resource Include="Windows\space1080.png" />
+    <Resource Include="Windows\Window_Background.png" />
     <Resource Include="Windows\you_lose.png" />
   </ItemGroup>
 
