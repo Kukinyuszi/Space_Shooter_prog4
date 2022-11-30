@@ -27,13 +27,12 @@ namespace Space_shooter.Windows
         private void Next_Button_Click(object sender, RoutedEventArgs e)
         {
             HowToPlayPage2Window howToPlay = new HowToPlayPage2Window();
-            this.Hide();
             if (howToPlay.ShowDialog() == true) this.Show();
             else this.Close();
         }
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = false;
+            this.Close();
         }
     }
 }
