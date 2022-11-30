@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\aali-tra\source\repos\Git3\Space shooter\Space shooter\obj\Debug\net5.0-windows\
+=======
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\obj\Debug\net5.0-windows\
+>>>>>>> 69369d438e7be920c7062954500d7cbdb2a1a42b
 Space_shooter
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\aali-tra\source\repos\Git3\Space shooter\Space shooter\App.xaml
 92135523950
+=======
+C:\Users\dorka\source\repos\GUI_2022_23_01_B2291T\Space shooter\Space shooter\App.xaml
+101088153548
+>>>>>>> 69369d438e7be920c7062954500d7cbdb2a1a42b
 1-151225254
-421442717955
-195-2015641592
-Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\HowToPlayWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
+43-335961480
+195297443348
+Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\HowToPlayPage2Window.xaml;Windows\HowToPlayWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
 
 False
 

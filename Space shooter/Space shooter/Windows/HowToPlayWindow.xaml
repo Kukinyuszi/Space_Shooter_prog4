@@ -8,21 +8,23 @@
         Title="HowToPlayWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/How_to_play.png"/>
+            <ImageBrush ImageSource="/Windows/1.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3.25*"/>
-            <RowDefinition Height="5.25*"/>
+            <RowDefinition Height="4.5*"/>
+            <RowDefinition Height="4.5*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
         <Label Content="How to play" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top" Margin="161,-11,0,0" Grid.ColumnSpan="2"/>
+<<<<<<< HEAD
         <Label Content="Goal" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Left" FontSize="36" Margin="99,71,0,199" Grid.RowSpan="2"/>
         <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Left" FontSize="36" Margin="99,73,0,199" Grid.RowSpan="2" Grid.Column="1"/>
         <Label Content="Collectibles" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,241,0,347" Grid.Row="1" Grid.RowSpan="2"/>
         <Label Content="Enemies" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,241,0,347" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1"/>
+=======
+        <Label Content="Goal" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,34,0,294" Grid.Row="1" Grid.RowSpan="2" />
+        <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,30,0,222" Grid.Row="2 "/>
+        <Button Content="Next" Click="Button_Click" Grid.Row="1" VerticalAlignment="Top" Margin="446,288,10,0" Padding="10" Grid.RowSpan="2" Foreground="Yellow" FontFamily="Agency FB" FontWeight="Bold" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}"/>
+>>>>>>> 69369d438e7be920c7062954500d7cbdb2a1a42b
     </Grid>
 </Window>
