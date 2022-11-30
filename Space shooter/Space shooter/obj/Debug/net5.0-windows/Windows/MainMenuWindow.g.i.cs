@@ -61,7 +61,7 @@ namespace Space_shooter.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Space shooter;V1.0.0.0;component/windows/mainmenuwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Space shooter;component/windows/mainmenuwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\MainMenuWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
