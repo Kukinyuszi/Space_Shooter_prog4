@@ -41,7 +41,7 @@
 
     <Grid x:Name="PlayerGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/space1080.png"/>
+            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -60,6 +60,6 @@
         </StackPanel>
         <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Column="1" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" />
         <Button Content="Start" Click="Start_Button_Click"  Grid.Row="3" VerticalAlignment="Top"  FontFamily="Agency FB"/>
-        <Button Content="Back" Click="Back_Button_Click"  Grid.Row="3"  FontFamily="Agency FB" Margin="428,214,22,10"/>
+        <Button Content="Back" Click="Back_Button_Click"  Grid.Row="3"  FontFamily="Agency FB" Margin="225,214,225,10"/>
     </Grid>
 </Window>

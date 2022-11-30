@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="CreditsWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="CreditsWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
@@ -38,17 +38,20 @@
         <Style TargetType="Label">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="200"/>
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10"/>
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
+        </Grid.Background>
         <StackPanel Margin="0,50,0,0">
             <Label Content="Ali Ákos Tamás G12D02"/>
             <Label Content="Tóth Dorka Csenge G12D02"/>
             <Label Content="Ali Ákos Tamás G12D02"/>
         </StackPanel>
-        <Button Content="Back" Click="Back_Button_Click" Margin="190,230,10,10"/>
+        <Button Content="Close" Click="Back_Button_Click" Margin="164,205,36,35"/>
     </Grid>
 </Window>

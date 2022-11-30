@@ -53,20 +53,21 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Settings" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" VerticalAlignment="Top" Margin="191,10,0,0" Grid.ColumnSpan="2"/>
-        <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="0,79,0,24" FontSize="25" HorizontalAlignment="Center" Grid.Row="1" FontFamily="Agency FB"/>
-        <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="0,15,0,94" FontSize="25" HorizontalAlignment="Center" Grid.Row="2" FontFamily="Agency FB"/>
-        <Label Content="Fullscreen" Foreground="Yellow" FontWeight="Bold" Margin="0,103,0,0" FontSize="25" HorizontalAlignment="Center" Grid.Row="2" FontFamily="Agency FB"/>
-        <CheckBox Content="ON/OFF" Foreground="White" Margin="10,89,195,38" IsChecked="{Binding Hitboxes}" Grid.Column="1" Grid.Row="1"/>
-        <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,30,195,94" IsChecked="{Binding Animation}" Grid.Column="1" Grid.Row="2"/>
-        <CheckBox  Content="ON/OFF" Foreground="White" Margin="10,115,195,10" IsChecked="{Binding FullScreen}" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4"  VerticalAlignment="Top" FontFamily="Agency FB" Margin="225,91,225,0" />
-        <Image x:Name="img_music" Height="40"  Grid.Row="3" Margin="145,19,81,88" Stretch="Fill" />
-        <Image x:Name="img_sound" Height="40" Margin="145,92,81,15" Grid.Row="3" Stretch="Fill" />
-        <Slider x:Name="sd_music" Maximum="1"  Grid.Column="1"  Grid.Row="3" Margin="10,31,148,88" ValueChanged="sd_music_ValueChanged"/>
-        <Slider x:Name="sd_sound" Maximum="1"  Grid.Column="1"  Grid.Row="3" Margin="10,101,148,24" ValueChanged="sd_sound_ValueChanged" />
-
+        <Label Content="Settings" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" VerticalAlignment="Top" Margin="0,10,0,0" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Content="Hitboxes" Foreground="Yellow" FontWeight="Bold" Margin="0,79,0,24" FontSize="25" HorizontalAlignment="Center" Grid.Row="1" FontFamily="Agency FB" Grid.Column="1"/>
+        <Label Content="Animation" Foreground="Yellow" FontWeight="Bold" Margin="0,15,0,94" FontSize="25" HorizontalAlignment="Center" Grid.Row="2" FontFamily="Agency FB" Grid.Column="1"/>
+        <Label Content="Fullscreen" Foreground="Yellow" FontWeight="Bold" Margin="0,103,0,0" FontSize="25" HorizontalAlignment="Center" Grid.Row="2" FontFamily="Agency FB" Grid.Column="1"/>
+        <CheckBox Content="ON/OFF" Foreground="White" Margin="0,89,0,38" HorizontalAlignment="Center" IsChecked="{Binding Hitboxes}" Grid.Column="2" Grid.Row="1"/>
+        <CheckBox  Content="ON/OFF" Foreground="White" Margin="0,30,0,94" HorizontalAlignment="Center" IsChecked="{Binding Animation}" Grid.Column="2" Grid.Row="2"/>
+        <CheckBox  Content="ON/OFF" Foreground="White" Margin="0,115,0,10" HorizontalAlignment="Center" IsChecked="{Binding FullScreen}" Grid.Column="2" Grid.Row="2"/>
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4"  VerticalAlignment="Top" FontFamily="Agency FB" Margin="155,91,165,0" Grid.Column="1" />
+        <Image x:Name="img_music" Height="40"  Grid.Row="3" Margin="75,19,100,88" Stretch="Fill" Grid.Column="1" />
+        <Image x:Name="img_sound" Height="40" Margin="75,92,100,15" Grid.Row="3" Stretch="Fill" Grid.Column="1" />
+        <Slider x:Name="sd_music" Maximum="1"  Grid.Column="2"  Grid.Row="3" Margin="0,31,0,88" Width="140" HorizontalAlignment="Center" ValueChanged="sd_music_ValueChanged"/>
+        <Slider x:Name="sd_sound" Maximum="1"  Grid.Column="2"  Grid.Row="3" Margin="0,101,0,24" Width="140" HorizontalAlignment="Center" ValueChanged="sd_sound_ValueChanged" />
     </Grid>
 </Window>

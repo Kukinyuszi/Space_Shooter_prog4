@@ -41,7 +41,7 @@ namespace Space_shooter.Windows
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (tb_playername.Text != "")
+            if (tb_playername.Text != "" && tb_playername.Text != "Type here your name")
             {
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();

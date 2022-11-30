@@ -46,6 +46,8 @@
         <Grid.Background>
             <VisualBrush>
                 <VisualBrush.Visual>
+                    <!--Menu_Background_cat.gif-->
+                    <!--/Windows/Menu_Background_light.gif-->
                     <Image Stretch="Fill"
                            gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif"
                            gif:AnimationBehavior.AnimateInDesignMode="False"/>

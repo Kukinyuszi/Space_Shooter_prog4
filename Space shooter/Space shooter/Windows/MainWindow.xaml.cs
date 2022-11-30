@@ -49,11 +49,15 @@ namespace Space_shooter
             if(displaySettings.FullScreen)
             {
                 this.WindowState = WindowState.Maximized;
+                this.ResizeMode = ResizeMode.NoResize;
+                this.WindowStyle = WindowStyle.None;
                 MyGrid.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
             }
             else
             {
                 this.WindowState = WindowState.Normal;
+                this.ResizeMode = ResizeMode.CanResize;
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
                 this.Height = MyGrid.Height;
                 this.Width = MyGrid.Width;
             }
