@@ -1116,7 +1116,7 @@ namespace Space_shooter.Renderer
                 if(model.Boss != null)
                 {
                     if (model.Boss is Boss1) drawingContext.DrawEllipse(Ship6Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 100, 100);
-                    else drawingContext.DrawEllipse(Boss2Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 100, 100);
+                    else drawingContext.DrawEllipse(Boss2Brush, null, new Point(model.Boss.Position.X, model.Boss.Position.Y), 70, 50);
                 }
                
 
