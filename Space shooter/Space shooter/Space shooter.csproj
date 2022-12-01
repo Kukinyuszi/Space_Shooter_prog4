@@ -14,7 +14,6 @@
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
     <None Remove="Windows\How_to_play.png" />
-    <None Remove="Windows\Menu_Background.gif" />
     <None Remove="Windows\Menu_Background_cat.gif" />
     <None Remove="Windows\Menu_Background_light.gif" />
     <None Remove="Windows\Sound_BTN.png" />
@@ -39,7 +38,6 @@
     <Resource Include="Windows\Header.png" />
     <Resource Include="Windows\HowToPlay.png" />
     <Resource Include="Windows\How_to_play.png" />
-    <Resource Include="Windows\Menu_Background.gif" />
     <Resource Include="Windows\Menu_Background_cat.gif" />
     <Resource Include="Windows\Menu_Background_light.gif" />
     <Resource Include="Windows\Sound_BTN.png" />

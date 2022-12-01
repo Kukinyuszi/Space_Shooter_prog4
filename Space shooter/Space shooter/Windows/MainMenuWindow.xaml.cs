@@ -20,6 +20,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 using static Space_shooter.Services.Save_LoadGameService;
+using static Space_shooter.Services.SettingsSaveService;
 
 namespace Space_shooter.Windows
 {
@@ -38,10 +39,28 @@ namespace Space_shooter.Windows
         public MainMenuWindow()
         {
             settings = new SpaceShooterLogic();
-            displaySettings = new Display();
+            SetupSettings();
             InitializeComponent();
             Sps.StartBackgroundMusic();
         }
+
+        private void SetupSettings()
+        {
+            this.displaySettings = new Display();
+            SettingsSaveService sss = new SettingsSaveService();
+            Settings_Convert sc = sss.LoadSettings();
+            if(sc != null)
+            {
+                this.displaySettings.FullScreen = sc.displaySettings.FullScreen;
+                this.displaySettings.Animation = sc.displaySettings.Animation;
+                this.displaySettings.Hitboxes = sc.displaySettings.Hitboxes;
+                this.sps = sc.soundPlayerService;
+            }
+
+
+
+        }
+
         public MainMenuWindow(IDisplaySettings displaySettings, SoundPlayerService sps)
         {
             settings = new SpaceShooterLogic();
@@ -54,7 +73,11 @@ namespace Space_shooter.Windows
         private void Settings_Button_Click(object sender, RoutedEventArgs e)
         {
             SettingsMenuWindow smw = new SettingsMenuWindow(DisplaySettings, sps);
-            smw.ShowDialog();
+            if(smw.ShowDialog() == true)
+            {
+                SettingsSaveService sss = new SettingsSaveService();
+                sss.SaveSettings(DisplaySettings, sps);
+            }
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)

@@ -52,9 +52,9 @@ namespace Space_shooter.Services
         {
             List<Score> scorelist = new List<Score>();
             ScoreList sl;
-            if (File.Exists("saves.json"))
+            if (File.Exists("Saves/scoresaves.json"))
             {
-                string jsonscores = File.ReadAllText("saves.json");
+                string jsonscores = File.ReadAllText("Saves/scoresaves.json");
                 sl = JsonConvert.DeserializeObject<ScoreList>(jsonscores);
                 sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString(), difficulty));
             }
@@ -64,14 +64,14 @@ namespace Space_shooter.Services
                 sl.Scores.Add(new Score(playername, score, DateTime.Today.ToShortDateString(), difficulty));
             }
             string json = JsonConvert.SerializeObject(sl);
-            File.WriteAllText("saves.json", json);
+            File.WriteAllText("Saves/scoresaves.json", json);
 
         }
         public int GetHighScore()
         {
-            if (File.Exists("saves.json"))
+            if (File.Exists("Saves/scoresaves.json"))
             {
-                string jsonscores = File.ReadAllText("saves.json");
+                string jsonscores = File.ReadAllText("Saves/scoresaves.json");
                 ScoreList sl = JsonConvert.DeserializeObject<ScoreList>(jsonscores);
                 sl.Scores.Sort();
                 return sl.Scores[0].Scoreamount;
@@ -81,9 +81,9 @@ namespace Space_shooter.Services
         public List<string> GetScoresList()
         {
             List<string> scores = new List<string>();
-            if (File.Exists("saves.json"))
+            if (File.Exists("Saves/scoresaves.json"))
             {
-                string jsonscores = File.ReadAllText("saves.json");
+                string jsonscores = File.ReadAllText("Saves/scoresaves.json");
                 ScoreList sl = JsonConvert.DeserializeObject<ScoreList>(jsonscores);
                 sl.Scores.Sort();
                 foreach (Score score in sl.Scores) scores.Add(score.ToString());

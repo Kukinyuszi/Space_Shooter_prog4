@@ -29,7 +29,6 @@ namespace Space_shooter.Renderer
         private DispatcherTimer ChatPopupTimer;
         private DispatcherTimer AnimationTimer;
         private List<Explosion> Explodings = new List<Explosion>();
-        private Resolution resolution;
         private bool animation = true;
         private bool hitboxes;
         private bool fullScreen = true;
@@ -38,7 +37,6 @@ namespace Space_shooter.Renderer
 
 
 
-        public Resolution WindowResolution { get => resolution; set => resolution = value; }
         public bool Animation { get => animation; set => animation = value; }
         public bool Hitboxes { get => hitboxes; set => hitboxes = value; }
         public bool FullScreen { get => fullScreen; set => fullScreen = value; }
@@ -66,7 +64,6 @@ namespace Space_shooter.Renderer
         public void SetupSettings(IDisplaySettings displaySettings)
         {
             animation = displaySettings.Animation;
-            resolution = displaySettings.WindowResolution;
             hitboxes = displaySettings.Hitboxes;
         }
 

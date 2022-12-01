@@ -47,7 +47,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
-        <Label Content="Credits" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" Margin="0,-13,0,243" />
+        <Label Content="Credits" FontWeight="Bold" Height="Auto" FontSize="30" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,0,0,255" />
         <StackPanel Margin="0,50,0,0">
             <Label Content="Ali Ákos Tamás G12D02"/>
             <Label Content="Tóth Dorka Csenge G12D02"/>

@@ -48,12 +48,7 @@ namespace Space_shooter.Windows
         {
             foreach (var item in MyGrid.Children)
             {
-
-                if (item is ComboBox t)
-                {
-                    displaysettings.WindowResolution = (IDisplaySettings.Resolution)t.SelectedIndex;
-                }
-                else if(item is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
+                 if(item is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
             }
             this.DialogResult = true;
             this.Close();

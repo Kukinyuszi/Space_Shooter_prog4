@@ -17,6 +17,7 @@
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="FontFamily" Value="Agency FB"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -71,7 +72,7 @@
         <CheckBox Content="ON/OFF" Foreground="White" Margin="0,89,0,38" HorizontalAlignment="Center" IsChecked="{Binding Hitboxes}" Grid.Column="2" Grid.Row="1"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="0,30,0,94" HorizontalAlignment="Center" IsChecked="{Binding Animation}" Grid.Column="2" Grid.Row="2"/>
         <CheckBox  Content="ON/OFF" Foreground="White" Margin="0,115,0,10" HorizontalAlignment="Center" IsChecked="{Binding FullScreen}" Grid.Column="2" Grid.Row="2"/>
-        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4"  VerticalAlignment="Top" FontFamily="Agency FB" Margin="155,91,165,0" Grid.Column="1" />
+        <Button Content="Back" Click="Back_Button_Click" Grid.ColumnSpan="2" Grid.Row="4" Margin="165,81,175,10" Grid.Column="1" />
         <Image x:Name="img_music" Height="40"  Grid.Row="3" Margin="75,19,100,88" Stretch="Fill" Grid.Column="1" />
         <Image x:Name="img_sound" Height="40" Margin="75,92,100,15" Grid.Row="3" Stretch="Fill" Grid.Column="1" />
         <Slider x:Name="sd_music" Maximum="1"  Grid.Column="2"  Grid.Row="3" Margin="0,31,0,88" Width="140" HorizontalAlignment="Center" ValueChanged="sd_music_ValueChanged"/>
