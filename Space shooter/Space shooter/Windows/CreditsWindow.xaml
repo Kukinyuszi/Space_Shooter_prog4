@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="CreditsWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Title="CreditsWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
@@ -44,15 +44,20 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
+            <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
         </Grid.Background>
-        <Label Content="Credits" FontWeight="Bold" Height="Auto" FontSize="30" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,0,0,255" />
-        <StackPanel Margin="0,50,0,0">
+
+        <Label Content="Credits" FontWeight="Bold" Height="Auto" FontSize="56" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,0" Grid.RowSpan="2" />
+        <StackPanel Margin="125,96,125,368" Grid.Row="1" Width="300" Background="Black" Opacity="0.7">
             <Label Content="Ali Ákos Tamás G12D02"/>
             <Label Content="Tóth Dorka Csenge G12D02"/>
             <Label Content="Ali Ákos Tamás G12D02"/>
         </StackPanel>
-        <Button Content="Close" Click="Back_Button_Click" Margin="164,205,36,35"/>
+        <Button Content="Close" Click="Back_Button_Click" Margin="225,508,225,45" Grid.Row="1"/>
     </Grid>
 </Window>

@@ -8,8 +8,8 @@
        Title="HighScoresWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None"  KeyDown="Window_KeyDown" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="FontSize" Value="30" />
-            <Setter Property="Margin" Value="10" />
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="Margin" Value="0,0,0,45" />
             <Setter Property="MaxHeight" Value="60" />
             <Setter Property="Width" Value="100" />
             <Setter Property="Background" Value="Transparent" />
@@ -40,7 +40,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
+            <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
@@ -52,10 +52,10 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Highscores" Foreground="Yellow" FontFamily="Agency FB" FontSize="40" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="62" Width="161" Margin="0,22,0,0"/>
+        <Label Content="Highscores" Foreground="Yellow" FontFamily="Agency FB" FontSize="56" Grid.Column="1" VerticalContentAlignment="Bottom"  HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="120" />
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3"  Margin="103,20,103,20">
-            <StackPanel x:Name="sp_scores" />
+            <StackPanel x:Name="sp_scores" Background="Black" Opacity="0.7" />
         </ScrollViewer>
-        <Button Content="Back" Grid.Row="2" Grid.Column="1"   Click="Back_Button_Click" FontFamily="Agency FB" Margin="122,28,122,-7" />
+        <Button Content="Back" Grid.Row="2" Grid.Column="1"   Click="Back_Button_Click" FontFamily="Agency FB" />
     </Grid>
 </Window>

@@ -46,8 +46,6 @@
         <Grid.Background>
             <VisualBrush>
                 <VisualBrush.Visual>
-                    <!--Menu_Background_cat.gif-->
-                    <!--/Windows/Menu_Background_light.gif-->
                     <Image Stretch="Fill"
                            gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif"
                            gif:AnimationBehavior.AnimateInDesignMode="False"/>
@@ -55,24 +53,17 @@
             </VisualBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <Label Grid.Column="1" Content="SPACE" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" Grid.Row="1" Content="SHOOTER" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="{x:Null}" VerticalAlignment="Top"/>
-        <Label Foreground="White" Margin="56,396,35,14" Grid.Row="2" HorizontalContentAlignment="Center" Grid.Column="1">
+        <Image Source="/Windows/Space_Shooter_Label.png" HorizontalAlignment="Center" Grid.RowSpan="2" Stretch="Fill" Width="480" Margin="0,75,0,413"/>
+        <Label Foreground="White" Margin="56,396,35,14" Grid.Row="1" HorizontalContentAlignment="Center" >
             <Label.Content>
                 <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
             </Label.Content>
         </Label>
-        <Label  Content="V4.01" Foreground="White" Margin="86,429,0,0" Height="30" Grid.Row="2" Grid.Column="2"/>
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <Label  Content="V4.01" Foreground="White" Margin="504,429,0,0" Height="30" Grid.Row="1"/>
+        <StackPanel Grid.Row="1">
             <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
             <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>
             <Button Content="How to play"  Click="HowToPlay_Button_Click"   FontFamily="Agency FB" />
@@ -81,6 +72,5 @@
             <Button Content="Credits"  Click="Credits_Button_Click"    FontFamily="Agency FB"/>
             <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
         </StackPanel>
-        <Grid x:Name="MainArea" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
