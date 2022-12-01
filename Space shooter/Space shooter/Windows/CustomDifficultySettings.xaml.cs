@@ -42,6 +42,7 @@ namespace Space_shooter.Windows
                     {
 
                         if (item2 is TextBox t) t.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+                        else if(item2 is Slider s) s.GetBindingExpression(Slider.ValueProperty).UpdateSource();
                         else if (item2 is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
                     }
                 }

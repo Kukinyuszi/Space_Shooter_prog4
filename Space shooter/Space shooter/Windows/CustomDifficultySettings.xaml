@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
+        xmlns:conv="clr-namespace:Space_shooter.Windows.Converters"
         mc:Ignorable="d"
        Title="CustomDifficultySettings" Height="450" Width="350" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
@@ -36,17 +37,28 @@
             </Setter>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="MaxLength" Value="2"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="70"/>
+            <Setter Property="Width" Value="50"/>
             <Setter Property="Opacity" Value="0.65"/>
+            <Setter Property="TextAlignment" Value="Right"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="Yellow"/>
             <Setter Property="FontFamily" Value="Agency FB"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="105"/>
         </Style>
+        <Style TargetType="Slider">
+            <Setter Property="Width" Value="83"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TickFrequency" Value="1"/>
+            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+        <conv:FirerateSettingConverter x:Key="convertFirerate"/>
+        <conv:AsteroidPerMinConverter x:Key="converterAsteroidSpeed"/>
+        <conv:BossHealthConverter x:Key="converterBossHealth"/>
     </Window.Resources>
 
     <Grid>
@@ -54,41 +66,48 @@
             <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
         <Label Content="Custom difficulty" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" Margin="0,-5,0,385" />
-        <StackPanel x:Name="MyStackpanel" Grid.Column="1" HorizontalAlignment="Center" Margin="0,80,0,30" Width="244">
+        <StackPanel x:Name="MyStackpanel" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,80,0,30" Width="253">
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Asteroid speed"/>
-                <TextBox Text="{Binding Asteroidspeed, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Label Content="Player firerate" />
-                <TextBox Text="{Binding Firerate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" >
-                <Label Content="Powerup rate"/>
-                <TextBox Text="{Binding Poweruprate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" >
-                <Label Content="Enemy firerate" />
-                <TextBox Text="{Binding Enemyshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" >
-                <Label Content="Boss firerate" />
-                <TextBox Text="{Binding Bossshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <TextBox Text="{Binding ElementName=sd_asteroidspeed, Path=Value, Converter={StaticResource converterAsteroidSpeed}}" PreviewTextInput="TextBox_PreviewTextInput" />
+                <Slider x:Name="sd_asteroidspeed" Value="{Binding Asteroidspeed, UpdateSourceTrigger=Explicit}" Minimum="1" Maximum="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label Content="No. of enemies" />
-                <TextBox Text="{Binding EnemySpawnCount, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <TextBox Text="{Binding ElementName=sd_noofenemies, Path=Value, StringFormat={}{0:N0}/Field}" PreviewTextInput="TextBox_PreviewTextInput" />
+                <Slider x:Name="sd_noofenemies" Value="{Binding EnemySpawnCount, UpdateSourceTrigger=Explicit}" Minimum="1" Maximum="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Player firerate" />
+                <TextBox Text="{Binding ElementName=sd_playerfirerate, Path=Value,StringFormat={}{0:N0}/Min, Converter={StaticResource convertFirerate}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Slider x:Name="sd_playerfirerate" Value="{Binding Firerate, UpdateSourceTrigger=Explicit}" Minimum="5" Maximum="100" IsDirectionReversed="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Enemy firerate" />
+                <TextBox Text="{Binding ElementName=sd_enemyfirerate, Path=Value,StringFormat={}{0:N0}/Min, Converter={StaticResource convertFirerate}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Slider x:Name="sd_enemyfirerate" Value="{Binding Enemyshottimechange, UpdateSourceTrigger=Explicit}" Minimum="5" Maximum="100" IsDirectionReversed="True"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Boss firerate" />
+                <TextBox Text="{Binding ElementName=sd_bossfirerate, Path=Value,StringFormat={}{0:N0}/Min, Converter={StaticResource convertFirerate}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Slider x:Name="sd_bossfirerate" Value="{Binding Bossshottimechange, UpdateSourceTrigger=Explicit}" Minimum="5" Maximum="100" IsDirectionReversed="True"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Boss health" />
-                <TextBox Text="{Binding BossHealth, UpdateSourceTrigger=Explicit}" MaxLength="3" PreviewTextInput="TextBox_PreviewTextInput"/>
+                <TextBox Text="{Binding ElementName=sd_bosshealth, Path=Value, Converter={StaticResource converterBossHealth}}" PreviewTextInput="TextBox_PreviewTextInput" />
+                <Slider x:Name="sd_bosshealth" Value="{Binding BossHealth, UpdateSourceTrigger=Explicit}" Maximum="1000" TickFrequency="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Godmode ON/OFF"/>
+                <Label Content="Powerup rate"/>
+                <TextBox Text="{Binding ElementName=sd_poweruprate, Path=Value, StringFormat={}{0:N0}%}"  PreviewTextInput="TextBox_PreviewTextInput"/>
+                <Slider x:Name="sd_poweruprate" Value="{Binding Poweruprate, UpdateSourceTrigger=Explicit}" Maximum="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Godmode ON/OFF" Width="140"/>
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
         </StackPanel>
-        <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="182,323,42,52"/>
-        <Button Content="Close" Click="Back_Button_Click"  FontFamily="Agency FB" Margin="43,322,175,52"/>
+        <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="182,341,42,68"/>
+        <Button Content="Close" Click="Back_Button_Click"  FontFamily="Agency FB" Margin="43,342,175,68"/>
     </Grid>
 </Window>
