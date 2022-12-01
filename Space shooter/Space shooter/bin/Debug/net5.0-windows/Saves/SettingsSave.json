@@ -2,7 +2,7 @@
   "displaySettings": {
     "Animation": true,
     "Hitboxes": false,
-    "FullScreen": true
+    "FullScreen": false
   },
   "soundPlayerService": {
     "Music": true,

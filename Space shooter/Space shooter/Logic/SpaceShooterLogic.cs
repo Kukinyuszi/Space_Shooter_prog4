@@ -388,9 +388,11 @@ namespace Space_shooter.Logic
 
         private void SetupEnemyes(System.Windows.Size area)
         {
-            int temp = random.Next(4);
+
             while(EnemyShips.Count != enemiesSpawnCount)
             {
+                int temp = random.Next(4);
+
                 switch (temp)
                 {
                     case 0:

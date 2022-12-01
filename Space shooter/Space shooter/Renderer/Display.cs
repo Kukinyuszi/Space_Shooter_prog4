@@ -24,16 +24,11 @@ namespace Space_shooter.Renderer
     {
         private Size area;
         private SpaceShooterLogic model;
-        private int backgroundcounter = 0;
+        private int backgroundcounter = 0, exhaustCounter;
         private string chatpopup;
-        private DispatcherTimer ChatPopupTimer;
-        private DispatcherTimer AnimationTimer;
+        private DispatcherTimer ChatPopupTimer, AnimationTimer;
         private List<Explosion> Explodings = new List<Explosion>();
-        private bool animation = true;
-        private bool hitboxes;
-        private bool fullScreen = true;
-
-        private int exhaustCounter;
+        private bool animation =  true, fullScreen = true, hitboxes;
 
 
 
@@ -46,12 +41,25 @@ namespace Space_shooter.Renderer
         {
             this.area = area;
             this.InvalidateVisual();
+
+            ////////
+
             model.PowerUpPickedUp += Model_PowerUpPickedUp;
+
+            ////////
+
             ChatPopupTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(3) };
             ChatPopupTimer.Tick += ChatPopup;
+
+            ////////
+            
             AnimationTimer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(40) };
-            AnimationTimer.Tick +=  Animation_Time_Step;
+            AnimationTimer.Tick += Animation_Time_Step;
+
+            ////////
+            
             AnimationTimer.Start();
+
         }
 
 
@@ -1349,6 +1357,11 @@ namespace Space_shooter.Renderer
                     drawingContext.PushOpacity(0.5);
                     drawingContext.DrawEllipse(ShieldAuraBrush, null, model.Player.Position, 50, 50);
                     drawingContext.Pop();
+                }
+                if(fullScreen)
+                {
+                    drawingContext.DrawRectangle(Brushes.Black, null, new Rect(-200, 0, 200, area.Height));
+                    drawingContext.DrawRectangle(Brushes.Black, null, new Rect(area.Width, 0, 200, area.Height));
                 }
 
 
