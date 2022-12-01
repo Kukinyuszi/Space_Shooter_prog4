@@ -53,8 +53,8 @@
             <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
         </Grid.Background>
 
-        <Label Content="Credits" FontWeight="Bold" Height="Auto" FontSize="56" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,0" Grid.RowSpan="2" />
-        <StackPanel Margin="125,96,125,368" Grid.Row="1" Width="300" Background="{StaticResource TransparentBackground}" >
+        <Label Content="Credits" Height="Auto" FontSize="56" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,0" Grid.RowSpan="2" />
+        <StackPanel Margin="125,96,125,332" Grid.Row="1" Width="300" Background="{StaticResource TransparentBackground}" >
             <Label Content="Ali Ákos Tamás G12D02"/>
             <Label Content="Tóth Dorka Csenge G12D02"/>
             <Label Content="Ali Ákos Tamás G12D02"/>

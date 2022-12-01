@@ -44,6 +44,7 @@
             <Setter Property="Width" Value="50"/>
             <Setter Property="Opacity" Value="0.65"/>
             <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="IsReadOnly" Value="True"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="Yellow"/>
@@ -74,7 +75,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
         </Grid.Background>
-        <Label Content="Custom difficulty" FontWeight="Bold" FontSize="56" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,77,0,59" Width="372" Grid.Row="0" />
+        <Label Content="Custom difficulty" FontSize="56" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,59" Width="372" Grid.Row="0" />
         <StackPanel x:Name="MyStackpanel" Margin="100,0,100,0" Grid.Row="1">
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Asteroid speed"/>
