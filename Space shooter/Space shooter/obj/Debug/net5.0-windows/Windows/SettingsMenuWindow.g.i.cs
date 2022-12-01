@@ -93,7 +93,7 @@ namespace Space_shooter.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Space shooter;component/windows/settingsmenuwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Space shooter;V1.0.0.0;component/windows/settingsmenuwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\SettingsMenuWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
