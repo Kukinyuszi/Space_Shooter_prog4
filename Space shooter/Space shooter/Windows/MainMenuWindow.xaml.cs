@@ -56,9 +56,6 @@ namespace Space_shooter.Windows
                 this.displaySettings.Hitboxes = sc.displaySettings.Hitboxes;
                 this.sps = sc.soundPlayerService;
             }
-
-
-
         }
 
         public MainMenuWindow(IDisplaySettings displaySettings, SoundPlayerService sps)

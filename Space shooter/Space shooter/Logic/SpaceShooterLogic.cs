@@ -28,7 +28,7 @@ namespace Space_shooter.Logic
         //Basic varibles --> like hud counters, game speed and difficulty settings, firerates, enemy firerates
 
         public event EventHandler Changed, GameOver, PowerUpPickedUp, PlayerShoot, EnemyShoot, Coin_Pickup, Health_Pickup, Powerup_Pickup, Shield_Pickup, Explosion, Godmode_activated;
-        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 300, bossFireRate = 40, angleCounter = -5,
+        private int asteroidSpeed = 5, fireRate = 30, powerupRate = 40, enemyFireRate = 60, bossSpawnHealth = 300, bossFireRate = 40, angleCounter = -5,enemySpawnCountTemp,enemyFireRateTemp,
         enemyShotTimer = 0, bossShotTimer = 0, playerShotTimer = 0, enemiesSpawnCount = 2, score = 0, highScore, rapidFireTime, strongTime, weaponTime;
         private bool godmode, shield, rapid, strong, weaponon, left, right, shoot, g, o, d;
         private string playername;
@@ -226,28 +226,34 @@ namespace Space_shooter.Logic
             {
                 case Difficulty.Easy:
                     enemiesSpawnCount = 1;
+                    enemySpawnCountTemp = 1;
                     asteroidSpeed = 5;
                     fireRate = 25;
                     powerupRate = 50;
                     enemyFireRate = 70;
+                    enemyFireRateTemp = 70;
                     bossFireRate = 60;
                     bossSpawnHealth = 250;
                     break;
                 case Difficulty.Medium:
                     enemiesSpawnCount = 2;
+                    enemySpawnCountTemp = 2;
                     asteroidSpeed = 5;
                     fireRate = 30;
                     powerupRate = 40;
                     enemyFireRate = 60;
+                    enemyFireRateTemp = 60;
                     bossFireRate = 40;
                     bossSpawnHealth = 300;
                     break;
                 case Difficulty.Hard:
                     enemiesSpawnCount = 3;
+                    enemySpawnCountTemp = 3;
                     asteroidSpeed = 7;
                     fireRate = 30;
                     powerupRate = 30;
                     enemyFireRate = 50;
+                    enemyFireRateTemp = 50;
                     bossFireRate = 40;
                     bossSpawnHealth = 400;
                     break;
@@ -697,9 +703,19 @@ namespace Space_shooter.Logic
 
             if (score > 1000 && score % 1000 < 90)
             {
+                IncreaseDifficulty(score / 1000);
                 return true;
             }
             return false;
+        }
+
+        private void IncreaseDifficulty(int kiloScore)
+        {
+            if (kiloScore < 5)
+            {
+                enemyFireRate = enemyFireRateTemp - (kiloScore * 5);
+                if (kiloScore % 2 == 0) enemiesSpawnCount = enemySpawnCountTemp + (kiloScore / 2);
+            }
         }
 
         private void LasersMovement(System.Windows.Size size)
