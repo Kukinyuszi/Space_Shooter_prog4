@@ -52,7 +52,7 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Highscores" Foreground="Yellow" FontFamily="Agency FB" FontSize="35" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="134" Margin="0,22,0,0"/>
+        <Label Content="Highscores" Foreground="Yellow" FontFamily="Agency FB" FontSize="40" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="62" Width="161" Margin="0,22,0,0"/>
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3"  Margin="103,20,103,20">
             <StackPanel x:Name="sp_scores" />
         </ScrollViewer>

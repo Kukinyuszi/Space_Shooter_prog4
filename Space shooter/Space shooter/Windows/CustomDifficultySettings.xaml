@@ -53,6 +53,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
+        <Label Content="Custom difficulty" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" Margin="0,-5,0,385" />
         <StackPanel x:Name="MyStackpanel" Grid.Column="1" HorizontalAlignment="Center" Margin="0,80,0,30" Width="244">
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Asteroid speed"/>

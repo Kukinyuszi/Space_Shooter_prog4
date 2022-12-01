@@ -46,7 +46,7 @@
             <RowDefinition Height="4.5*"/>
             <RowDefinition Height="4.5*"/>
         </Grid.RowDefinitions>
-        <Label Content="How to play" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Left" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" VerticalAlignment="Top" Margin="161,-11,0,0" Grid.ColumnSpan="2"/>
+        <Label Content="How to play" FontWeight="Bold" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" VerticalAlignment="Top" Margin="0,26,0,0" Grid.RowSpan="2"/>
         <Label Content="Goal" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36" Margin="0,34,0,294" Grid.Row="1" Grid.RowSpan="2" />
         <Label Content="Controls" Foreground="Yellow" FontFamily="Agency FB" HorizontalAlignment="Center" FontSize="36"  Margin="0,30,0,222" Grid.Row="2 "/>
         <Button Content="Next" Click="Next_Button_Click" FontFamily="Agency FB" Margin="400,322,0,262" Grid.Row="1" Grid.RowSpan="2" />
