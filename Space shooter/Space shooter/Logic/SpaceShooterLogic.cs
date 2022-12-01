@@ -169,7 +169,7 @@ namespace Space_shooter.Logic
                     IsBossDead(size);                                                                           // It moves first bc if it checks first, than the boss would be null, it cant move
                 }
 
-                if (DifficultyByScore() && Boss == null) SetupNewBoss(size);                                    // If the score is 1000-1050(if its 990 and you kill an enemy than it is 1020, so it skips 1000, also it is 1050 bc if you kill the boss you get 50 so at least you have 1050 points)
+                if (DifficultyByScore() && Boss == null && bossSpawnHealth != 0) SetupNewBoss(size);            // If the score is 1000-1050(if its 990 and you kill an enemy than it is 1020, so it skips 1000, also it is 1050 bc if you kill the boss you get 50 so at least you have 1050 points)
                                                                                                                 // and there is no boss round, than sets up a new boss, and removes all the enemy ships
                 LasersMovement(size);
                 AsteroidsMovement(size);
@@ -226,40 +226,36 @@ namespace Space_shooter.Logic
             {
                 case Difficulty.Easy:
                     enemiesSpawnCount = 1;
-                    enemySpawnCountTemp = 1;
                     asteroidSpeed = 5;
                     fireRate = 25;
                     powerupRate = 50;
                     enemyFireRate = 70;
-                    enemyFireRateTemp = 70;
                     bossFireRate = 60;
                     bossSpawnHealth = 250;
                     break;
                 case Difficulty.Medium:
                     enemiesSpawnCount = 2;
-                    enemySpawnCountTemp = 2;
                     asteroidSpeed = 5;
                     fireRate = 30;
                     powerupRate = 40;
                     enemyFireRate = 60;
-                    enemyFireRateTemp = 60;
                     bossFireRate = 40;
                     bossSpawnHealth = 300;
                     break;
                 case Difficulty.Hard:
                     enemiesSpawnCount = 3;
-                    enemySpawnCountTemp = 3;
                     asteroidSpeed = 7;
                     fireRate = 30;
                     powerupRate = 30;
                     enemyFireRate = 50;
-                    enemyFireRateTemp = 50;
                     bossFireRate = 40;
                     bossSpawnHealth = 400;
                     break;
                 default:
                     break;
             }
+            enemyFireRateTemp = enemyFireRate;
+            enemySpawnCountTemp = enemiesSpawnCount;
         }
 
         public void RelocateObjects(Size area)
@@ -701,7 +697,7 @@ namespace Space_shooter.Logic
         private bool DifficultyByScore()
         {
 
-            if (score > 1000 && score % 1000 < 90)
+            if (score > 999 && score % 1000 < 90)
             {
                 IncreaseDifficulty(score / 1000);
                 return true;
@@ -714,7 +710,11 @@ namespace Space_shooter.Logic
             if (kiloScore < 5)
             {
                 enemyFireRate = enemyFireRateTemp - (kiloScore * 5);
-                if (kiloScore % 2 == 0) enemiesSpawnCount = enemySpawnCountTemp + (kiloScore / 2);
+                if (kiloScore % 2 == 0)
+                {
+                    enemiesSpawnCount = enemySpawnCountTemp + (kiloScore / 2);
+                    SetupEnemyes(area);
+                }
             }
         }
 
@@ -739,6 +739,5 @@ namespace Space_shooter.Logic
             if (weaponTime > 0) weaponTime--;
             else { Weaponon = false; Player.Weapon = WeaponPowerup.WeaponType.None; }
         }
-
     }
 }

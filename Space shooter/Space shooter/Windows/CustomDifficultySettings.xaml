@@ -10,12 +10,14 @@
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="FontSize" Value="30" />
-            <Setter Property="MaxHeight" Value="60" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Height" Value="35" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="FontFamily" Value="Agency FB"/>
+            <Setter Property="Width" Value="130"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -65,11 +67,11 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
-        <Label Content="Custom difficulty" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Background="Transparent" Margin="0,-5,0,385" />
-        <StackPanel x:Name="MyStackpanel" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,80,0,30" Width="253">
+        <Label Content="Custom difficulty" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,-5,0,385" Width="226" />
+        <StackPanel x:Name="MyStackpanel" Margin="48,77,48,30" Width="253">
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Asteroid speed"/>
-                <TextBox Text="{Binding ElementName=sd_asteroidspeed, Path=Value, Converter={StaticResource converterAsteroidSpeed}}" PreviewTextInput="TextBox_PreviewTextInput" />
+                <TextBox Text="{Binding ElementName=sd_asteroidspeed, Path=Value, Converter={StaticResource converterAsteroidSpeed}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput" />
                 <Slider x:Name="sd_asteroidspeed" Value="{Binding Asteroidspeed, UpdateSourceTrigger=Explicit}" Minimum="1" Maximum="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
@@ -94,7 +96,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Boss health" />
-                <TextBox Text="{Binding ElementName=sd_bosshealth, Path=Value, Converter={StaticResource converterBossHealth}}" PreviewTextInput="TextBox_PreviewTextInput" />
+                <TextBox Text="{Binding ElementName=sd_bosshealth, Path=Value, Converter={StaticResource converterBossHealth}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput" />
                 <Slider x:Name="sd_bosshealth" Value="{Binding BossHealth, UpdateSourceTrigger=Explicit}" Maximum="1000" TickFrequency="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
@@ -106,8 +108,12 @@
                 <Label Content="Godmode ON/OFF" Width="140"/>
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Button Content="Close" Click="Back_Button_Click"/>
+                <Button Content="Save" Click="Save_Button_Click"/>
+            </StackPanel>
+
         </StackPanel>
-        <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="182,341,42,68"/>
-        <Button Content="Close" Click="Back_Button_Click"  FontFamily="Agency FB" Margin="43,342,175,68"/>
+
     </Grid>
 </Window>
