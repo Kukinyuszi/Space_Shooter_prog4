@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="350" Width="300" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
+       Title="CustomDifficultySettings" Height="450" Width="350" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
             <Setter Property="MaxHeight" Value="60" />
-            <Setter Property="Width" Value="150" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -46,6 +45,7 @@
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="Yellow"/>
             <Setter Property="FontFamily" Value="Agency FB"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
     </Window.Resources>
 
@@ -53,9 +53,9 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Windows/Window_Background.png"/>
         </Grid.Background>
-        <StackPanel x:Name="MyStackpanel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="30,70,15,30">
+        <StackPanel x:Name="MyStackpanel" Grid.Column="1" HorizontalAlignment="Center" Margin="0,80,0,30" Width="244">
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Asteroids speed"/>
+                <Label Content="Asteroid speed"/>
                 <TextBox Text="{Binding Asteroidspeed, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -63,19 +63,19 @@
                 <TextBox Text="{Binding Firerate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Powerup dropping rate"/>
+                <Label Content="Powerup rate"/>
                 <TextBox Text="{Binding Poweruprate, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Enemy shooting intensity" />
+                <Label Content="Enemy firerate" />
                 <TextBox Text="{Binding Enemyshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Boss shooting intensity" />
+                <Label Content="Boss firerate" />
                 <TextBox Text="{Binding Bossshottimechange, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Enemies on the field" />
+                <Label Content="No. of enemies" />
                 <TextBox Text="{Binding EnemySpawnCount, UpdateSourceTrigger=Explicit}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
@@ -87,7 +87,7 @@
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
         </StackPanel>
-        <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="150,264,0,52"/>
-        <Button Content="Close" Click="Back_Button_Click"  FontFamily="Agency FB" Margin="0,261,150,52"/>
+        <Button Content="Save" Click="Save_Button_Click" FontFamily="Agency FB" Margin="182,323,42,52"/>
+        <Button Content="Close" Click="Back_Button_Click"  FontFamily="Agency FB" Margin="43,322,175,52"/>
     </Grid>
 </Window>
