@@ -36,6 +36,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <SolidColorBrush x:Key="TransparentBackground" Color="Black" Opacity="0.5" />
     </Window.Resources>
 
     <Grid>
@@ -54,7 +55,7 @@
         </Grid.ColumnDefinitions>
         <Label Content="Highscores" Foreground="Yellow" FontFamily="Agency FB" FontSize="56" Grid.Column="1" VerticalContentAlignment="Bottom"  HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="120" />
         <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3"  Margin="103,20,103,20">
-            <StackPanel x:Name="sp_scores" Background="Black" Opacity="0.7" />
+            <StackPanel x:Name="sp_scores" Background="{StaticResource TransparentBackground}" />
         </ScrollViewer>
         <Button Content="Back" Grid.Row="2" Grid.Column="1"   Click="Back_Button_Click" FontFamily="Agency FB" />
     </Grid>

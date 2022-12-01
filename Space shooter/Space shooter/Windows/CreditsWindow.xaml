@@ -42,6 +42,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10"/>
         </Style>
+        <SolidColorBrush x:Key="TransparentBackground" Color="Black" Opacity="0.5" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -53,7 +54,7 @@
         </Grid.Background>
 
         <Label Content="Credits" FontWeight="Bold" Height="Auto" FontSize="56" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,0" Grid.RowSpan="2" />
-        <StackPanel Margin="125,96,125,368" Grid.Row="1" Width="300" Background="Black" Opacity="0.7">
+        <StackPanel Margin="125,96,125,368" Grid.Row="1" Width="300" Background="{StaticResource TransparentBackground}" >
             <Label Content="Ali Ákos Tamás G12D02"/>
             <Label Content="Tóth Dorka Csenge G12D02"/>
             <Label Content="Ali Ákos Tamás G12D02"/>

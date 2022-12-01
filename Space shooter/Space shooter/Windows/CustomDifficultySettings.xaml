@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         xmlns:conv="clr-namespace:Space_shooter.Windows.Converters"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="450" Width="350" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
+       Title="CustomDifficultySettings" Height="735" Width="550" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
@@ -49,14 +49,17 @@
             <Setter Property="Foreground" Value="Yellow"/>
             <Setter Property="FontFamily" Value="Agency FB"/>
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Width" Value="105"/>
+            <Setter Property="Width" Value="150"/>
         </Style>
         <Style TargetType="Slider">
-            <Setter Property="Width" Value="83"/>
+            <Setter Property="Width" Value="130"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TickFrequency" Value="1"/>
             <Setter Property="IsSnapToTickEnabled" Value="True"/>
             <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,15,0,0"/>
         </Style>
         <conv:FirerateSettingConverter x:Key="convertFirerate"/>
         <conv:AsteroidPerMinConverter x:Key="converterAsteroidSpeed"/>
@@ -64,11 +67,15 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="174*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
+            <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
         </Grid.Background>
-        <Label Content="Custom difficulty" FontWeight="Bold" Height="70" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,-5,0,385" Width="226" />
-        <StackPanel x:Name="MyStackpanel" Margin="48,77,48,30" Width="253">
+        <Label Content="Custom difficulty" FontWeight="Bold" FontSize="56" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,77,0,59" Width="372" Grid.Row="0" />
+        <StackPanel x:Name="MyStackpanel" Margin="100,0,100,0" Grid.Row="1">
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Asteroid speed"/>
                 <TextBox Text="{Binding ElementName=sd_asteroidspeed, Path=Value, Converter={StaticResource converterAsteroidSpeed}, Mode=OneWay}" PreviewTextInput="TextBox_PreviewTextInput" />
@@ -108,12 +115,9 @@
                 <Label Content="Godmode ON/OFF" Width="140"/>
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" >
-                <Button Content="Close" Click="Back_Button_Click"/>
-                <Button Content="Save" Click="Save_Button_Click"/>
-            </StackPanel>
-
         </StackPanel>
+        <Button Content="Close" Click="Back_Button_Click" Width="70" Margin="0,441,275,46" Grid.Row="1" />
+        <Button Content="Save" Click="Save_Button_Click" Width="70" Margin="380,441,100,46" Grid.Row="1"/>
 
     </Grid>
 </Window>
