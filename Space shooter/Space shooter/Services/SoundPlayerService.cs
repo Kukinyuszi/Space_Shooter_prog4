@@ -29,9 +29,6 @@ namespace Space_shooter.Services
 
         public SoundPlayerService()
         {
-            musicVolume = 0.3;
-            soundVolume = 0.3;
-
             PlayerShotAudioSetup();
             EnemyShotAudioSetup();
             CoinAudioSetup();

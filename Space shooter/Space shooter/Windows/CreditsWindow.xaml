@@ -8,9 +8,9 @@
         Title="CreditsWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontSize" Value="50" />
             <Setter Property="Height" Value="60" />
-            <Setter Property="Width" Value="100" />
+            <Setter Property="Width" Value="200" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -59,6 +59,6 @@
             <Label Content="Tóth Dorka Csenge G12D02"/>
             <Label Content="Ali Ákos Tamás G12D02"/>
         </StackPanel>
-        <Button Content="Close" Click="Back_Button_Click" Margin="225,508,225,45" Grid.Row="1"/>
+        <Button Content="Close" Click="Back_Button_Click" Margin="0,506,0,46" Grid.Row="1" HorizontalAlignment="Center" Width="167"/>
     </Grid>
 </Window>
