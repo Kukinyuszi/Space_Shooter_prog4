@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\aali-tra\source\repos\Git3\Space shooter\Space shooter\App.xaml
-11306285928
-1-151225254
-50-1715295103
+12811320330
+2-1718390599
+51-139123257
 1961570994067
-Windows\CreditsWindow.xaml;Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\HowToPlayPage2Window.xaml;Windows\HowToPlayWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
+Windows\CreditsWindow.xaml;Windows\CustomDifficultySettings.xaml;Windows\GameOverWindow.xaml;Windows\GamePauseWindow.xaml;Windows\HighScoresWindow.xaml;Windows\HowToPlayPage2Window.xaml;Windows\HowToPlayWindow.xaml;Windows\IntroWindow.xaml;Windows\MainMenuWindow.xaml;Windows\MainWindow.xaml;Windows\PlayerSettingsWindow.xaml;Windows\SettingsMenuWindow.xaml;
 
-True
+False
 

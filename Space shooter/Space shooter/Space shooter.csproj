@@ -14,6 +14,7 @@
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
     <None Remove="Windows\How_to_play.png" />
+    <None Remove="Windows\Intro_video.mp4" />
     <None Remove="Windows\Menu_Background_cat.gif" />
     <None Remove="Windows\Menu_Background_light.gif" />
     <None Remove="Windows\Sound_BTN.png" />
@@ -25,6 +26,9 @@
 
   <ItemGroup>
     <Content Include="spaceshooter.ico" />
+    <Content Include="Windows\Intro_video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

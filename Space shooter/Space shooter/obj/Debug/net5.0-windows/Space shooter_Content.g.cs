@@ -9,5 +9,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("spaceshooter.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/intro_video.mp4")]
 
 

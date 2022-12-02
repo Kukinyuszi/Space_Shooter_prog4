@@ -28,6 +28,9 @@
     <Compile Update="Windows\HowToPlayWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\IntroWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\MainMenuWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\HowToPlayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\IntroWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MainWindow.xaml">
