@@ -46,9 +46,7 @@
         <Grid.Background>
             <VisualBrush>
                 <VisualBrush.Visual>
-                    <Image Stretch="Fill"
-                           gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif"
-                           gif:AnimationBehavior.AnimateInDesignMode="False"/>
+                    <Image Stretch="Fill" gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif" gif:AnimationBehavior.AnimateInDesignMode="False"/>
                 </VisualBrush.Visual>
             </VisualBrush>
         </Grid.Background>
@@ -56,13 +54,13 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Windows/Space_Shooter_Label.png" HorizontalAlignment="Center" Grid.RowSpan="2" Stretch="Fill" Width="480" Margin="0,75,0,413"/>
+        <Image Source="Images/Space_Shooter_Label.png" HorizontalAlignment="Center" Grid.RowSpan="2" Stretch="Fill" Width="480" Margin="0,75,0,413"/>
         <Label Foreground="White" Margin="56,396,35,14" Grid.Row="1" HorizontalContentAlignment="Center" >
             <Label.Content>
                 <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
             </Label.Content>
         </Label>
-        <Label  Content="V4.01" Foreground="White" Margin="504,429,0,0" Height="30" Grid.Row="1"/>
+        <Label  Content="V4.02" Foreground="White" Margin="504,429,0,0" Height="30" Grid.Row="1"/>
         <StackPanel Grid.Row="1">
             <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
             <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>

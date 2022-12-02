@@ -14,6 +14,19 @@
     <None Remove="Windows\Header.png" />
     <None Remove="Windows\HowToPlay.png" />
     <None Remove="Windows\How_to_play.png" />
+    <None Remove="Windows\Images\1.png" />
+    <None Remove="Windows\Images\2.png" />
+    <None Remove="Windows\Images\Header.png" />
+    <None Remove="Windows\Images\HowToPlay.png" />
+    <None Remove="Windows\Images\How_to_play.png" />
+    <None Remove="Windows\Images\Intro_video.mp4" />
+    <None Remove="Windows\Images\Menu_Background_light.gif" />
+    <None Remove="Windows\Images\Sound_BTN.png" />
+    <None Remove="Windows\Images\Sound_BTN_up.png" />
+    <None Remove="Windows\Images\space1080.png" />
+    <None Remove="Windows\Images\Space_Shooter_Label.png" />
+    <None Remove="Windows\Images\Window_Background.png" />
+    <None Remove="Windows\Images\you_lose.png" />
     <None Remove="Windows\Intro_video.mp4" />
     <None Remove="Windows\Menu_Background_cat.gif" />
     <None Remove="Windows\Menu_Background_light.gif" />
@@ -26,6 +39,45 @@
 
   <ItemGroup>
     <Content Include="spaceshooter.ico" />
+    <Content Include="Windows\Images\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Header.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\HowToPlay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\How_to_play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Intro_video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Menu_Background_light.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Sound_BTN.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Sound_BTN_up.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\space1080.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Space_Shooter_Label.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Window_Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\you_lose.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Windows\Intro_video.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -38,18 +90,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Windows\1.png" />
-    <Resource Include="Windows\2.png" />
-    <Resource Include="Windows\Header.png" />
-    <Resource Include="Windows\HowToPlay.png" />
-    <Resource Include="Windows\How_to_play.png" />
-    <Resource Include="Windows\Menu_Background_cat.gif" />
     <Resource Include="Windows\Menu_Background_light.gif" />
-    <Resource Include="Windows\Sound_BTN.png" />
-    <Resource Include="Windows\space1080.png" />
-    <Resource Include="Windows\Space_Shooter_Label.png" />
-    <Resource Include="Windows\Window_Background.png" />
-    <Resource Include="Windows\you_lose.png" />
   </ItemGroup>
 
 </Project>

@@ -41,7 +41,7 @@
 
     <Grid x:Name="PlayerGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
+            <ImageBrush ImageSource="Images/Menu_Background_light.gif"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="327*"/>

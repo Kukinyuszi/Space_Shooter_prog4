@@ -39,7 +39,7 @@
     </Window.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/2.png"/>
+            <ImageBrush ImageSource="Images/2.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

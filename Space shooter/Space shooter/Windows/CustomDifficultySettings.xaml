@@ -73,7 +73,7 @@
             <RowDefinition Height="174*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Menu_Background_light.gif"/>
+            <ImageBrush ImageSource="Images/Menu_Background_light.gif"/>
         </Grid.Background>
         <Label Content="Custom difficulty" FontSize="56" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,74,0,59" Width="372" Grid.Row="0" />
         <StackPanel x:Name="MyStackpanel" Margin="100,0,100,0" Grid.Row="1">

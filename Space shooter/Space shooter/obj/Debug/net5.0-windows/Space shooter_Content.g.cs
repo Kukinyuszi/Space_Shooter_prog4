@@ -9,6 +9,19 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("spaceshooter.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/header.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/howtoplay.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/how_to_play.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/intro_video.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/menu_background_light.gif")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/sound_btn.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/sound_btn_up.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/space1080.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/space_shooter_label.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/window_background.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/you_lose.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/intro_video.mp4")]
 
 
