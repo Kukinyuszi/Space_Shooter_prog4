@@ -22,6 +22,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/space_shooter_label.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/window_background.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/you_lose.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/intro.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/intro_video.mp4")]
 
 

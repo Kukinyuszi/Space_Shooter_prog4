@@ -27,6 +27,7 @@
     <None Remove="Windows\Images\Space_Shooter_Label.png" />
     <None Remove="Windows\Images\Window_Background.png" />
     <None Remove="Windows\Images\you_lose.png" />
+    <None Remove="Windows\Intro.mp4" />
     <None Remove="Windows\Intro_video.mp4" />
     <None Remove="Windows\Menu_Background_cat.gif" />
     <None Remove="Windows\Menu_Background_light.gif" />
@@ -76,6 +77,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Images\you_lose.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Intro.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Intro_video.mp4">

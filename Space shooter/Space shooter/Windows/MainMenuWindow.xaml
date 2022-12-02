@@ -7,8 +7,46 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
        Title="Main Menu" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Black" ResizeMode="NoResize">
-
-
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
+                <Border BorderBrush="Yellow" BorderThickness="4" CornerRadius="10" Name="MainBorder" Background="Black" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="Yellow"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.Background>
+                            <VisualBrush>
+                                <VisualBrush.Visual>
+                                    <Image Stretch="Fill" gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif" gif:AnimationBehavior.AnimateInDesignMode="False"/>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="Images/Space_Shooter_Label.png" HorizontalAlignment="Center" Grid.RowSpan="2" Stretch="Fill" Width="480" Margin="0,75,0,413"/>
+                        <Label Foreground="White" Margin="39,384,39,15" Grid.Row="1" HorizontalContentAlignment="Center" >
+                            <Label.Content>
+                                <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
+                            </Label.Content>
+                        </Label>
+                        <Label  Content="V4.02" Foreground="White" Margin="478,418,10,0" Height="30" Grid.Row="1"/>
+                        <StackPanel Grid.Row="1">
+                            <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
+                            <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>
+                            <Button Content="How to play"  Click="HowToPlay_Button_Click"   FontFamily="Agency FB" />
+                            <Button Content="Score board"  Click="ScoreBoard_Click"   FontFamily="Agency FB"/>
+                            <Button Content="Settings"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
+                            <Button Content="Credits"  Click="Credits_Button_Click"    FontFamily="Agency FB"/>
+                            <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
@@ -40,35 +78,4 @@
             </Setter>
         </Style>
     </Window.Resources>
-
-
-    <Grid>
-        <Grid.Background>
-            <VisualBrush>
-                <VisualBrush.Visual>
-                    <Image Stretch="Fill" gif:AnimationBehavior.SourceUri="/Windows/Menu_Background_light.gif" gif:AnimationBehavior.AnimateInDesignMode="False"/>
-                </VisualBrush.Visual>
-            </VisualBrush>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="5*"/>
-        </Grid.RowDefinitions>
-        <Image Source="Images/Space_Shooter_Label.png" HorizontalAlignment="Center" Grid.RowSpan="2" Stretch="Fill" Width="480" Margin="0,75,0,413"/>
-        <Label Foreground="White" Margin="56,396,35,14" Grid.Row="1" HorizontalContentAlignment="Center" >
-            <Label.Content>
-                <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
-            </Label.Content>
-        </Label>
-        <Label  Content="V4.02" Foreground="White" Margin="504,429,0,0" Height="30" Grid.Row="1"/>
-        <StackPanel Grid.Row="1">
-            <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
-            <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>
-            <Button Content="How to play"  Click="HowToPlay_Button_Click"   FontFamily="Agency FB" />
-            <Button Content="Score board"  Click="ScoreBoard_Click"   FontFamily="Agency FB"/>
-            <Button Content="Settings"  Click="Settings_Button_Click"    FontFamily="Agency FB"/>
-            <Button Content="Credits"  Click="Credits_Button_Click"    FontFamily="Agency FB"/>
-            <Button Content="Quit"   Click="Quit_Button_Click"  FontFamily="Agency FB"/>
-        </StackPanel>
-    </Grid>
 </Window>

@@ -5,14 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="IntroWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None"  ResizeMode="NoResize">
-    <Canvas Margin="-600,0,-600,0">
-        <Canvas.Background>
-            <VisualBrush Stretch="Fill" >
-                <VisualBrush.Visual>
-                    <MediaElement x:Name="mediaElement" MediaEnded="MediaElement_MediaEnded" UnloadedBehavior="Play" Source="Videos/Intro_video.mp4" Volume="1" />
-                </VisualBrush.Visual>
-            </VisualBrush>
-        </Canvas.Background>
-    </Canvas>
+        Title="IntroWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" Focusable="True" ResizeMode="NoResize">
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
+                <Border BorderBrush="Yellow" BorderThickness="4" CornerRadius="10" Name="MainBorder" Background="Black" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="Yellow"/>
+                    </Border.Effect>
+                    <Canvas Margin="0,0,0,0">
+                        <Canvas.Background>
+                            <VisualBrush Stretch="Fill" >
+                                <VisualBrush.Visual>
+                                    <MediaElement x:Name="mediaElement" MediaEnded="MediaElement_MediaEnded" LoadedBehavior="Play" Source="Videos/Intro_video.mp4" Volume="1" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Canvas.Background>
+                    </Canvas>
+                </Border>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
 </Window>

@@ -29,7 +29,7 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class MainMenuWindow : Window
     {
-        DispatcherTimer videoTimer = new DispatcherTimer();
+        //DispatcherTimer videoTimer = new DispatcherTimer();
         SoundPlayerService sps = new SoundPlayerService();
         ISettings settings;
         IDisplaySettings displaySettings;
