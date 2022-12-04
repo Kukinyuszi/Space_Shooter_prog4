@@ -50,8 +50,9 @@ namespace Space_shooter.Windows
             {
                  if(item is CheckBox c) c.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
             }
+            this.Owner.Show();
             this.DialogResult = true;
-            this.Close();
+
         }
 
         private void sd_music_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -69,12 +70,7 @@ namespace Space_shooter.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Owner.Visibility = Visibility.Hidden;
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            this.Owner.Visibility = Visibility.Visible;
+            this.Owner.Hide();
         }
 
     }

@@ -165,7 +165,7 @@ namespace Space_shooter.Logic
                 }
                 if (Boss != null)                                                                               // If it is not a boss round, than the enemies move one time
                 {
-                    Boss.Move(size);                                                                            // If it is a boss round, than the boss moves, and checks if it is dead ( boss health less than 1) --> sets boss to null
+                    Boss.MoveSideWays(size);                                                                            // If it is a boss round, than the boss moves, and checks if it is dead ( boss health less than 1) --> sets boss to null
                     IsBossDead(size);                                                                           // It moves first bc if it checks first, than the boss would be null, it cant move
                 }
 
@@ -262,8 +262,6 @@ namespace Space_shooter.Logic
         {
             if(Player.Position.X >= area.Width - 25 )Player.Position = new Point(area.Width - 25, Player.Position.Y);
             if (Player.Position.X <= 0) Player.Position = new Point(0, Player.Position.Y);
-            Player.Position = new Point(Player.Position.X, area.Height - 100);
-            Player.Hitbox = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);
             foreach (var enemy in EnemyShips)
             {
                 if (enemy.Position.X >= area.Width - 25) enemy.Position = new Point(random.Next(25, (int)area.Width - 25), enemy.Position.Y);
@@ -366,7 +364,7 @@ namespace Space_shooter.Logic
         {
             for (int i = 0; i < EnemyShips.Count; i++)
             {
-                if (enemyShotTimer == 0)
+                if (enemyShotTimer == 0 && !EnemyShips[i].IsMoving)
                 {
                     NewEnemyShoot(EnemyShips[i]);
                 }
@@ -534,16 +532,27 @@ namespace Space_shooter.Logic
 
         private void PlayerInteractions(System.Windows.Size size)
         {
-            if (left)
+            if(Player.Position.Y > size.Height - 100)
             {
-                Player.left = true;
-                Player.Move(size);
+                Player.MoveUp();
             }
-
-            if (right)
+            else if(Player.Position.Y < size.Height - 105)
             {
-                Player.left = false;
-                Player.Move(size);
+                Player.MoveDown();
+            }
+            else
+            {
+                if (left)
+                {
+                    Player.left = true;
+                    Player.MoveSideWays(size);
+                }
+
+                if (right)
+                {
+                    Player.left = false;
+                    Player.MoveSideWays(size);
+                }
             }
 
             if (shoot && playerShotTimer <= 0)
@@ -692,7 +701,7 @@ namespace Space_shooter.Logic
         {
             foreach (var item in EnemyShips)
             {
-                item.Move(size);
+                item.MoveSideWays(size);
             }
         }
 

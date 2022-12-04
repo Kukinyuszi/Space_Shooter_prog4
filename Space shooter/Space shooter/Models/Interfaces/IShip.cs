@@ -12,6 +12,6 @@ namespace Space_shooter.Models.Interfaces
         public Point Position { get; set; }
         public bool IsDead { get; set; }
         public bool IsMoving { set; get; }
-        public void Move(System.Windows.Size area);
+        public void MoveSideWays(System.Windows.Size area);
     }
 }

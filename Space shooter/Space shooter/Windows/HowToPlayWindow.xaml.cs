@@ -30,20 +30,20 @@ namespace Space_shooter.Windows
             HowToPlayPage2Window howToPlay = new HowToPlayPage2Window();
             howToPlay.Template = this.Template;
             howToPlay.Owner = this;
-            if (howToPlay.ShowDialog() == false) this.Close();
+            if (howToPlay.ShowDialog() == false)
+            {
+                this.Owner.Show();
+                this.Close();
+            }
         }
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Owner.Show();
             this.Close();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Owner.Visibility = Visibility.Hidden;
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            this.Owner.Visibility = Visibility.Visible;
+            this.Owner.Hide();
         }
     }
 }

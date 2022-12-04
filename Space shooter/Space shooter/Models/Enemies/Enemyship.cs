@@ -41,7 +41,7 @@ namespace Space_shooter.Models
             IsMoving = true;
         }
 
-        public virtual void Move(System.Windows.Size area)
+        public virtual void MoveSideWays(System.Windows.Size area)
         {
             Point newposition;
             if (position.Y <= area.Height / 4)

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="GamePauseWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" Cursor="Images/Cursor_arrow.cur" WindowStyle="None" KeyDown="Window_KeyDown" ResizeMode="NoResize">
+        Title="GamePauseWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" Cursor="Images/Cursor_arrow.cur"
+        WindowStyle="None" KeyDown="Window_KeyDown" ResizeMode="NoResize">
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >

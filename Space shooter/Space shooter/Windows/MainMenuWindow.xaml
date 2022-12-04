@@ -6,7 +6,8 @@
         xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-       Title="Main Menu" Height="735" Width="550" Cursor="Images/Cursor_arrow.cur" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+       Title="Main Menu" Height="735" Width="550" Cursor="Images/Cursor_arrow.cur" AllowsTransparency="True"
+        Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >

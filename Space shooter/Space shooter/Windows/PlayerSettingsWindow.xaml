@@ -15,7 +15,6 @@
             <Setter Property="MaxHeight" Value="60" />
             <Setter Property="Width" Value="100" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
             <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
@@ -45,7 +44,7 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
         </Style>
     </Window.Resources>
 

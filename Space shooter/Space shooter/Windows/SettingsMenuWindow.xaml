@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
         Title="SettingsMenuWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur"
-        Loaded="Window_Loaded" Closed="Window_Closed"  Background="Transparent" WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded" Background="Transparent" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>

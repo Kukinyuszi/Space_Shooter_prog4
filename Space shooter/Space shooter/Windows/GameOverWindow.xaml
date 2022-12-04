@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" Cursor="Images/Cursor_arrow.cur" WindowStyle="None" ResizeMode="NoResize">
+        Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" Cursor="Images/Cursor_arrow.cur"
+        WindowStyle="None" ResizeMode="NoResize">
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >

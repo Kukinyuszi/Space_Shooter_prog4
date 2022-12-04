@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="HowToPlayWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Loaded="Window_Loaded" Closed="Window_Closed" Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+        Title="HowToPlayWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur"
+        Loaded="Window_Loaded" Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />

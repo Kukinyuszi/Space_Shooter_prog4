@@ -30,13 +30,29 @@ namespace Space_shooter.Models
 
         public Player(Size area)
         {
-            IsMoving = false;
-            this.position = new System.Windows.Point((int)area.Width / 2, (int)area.Height - 100);
+            IsMoving = true;
+            this.position = new System.Windows.Point((int)area.Width / 2, (int)area.Height + 13);
             hitbox = new Rect(position.X - 15, position.Y - 12, 30, 25);
             Weapon = WeaponType.None;
         }
-        public void Move(System.Windows.Size area)
+        public void MoveUp()
         {
+            IsMoving = true;
+            Point newposition;
+            newposition = new Point(position.X, position.Y - 5);
+            position = newposition;
+            hitbox.Y = hitbox.Y - 5;
+        }
+        public void MoveDown()
+        {
+            Point newposition;
+            newposition = new Point(position.X, position.Y + 5);
+            position = newposition;
+            hitbox.Y = hitbox.Y + 5;
+        }
+        public void MoveSideWays(System.Windows.Size area)
+        {
+            IsMoving = false;
             if (left) MoveLeft(area);
             else MoveRight(area);
         }

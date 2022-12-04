@@ -27,6 +27,7 @@ namespace Space_shooter.Windows
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Owner.Show();
             this.DialogResult = true;
         }
 
@@ -36,12 +37,7 @@ namespace Space_shooter.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Owner.Visibility = Visibility.Hidden;
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            this.Owner.Visibility = Visibility.Visible;
+            this.Owner.Hide();
         }
     }
 }

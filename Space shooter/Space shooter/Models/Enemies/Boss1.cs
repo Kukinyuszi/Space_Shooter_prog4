@@ -17,7 +17,7 @@ namespace Space_shooter.Models.Enemies
 
         private Random random = new Random();
 
-        public override void Move(Size area)
+        public override void MoveSideWays(Size area)
         {
             Point newposition;
             if (Position.Y <= area.Height / 5)

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Space_shooter"
         xmlns:renderer="clr-namespace:Space_shooter.Renderer"
         mc:Ignorable="d"
-        Title="MainWindow" KeyDown="Window_KeyDown" MinHeight="600" MinWidth="400" Background="Black" WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged"  KeyUp="Window_KeyUp">
+        Title="MainWindow" KeyDown="Window_KeyDown" MinHeight="600" MinWidth="400" Background="Black"
+        WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded" SizeChanged="Window_SizeChanged"  KeyUp="Window_KeyUp">
     <Window.Resources>
         <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="13" />
