@@ -241,4 +241,8 @@ C:\Users\aali-tra\Source\Repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0
 C:\Users\aali-tra\Source\Repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Space_Shooter_Label.png
 C:\Users\aali-tra\Source\Repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Window_Background.png
 C:\Users\aali-tra\Source\Repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\you_lose.png
-C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Intro.mp4
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_click.cur
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_def.cur
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_arrow.cur
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_grab.cur
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_arrow.png

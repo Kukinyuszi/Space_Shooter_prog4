@@ -6,18 +6,19 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         xmlns:conv="clr-namespace:Space_shooter.Windows.Converters"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="735" Width="550" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
+       Title="CustomDifficultySettings" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Background="Transparent" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="FontSize" Value="25" />
-            <Setter Property="Height" Value="35" />
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="Height" Value="80" />
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
             <Setter Property="FontFamily" Value="Agency FB"/>
             <Setter Property="Width" Value="130"/>
+            <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -53,11 +54,12 @@
             <Setter Property="Width" Value="150"/>
         </Style>
         <Style TargetType="Slider">
-            <Setter Property="Width" Value="130"/>
+            <Setter Property="Width" Value="120"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TickFrequency" Value="1"/>
             <Setter Property="IsSnapToTickEnabled" Value="True"/>
             <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
         </Style>
         <Style TargetType="StackPanel">
             <Setter Property="Margin" Value="0,15,0,0"/>
@@ -117,8 +119,8 @@
                 <CheckBox IsChecked="{Binding Godmode, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.65"/>
             </StackPanel>
         </StackPanel>
-        <Button Content="Close" Click="Back_Button_Click" Width="70" Margin="0,441,275,46" Grid.Row="1" />
-        <Button Content="Save" Click="Save_Button_Click" Width="70" Margin="380,441,100,46" Grid.Row="1"/>
+        <Button Content="Back" Click="Back_Button_Click" Width="Auto" Margin="100,414,339,28" Grid.Row="1" />
+        <Button Content="Save" Click="Save_Button_Click" Width="Auto" Margin="351,414,100,28" Grid.Row="1"/>
 
     </Grid>
 </Window>

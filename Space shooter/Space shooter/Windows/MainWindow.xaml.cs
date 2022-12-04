@@ -85,10 +85,10 @@ namespace Space_shooter
             gameTimer.Start();
 
             EventsSetup();
-            logic.SetupSizes(new System.Windows.Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+            logic.SetupSizes(new System.Windows.Size(MyGrid.Width, MyGrid.Height));
             display.SetupModel(logic);
             display.SetupSettings(displaySettings);
-            display.SetupSizes(new Size(MyGrid.ActualWidth, MyGrid.ActualHeight));
+            display.SetupSizes(new Size(MyGrid.Width, MyGrid.Height));
 
         }
 
@@ -107,16 +107,31 @@ namespace Space_shooter
 
         private void Logic_Godmode_activated(object sender, EventArgs e)
         {
-            if (logic.Godmode) PowerupTimer.Stop();
-            else PowerupTimer.Start();
+            if (logic.Godmode)
+            {
+                PowerupTimer.Stop();
+                this.Cursor = new Cursor("Images/Cursor_arrow.cur");
+            }
+            else
+            {
+                PowerupTimer.Start();
+                this.Cursor = Cursors.None;
+            }
 
             foreach (var item in MyGrid.Children)
             {
                  if(item is Label)
                 {
                     Label l = (Label)item;
-                    if (logic.Godmode) l.Visibility = Visibility.Visible;
-                    else l.Visibility = Visibility.Hidden;
+                    if (logic.Godmode)
+                    {
+                        l.Visibility = Visibility.Visible;
+                        
+                    }
+                    else
+                    {
+                        l.Visibility = Visibility.Hidden;
+                    }
                 }
             }
         }

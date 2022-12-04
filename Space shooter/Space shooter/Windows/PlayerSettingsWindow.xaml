@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="PlayerSettingsWindow" Height="735" Width="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="PlayerSettingsWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
@@ -17,6 +17,7 @@
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -37,6 +38,14 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
     </Window.Resources>
 
     <Grid x:Name="PlayerGrid">
@@ -50,17 +59,17 @@
             <RowDefinition Height="283*"/>
         </Grid.RowDefinitions>
         <Label Content="New Game" FontSize="56" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="Yellow" FontFamily="Agency FB" Margin="0,78,0,172" Width="194" />
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="218" >
-            <Label Content="Difficulty" Foreground="Yellow" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" FontFamily="Impact"/>
-            <StackPanel x:Name="sp_difficulty" Orientation="Horizontal" HorizontalAlignment="Center">
-                <RadioButton x:Name="rb_easy" Content="Easy" MinHeight="20" Margin="1" Foreground="White"/>
-                <RadioButton x:Name="rb_medium" Content="Medium" MinHeight="20" Margin="1" IsChecked="True" Foreground="White"/>
-                <RadioButton x:Name="rb_hard" Content="Hard" MinHeight="20" Margin="1" Foreground="White"/>
-                <RadioButton x:Name="rb_custom" Content="Custom" Click="rb_custom_Click" MinHeight="20" Margin="1" Foreground="White"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="350" Margin="0,0,0,25" Grid.RowSpan="2" >
+            <Label Content="Difficulty" Foreground="Yellow" HorizontalAlignment="Center" FontSize="35" Margin="0,0,0,10" Width="120" FontWeight="Bold" FontFamily="Agency FB"/>
+            <StackPanel x:Name="sp_difficulty" Orientation="Horizontal" Height="45">
+                <RadioButton x:Name="rb_easy" Content="Easy" />
+                <RadioButton x:Name="rb_medium" Content="Medium" IsChecked="True"/>
+                <RadioButton x:Name="rb_hard" Content="Hard"/>
+                <RadioButton x:Name="rb_custom" Content="Custom" Click="rb_custom_Click"/>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Row="2" GotFocus="tb_playername_GotFocus"  VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="20" MinWidth="200" Opacity="0.65" Height="20" Width="200" />
-        <Button Content="Start" Click="Start_Button_Click"  Grid.Row="3" FontFamily="Agency FB" Margin="225,10,225,227"/>
+        <TextBox x:Name="tb_playername" Text="Type here your name" Grid.Row="2" LostFocus="tb_playername_LostFocus" GotFocus="tb_playername_GotFocus" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Center" Height="25" Width="250" Opacity="0.65" Margin="0,43,0,0" Grid.RowSpan="2" />
+        <Button Content="Start" Click="Start_Button_Click"  Grid.Row="3" FontFamily="Agency FB" Margin="225,24,225,207"/>
         <Button Content="Back" Click="Back_Button_Click"  Grid.Row="3"  FontFamily="Agency FB" Margin="225,188,225,45"/>
     </Grid>
 </Window>

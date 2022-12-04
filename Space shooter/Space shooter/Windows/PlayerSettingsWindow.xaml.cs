@@ -46,9 +46,9 @@ namespace Space_shooter.Windows
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();
                 MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
+                StartingTheGame.Show();
                 _mainMenu.Close();
                 this.Close();
-                StartingTheGame.Show();
             }
         }
 
@@ -81,6 +81,7 @@ namespace Space_shooter.Windows
         private void rb_custom_Click(object sender, RoutedEventArgs e)
         {
             CustomDifficultySettings sw = new CustomDifficultySettings(settings);
+            sw.Template = this.Template;
             sw.ShowDialog();
             sw.Close();
         }
@@ -94,9 +95,7 @@ namespace Space_shooter.Windows
                     settings.PlayerName = tb_playername.Text;
                     settings.Difficultyness = DifficultyChecker();
                     MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
-                    _mainMenu.Close();
-                    this.Close();
-                    StartingTheGame.Show();
+
                 }
             }
             else if(e.Key == Key.Escape)
@@ -109,7 +108,17 @@ namespace Space_shooter.Windows
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            _mainMenu.Visibility = Visibility.Visible;
+            this.Close();
+        }
+
+        private void tb_playername_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tb_playername.Text == "")
+            {
+                tb_playername.Text = "Type here your name";
+                hasBeenClicked = false;
+            }
         }
     }
 }

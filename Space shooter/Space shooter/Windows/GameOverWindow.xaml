@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
-
+        Title="GameOverWindow" Height="200" Width="400" WindowStartupLocation="CenterScreen" Cursor="Images/Cursor_arrow.cur" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
+                <Border BorderBrush="LightBlue" BorderThickness="4" CornerRadius="10" Name="MainBorder" Background="Black" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="LightBlue"/>
+                    </Border.Effect>
+                    <Grid>
+                        <ContentPresenter/>
+                    </Grid>
+                </Border>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="30" />
@@ -16,6 +29,7 @@
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="Wheat"/>
+            <Setter Property="Cursor" Value="Images/Cursor_grab.cur"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -40,17 +54,17 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Windows/Window_Background.png"/>
+            <ImageBrush ImageSource="Images/Window_Background.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Windows/you_lose.png" Margin="40,28,40,116" Grid.RowSpan="2" />
+        <Image Source="Images/you_lose.png" Margin="40,28,40,116" Grid.RowSpan="2" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="35,0,50,0">
-            <Button Content="Restart"  Grid.Column="1" Grid.Row="1" Click="Restart_Button_Click"  FontFamily="Agency FB" />
-            <Button Content="Load"  Grid.Column="2"  Grid.Row="1"  Click="Reload_Button_Click"  FontFamily="Agency FB" />
-            <Button Content="Main Menu" Click="Menu_Button_Click"  FontFamily="Agency FB"  />
+            <Button Content="Restart"  Grid.Column="1" Grid.Row="1" Click="Restart_Button_Click"  FontFamily="Agency FB" Height="47" />
+            <Button Content="Load"  Grid.Column="2"  Grid.Row="1"  Click="Reload_Button_Click"  FontFamily="Agency FB" Height="44" />
+            <Button Content="Main Menu" Click="Menu_Button_Click"  FontFamily="Agency FB" Height="49"  />
         </StackPanel>
     </Grid>
 </Window>

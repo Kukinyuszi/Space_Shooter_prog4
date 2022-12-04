@@ -20,8 +20,6 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class IntroWindow : Window
     {
-        private string videoPath = Directory.GetCurrentDirectory();
-
         public IntroWindow()
         {
             InitializeComponent();

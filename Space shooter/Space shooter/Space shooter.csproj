@@ -16,6 +16,11 @@
     <None Remove="Windows\How_to_play.png" />
     <None Remove="Windows\Images\1.png" />
     <None Remove="Windows\Images\2.png" />
+    <None Remove="Windows\Images\Cursor_arrow.cur" />
+    <None Remove="Windows\Images\Cursor_arrow.png" />
+    <None Remove="Windows\Images\Cursor_click.cur" />
+    <None Remove="Windows\Images\Cursor_def.cur" />
+    <None Remove="Windows\Images\Cursor_grab.cur" />
     <None Remove="Windows\Images\Header.png" />
     <None Remove="Windows\Images\HowToPlay.png" />
     <None Remove="Windows\Images\How_to_play.png" />
@@ -44,6 +49,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Images\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Cursor_arrow.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Cursor_arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Cursor_click.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Cursor_def.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Images\Cursor_grab.cur">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Images\Header.png">
@@ -77,9 +97,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Images\you_lose.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Windows\Intro.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Intro_video.mp4">

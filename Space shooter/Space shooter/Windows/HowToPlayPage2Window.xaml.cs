@@ -19,6 +19,7 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class HowToPlayPage2Window : Window
     {
+
         public HowToPlayPage2Window()
         {
             InitializeComponent();
