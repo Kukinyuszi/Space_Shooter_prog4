@@ -66,5 +66,16 @@ namespace Space_shooter.Windows
             sps.SoundVolume = sd_sound.Value;
             SetupSounds();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Owner.Visibility = Visibility.Hidden;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.Owner.Visibility = Visibility.Visible;
+        }
+
     }
 }

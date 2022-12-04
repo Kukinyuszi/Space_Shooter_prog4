@@ -82,8 +82,8 @@ namespace Space_shooter.Windows
         {
             CustomDifficultySettings sw = new CustomDifficultySettings(settings);
             sw.Template = this.Template;
+            sw.Owner = this;
             sw.ShowDialog();
-            sw.Close();
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="PlayerSettingsWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="PlayerSettingsWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur"
+        Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

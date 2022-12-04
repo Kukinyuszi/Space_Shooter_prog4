@@ -71,6 +71,7 @@ namespace Space_shooter.Windows
         {
             SettingsMenuWindow smw = new SettingsMenuWindow(DisplaySettings, sps);
             smw.Template = this.Template;
+            smw.Owner = this;
             if(smw.ShowDialog() == true)
             {
                 SettingsSaveService sss = new SettingsSaveService();
@@ -89,16 +90,17 @@ namespace Space_shooter.Windows
 
         private void HowToPlay_Button_Click(object sender, RoutedEventArgs e)
         {
-            HowToPlayWindow howToPlay = new HowToPlayWindow(this);
+            HowToPlayWindow howToPlay = new HowToPlayWindow();
             howToPlay.Template = this.Template;
+            howToPlay.Owner = this;
             howToPlay.Show();
-            this.Visibility= Visibility.Hidden;
         }
 
         private void ScoreBoard_Click(object sender, RoutedEventArgs e)
         {
             HighScoresWindow hsw = new HighScoresWindow();
             hsw.Template = this.Template;
+            hsw.Owner = this;
             hsw.Show();
         }
 
@@ -111,6 +113,7 @@ namespace Space_shooter.Windows
         {
             CreditsWindow cw = new CreditsWindow();
             cw.Template = this.Template;
+            cw.Owner = this;
             cw.Show();
         }
 

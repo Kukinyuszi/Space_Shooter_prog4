@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Space_shooter.Windows"
         xmlns:conv="clr-namespace:Space_shooter.Windows.Converters"
         mc:Ignorable="d"
-       Title="CustomDifficultySettings" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Background="Transparent" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
+       Title="CustomDifficultySettings" Height="735" Width="550" AllowsTransparency="True" Cursor="Images/Cursor_arrow.cur" Loaded="Window_Loaded" Closed="Window_Closed" Background="Transparent" WindowStartupLocation="CenterScreen"  WindowStyle="None" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

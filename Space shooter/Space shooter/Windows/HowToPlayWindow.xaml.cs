@@ -19,10 +19,8 @@ namespace Space_shooter.Windows
     /// </summary>
     public partial class HowToPlayWindow : Window
     {
-        private MainMenuWindow _mainmenu;
-        public HowToPlayWindow(MainMenuWindow _mainmenu)
+        public HowToPlayWindow()
         {
-            this._mainmenu = _mainmenu;
             InitializeComponent();
 
         }
@@ -31,18 +29,21 @@ namespace Space_shooter.Windows
         {
             HowToPlayPage2Window howToPlay = new HowToPlayPage2Window();
             howToPlay.Template = this.Template;
-            this.Visibility = Visibility.Hidden;
-            if (howToPlay.ShowDialog() == true) this.Visibility = Visibility.Visible;
-            else
-            {
-                _mainmenu.Visibility = Visibility.Visible;
-                this.Close();
-            }
+            howToPlay.Owner = this;
+            if (howToPlay.ShowDialog() == false) this.Close();
         }
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
-            _mainmenu.Visibility = Visibility.Visible;
             this.Close();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Owner.Visibility = Visibility.Hidden;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.Owner.Visibility = Visibility.Visible;
         }
     }
 }
