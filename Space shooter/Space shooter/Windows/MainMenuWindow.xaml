@@ -72,7 +72,7 @@
                 <AccessText TextWrapping="Wrap" Text="&#x09; Tipp:&#x0a;Try typing G-O-D while playing"  />
             </Label.Content>
         </Label>
-        <Label  Content="V4.03" Foreground="White" Margin="478,418,10,0" Height="30" Grid.Row="1"/>
+        <Label  Content="V4.04" Foreground="White" Margin="478,418,10,0" Height="30" Grid.Row="1"/>
         <StackPanel Grid.Row="1">
             <Button Content="New game"  Click="Start_Button_Click"  FontFamily="Agency FB" />
             <Button Content="Load"  Click="Load_Button_Click"   FontFamily="Agency FB"/>
