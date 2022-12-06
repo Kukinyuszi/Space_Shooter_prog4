@@ -298,8 +298,12 @@ namespace Space_shooter.Logic
 
         private void SetupNewBoss(System.Windows.Size size)
         {
-            if((score % 2000) < 90) Boss = new Boss2(area, bossSpawnHealth);
+            if((score % 2000) < 90)
+            {
+                Boss = new Boss2(area, bossSpawnHealth);
+            }
             else Boss = new Boss1(area, bossSpawnHealth);
+
             EnemyShips.Clear();
         }
 
@@ -724,7 +728,6 @@ namespace Space_shooter.Logic
                 if (kiloScore % 2 == 0)
                 {
                     enemiesSpawnCount = enemySpawnCountTemp + (kiloScore / 2);
-                    SetupEnemyes(area);
                 }
             }
         }

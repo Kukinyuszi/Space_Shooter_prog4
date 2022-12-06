@@ -1,16 +1,16 @@
 {
   "Lasers": [
     {
-      "Laservector": "-2,10",
-      "Angle": 101.30993247402021,
+      "Laservector": "-5.675,10.775",
+      "Angle": 117.77497499572732,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 47,
-      "Hitbox": "272,708,10,10",
-      "Position": "277,713",
+      "Counter": 43,
+      "Hitbox": "282,633,10,10",
+      "Position": "287,638",
       "FromBoss": false
     },
     {
@@ -21,9 +21,9 @@
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 48,
-      "Hitbox": "237,574,10,10",
-      "Position": "242,579",
+      "Counter": 44,
+      "Hitbox": "346,511,10,10",
+      "Position": "351,516",
       "FromBoss": false
     }
   ],
@@ -31,48 +31,48 @@
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "196,175",
-      "Hitbox": "171,155,50,40"
+      "Position": "336,600",
+      "Hitbox": "311,580,50,40"
     }
   ],
   "EnemyShips": [
     {
       "left": true,
-      "Position": "323,220",
-      "Name": 3,
+      "Position": "504,185",
+      "Name": 2,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "298,200,50,40"
+      "Hitbox": "479,165,50,40"
     },
     {
-      "left": false,
-      "Position": "290,220",
+      "left": true,
+      "Position": "307,185",
       "Name": 0,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "265,200,50,40"
+      "Hitbox": "282,165,50,40"
     }
   ],
   "Powerups": [],
   "Player": {
-    "left": false,
-    "Position": "415,764",
+    "left": true,
+    "Position": "175,633",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "400,752,30,25",
-    "Health": 30
+    "Hitbox": "160,621,30,25",
+    "Health": 90
   },
   "Boss": null,
-  "Score": 16940,
-  "HighScore": 16040,
+  "Score": 1910,
+  "HighScore": 17020,
   "PlayerName": "Akos",
   "Asteroidspeed": 5,
   "Firerate": 30,
   "Poweruprate": 40,
-  "Enemyshottimechange": 60,
+  "Enemyshottimechange": 55,
   "Bossshottimechange": 40,
   "EnemySpawnCount": 2,
   "BossHealth": 300,
@@ -85,5 +85,5 @@
   "Rapid": false,
   "Strong": false,
   "Weaponon": false,
-  "Area": "550,864.0000000000001"
+  "Area": "550.4,735.2"
 }
