@@ -1128,8 +1128,17 @@ namespace Space_shooter.Renderer
                 if (model.Boss != null && hitboxes) drawingContext.DrawRectangle(null, new Pen(Brushes.Red, 2), model.Boss.Hitbox);
                 if(model.Boss != null && model.Boss.Health > 0)
                 {
-                    
-                    drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(model.Boss.Position.X - model.Boss.Health / 4, model.Boss.Position.Y - 100, model.Boss.Health / 2, 10));
+                    if(model.Boss.BossType == Boss.BossName.Claec)
+                    {
+                        drawingContext.DrawText(FormatText("Claec"), new Point(model.Boss.Position.X - 25, model.Boss.Position.Y - 130));
+                        drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(model.Boss.Position.X - model.Boss.Health / 4, model.Boss.Position.Y - 100, model.Boss.Health / 2, 10));
+                    }
+                    else if (model.Boss.BossType == Boss.BossName.Kasdeya)
+                    {
+                        drawingContext.DrawText(FormatText("Kasdeya"), new Point(model.Boss.Position.X - 25, model.Boss.Position.Y - 110));
+                        drawingContext.DrawRectangle(BossHpMiddle, null, new Rect(model.Boss.Position.X - model.Boss.Health / 4, model.Boss.Position.Y - 80, model.Boss.Health / 2, 10));
+                    }
+
                     
                 }
                 if(model.Boss != null && model.Boss.Health <= 0)

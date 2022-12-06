@@ -75,6 +75,11 @@ namespace Space_shooter.Logic
             if (EnemyShips == null) EnemyShips = new List<EnemyShip>();
             if (Powerups == null) Powerups = new List<Powerup>();
             if (Player == null) Player = new Player(area);
+            else
+            {
+                Player.Position = new Point(Player.Position.X, area.Height - 100);
+                Player.Hitbox = new Rect(Player.Position.X - 15, Player.Position.Y - 12, 30, 25);
+            }
             if (Asteroids.Count == 0) Asteroids.Add(new Asteroid(area, Asteroidspeed));
             if (EnemyShips.Count == 0 && Boss == null) SetupEnemyes(area);
             Godmode_activated?.Invoke(this, null);
