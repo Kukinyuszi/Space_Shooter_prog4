@@ -1,0 +1,20 @@
+﻿<Window x:Class="Space_shooter.Windows.StoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Space_shooter.Windows"
+        mc:Ignorable="d"
+        Title="StoryWindow" Height="735" Width="550" AllowsTransparency="True" Cursor="None"
+        Background="Black" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize" KeyDown="Window_KeyDown">
+    <Canvas x:Name="myCanvas">
+        <Canvas.Background>
+            <VisualBrush Stretch="Fill" >
+                <VisualBrush.Visual>
+                    <MediaElement x:Name="mediaElement" MediaEnded="mediaElement_MediaEnded"  LoadedBehavior="Play" Source="Videos/Story.mp4" />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Canvas.Background>
+    </Canvas>
+</Window>

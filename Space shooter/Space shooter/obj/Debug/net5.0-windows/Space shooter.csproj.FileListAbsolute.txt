@@ -246,3 +246,6 @@ C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0
 C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_arrow.cur
 C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_grab.cur
 C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Images\Cursor_arrow.png
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\StoryWindow.g.cs
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\bin\Debug\net5.0-windows\Windows\Story.mp4
+C:\Users\aali-tra\source\repos\Git5\Space shooter\Space shooter\obj\Debug\net5.0-windows\Windows\StoryWindow.baml

@@ -46,7 +46,7 @@ namespace Space_shooter
             this.sps = sps;
             InitializeComponent();
 
-            if(displaySettings.FullScreen)
+            if (displaySettings.FullScreen)
             {
                 this.WindowState = WindowState.Maximized;
                 this.ResizeMode = ResizeMode.NoResize;
@@ -62,7 +62,6 @@ namespace Space_shooter
                 this.Width = MyGrid.Width;
             }
 
-            //this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -173,8 +172,9 @@ namespace Space_shooter
         {
             IGameModel settings = new SpaceShooterLogic();
             MainWindow mw = new MainWindow(gameMenu, settings, displaySettings, sps);
-            this.Close();
             mw.Show();
+            this.Close();
+
         }
 
         private void Paused()

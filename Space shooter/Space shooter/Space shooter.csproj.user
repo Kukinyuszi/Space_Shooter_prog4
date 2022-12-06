@@ -40,6 +40,9 @@
     <Compile Update="Windows\SettingsMenuWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\StoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Windows\CreditsWindow.xaml">
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\SettingsMenuWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\StoryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

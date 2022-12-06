@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Space_shooter.Windows"
         mc:Ignorable="d"
-        Title="IntroWindow" Height="735" Width="550" Cursor="None" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
+        Title="IntroWindow" Height="735" Width="550" Cursor="None" Focusable="True" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border BorderBrush="Transparent"  BorderThickness="5" CornerRadius="10" Background="Transparent" >
@@ -21,7 +21,7 @@
         </ControlTemplate>
     </Window.Template>
   
-    <Canvas>
+    <Canvas x:Name="myCanvas">
         <Canvas.Background>
             <VisualBrush Stretch="Fill" >
                 <VisualBrush.Visual>

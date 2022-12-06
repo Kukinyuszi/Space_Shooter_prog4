@@ -2,12 +2,12 @@
   "displaySettings": {
     "Animation": true,
     "Hitboxes": false,
-    "FullScreen": true
+    "FullScreen": false
   },
   "soundPlayerService": {
     "Music": true,
     "Sound": true,
-    "MusicVolume": 0.0,
-    "SoundVolume": 0.0
+    "MusicVolume": 0.01860465116279096,
+    "SoundVolume": 0.11782945736434146
   }
 }

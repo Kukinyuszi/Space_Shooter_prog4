@@ -39,6 +39,7 @@
     <None Remove="Windows\Sound_BTN.png" />
     <None Remove="Windows\space1080.png" />
     <None Remove="Windows\Space_Shooter_Label.png" />
+    <None Remove="Windows\Story.mp4" />
     <None Remove="Windows\Window_Background.png" />
     <None Remove="Windows\you_lose.png" />
   </ItemGroup>
@@ -100,6 +101,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Windows\Intro_video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\Story.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

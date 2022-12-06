@@ -28,5 +28,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/window_background.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/images/you_lose.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/intro_video.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/story.mp4")]
 
 

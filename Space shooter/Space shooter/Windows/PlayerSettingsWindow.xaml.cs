@@ -45,8 +45,9 @@ namespace Space_shooter.Windows
             {
                 settings.PlayerName = tb_playername.Text;
                 settings.Difficultyness = DifficultyChecker();
-                MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
-                StartingTheGame.Show();
+                StoryWindow sw = new StoryWindow(_mainMenu, settings, displaySettings, sps);
+                sw.Template = this.Template;
+                sw.Show();
                 _mainMenu.Close();
                 this.Close();
             }
@@ -94,7 +95,10 @@ namespace Space_shooter.Windows
                 {
                     settings.PlayerName = tb_playername.Text;
                     settings.Difficultyness = DifficultyChecker();
-                    MainWindow StartingTheGame = new MainWindow(_mainMenu, settings, displaySettings, sps);
+                    StoryWindow sw = new StoryWindow(_mainMenu, settings, displaySettings, sps);
+                    sw.Template = this.Template;
+                    sw.Show();
+                    this.Close();
 
                 }
             }

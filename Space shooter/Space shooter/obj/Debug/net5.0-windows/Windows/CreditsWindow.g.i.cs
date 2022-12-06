@@ -53,7 +53,7 @@ namespace Space_shooter.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Space shooter;V1.0.0.0;component/windows/creditswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Space shooter;component/windows/creditswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\CreditsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
