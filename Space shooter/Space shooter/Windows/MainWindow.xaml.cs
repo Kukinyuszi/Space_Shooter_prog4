@@ -46,6 +46,8 @@ namespace Space_shooter
             this.sps = sps;
             InitializeComponent();
 
+            // Sets the resolution by the settings
+
             if (displaySettings.FullScreen)
             {
                 this.WindowState = WindowState.Maximized;
@@ -66,6 +68,8 @@ namespace Space_shooter
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // Game refresh timer
+
             gameTimer = new DispatcherTimer();
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);
             gameTimer.Tick += (sender, eventargs) =>
@@ -73,6 +77,8 @@ namespace Space_shooter
                 logic.TimeStep();
                 display.InvalidateVisual();
             };
+
+            // Timer for the powerups
 
             PowerupTimer = new DispatcherTimer();
             PowerupTimer.Interval = TimeSpan.FromSeconds(1);
@@ -104,6 +110,7 @@ namespace Space_shooter
             logic.Godmode_activated += Logic_Godmode_activated;
         }
 
+        // Checks if godmode activated, and sets up the buttons for it
         private void Logic_Godmode_activated(object sender, EventArgs e)
         {
             if (logic.Godmode)
@@ -116,7 +123,6 @@ namespace Space_shooter
                 PowerupTimer.Start();
                 this.Cursor = Cursors.None;
             }
-
             foreach (var item in MyGrid.Children)
             {
                  if(item is Label)
@@ -124,9 +130,7 @@ namespace Space_shooter
                     Label l = (Label)item;
                     if (logic.Godmode)
                     {
-                        l.Visibility = Visibility.Visible;
-                        
-                    }
+                        l.Visibility = Visibility.Visible;                    }
                     else
                     {
                         l.Visibility = Visibility.Hidden;
@@ -135,6 +139,7 @@ namespace Space_shooter
             }
         }
 
+        // Stops the game and displays the game over window
         private void Logic_GameOver(object? sender, EventArgs e)
         {
             gameTimer.Stop();
@@ -202,7 +207,6 @@ namespace Space_shooter
             }
         }
 
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (logic != null)
@@ -269,6 +273,8 @@ namespace Space_shooter
                 logic.Controlup(SpaceShooterLogic.Controls.Shoot);
             }
         }
+
+        // Developer buttons
         private void Score_Button_Click(object sender, MouseButtonEventArgs e)
         {
             logic.Score += 20;

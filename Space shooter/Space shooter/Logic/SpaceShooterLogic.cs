@@ -216,7 +216,7 @@ namespace Space_shooter.Logic
                 }
             
         }
-
+        // Checks if the ships heading the same way, and they overlap each other, if they are, than redirect one 
         private void EnemyShipsClearance()
         {
             for (int i = 1; i < EnemyShips.Count; i++)
@@ -224,7 +224,7 @@ namespace Space_shooter.Logic
                 if(Collide(EnemyShips[0].Hitbox,EnemyShips[i].Hitbox) && EnemyShips[0].left == EnemyShips[i].left) EnemyShips[0].left = !EnemyShips[0].left;
             }
         }
-
+        // Sets the difficulty
         private void SetupDifficulty()
         {
             switch (Difficultyness)
@@ -262,7 +262,7 @@ namespace Space_shooter.Logic
             enemyFireRateTemp = enemyFireRate;
             enemySpawnCountTemp = enemiesSpawnCount;
         }
-
+        // If the screen size changes, it relocates the objects to its original place
         public void RelocateObjects(Size area)
         {
             if(Player.Position.X >= area.Width - 25 )Player.Position = new Point(area.Width - 25, Player.Position.Y);
@@ -272,7 +272,7 @@ namespace Space_shooter.Logic
                 if (enemy.Position.X >= area.Width - 25) enemy.Position = new Point(random.Next(25, (int)area.Width - 25), enemy.Position.Y);
             }
         }
-
+        // Checks all the objects if they are got hit previous round, and delets them from the arrays
         private void HitCheck(System.Windows.Size size)
         {
             for (int i = 0; i < Asteroids.Count; i++)
@@ -284,7 +284,7 @@ namespace Space_shooter.Logic
                     Asteroids.Add(new Asteroid(size, Asteroidspeed));
                 }
             }
-
+            
             for (int i = 0; i < EnemyShips.Count; i++)
             {
                 if (EnemyShips[i].IsHit)
@@ -300,7 +300,7 @@ namespace Space_shooter.Logic
                 if (Lasers[i].IsHit) { Lasers.RemoveAt(i); }
             }
         }
-
+        // Sets up one of the new bosses based on the point score
         private void SetupNewBoss(System.Windows.Size size)
         {
             if((score % 2000) < 90)
@@ -311,7 +311,7 @@ namespace Space_shooter.Logic
 
             EnemyShips.Clear();
         }
-
+        // Checks if the boss health is 0, than sets up the enemies again
         private void IsBossDead(System.Windows.Size size)
         {
             if (Boss.Health <= 0)
@@ -321,10 +321,9 @@ namespace Space_shooter.Logic
                 SetupEnemyes(size);
             }
         }
-
+        // Checks if a laser object intersects with the boss, and decrease its health
         private void BossCollisions(int i)
         {
-
             if (Collide(Lasers[i].Hitbox, Boss.Hitbox) && Lasers[i].Fromplayer)
             {
                 Lasers[i].IsHit = true;
@@ -332,7 +331,7 @@ namespace Space_shooter.Logic
                 else Boss.Health -= 10;
             }
         }
-
+        // Checks if a laser object intersects with the enemies, and changes their status to got hit
         private void EnemyShipsCollisions(int i)
         {
             for (int j = 0; j < EnemyShips.Count; j++)
@@ -347,7 +346,8 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Checks if a laser object intersects with the asteroids, and changes their status to got hit
+        // Checks if an asteroid intersects wint the player, and decrease players health
         private void AsteroidsCollison(int j)
         {
             for (int i = 0; i < Asteroids.Count; i++)
@@ -368,7 +368,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Helper method to go through all the enemies and call the shooting method with them
         private void EnemiesShoot()
         {
             for (int i = 0; i < EnemyShips.Count; i++)
@@ -379,7 +379,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Moves with the asteroids one step, and desletes them if they are out of the area
         private void AsteroidsMovement(System.Windows.Size size)
         {
             for (int i = 0; i < Asteroids.Count; i++)
@@ -392,7 +392,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Sets up the enemies randomly
         private void SetupEnemyes(System.Windows.Size area)
         {
 
@@ -419,7 +419,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Shoots with the player based on its weapon
         private void NewPlayerShoot()
         {
             Point playerpositiontemp = new System.Windows.Point(Player.Position.X, Player.Position.Y - 25);
@@ -444,7 +444,7 @@ namespace Space_shooter.Logic
                     break;
             }
         }
-
+        // Shoots with the enemies based on their type
         private void NewEnemyShoot(EnemyShip enemyship)
         {
             Point enemyshippositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 23);
@@ -483,19 +483,19 @@ namespace Space_shooter.Logic
             
 
         }
-
-            private void BossShoot(EnemyShip enemyship, double x, double y)
+        // Shoots with the boss based on its type
+        private void BossShoot(EnemyShip enemyship, double x, double y)
+        {
+            Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
+            switch ((enemyship as Boss).BossType)
             {
-               Point bosspositiontemp = new System.Windows.Point(enemyship.Position.X, enemyship.Position.Y + 60);
-               switch ((enemyship as Boss).BossType)
-               {
                 case BossName.Claec:
                     if (bossShotTimer == Bossshottimechange / 2)
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector(Math.Round(x) * 1.5, Math.Round(y) * 1.5), false, false, true));
                         EnemyShoot?.Invoke(this, null);
                     }
-                    else if(bossShotTimer == 0)
+                    else if (bossShotTimer == 0)
                     {
                         Lasers.Add(new Laser(bosspositiontemp, new Vector((x * 2) - 2, y * 1.5), false, false, true));
                         Lasers.Add(new Laser(bosspositiontemp, new Vector(x * 2 + random.Next(-1, 2), y * 1.5), false, false, true));
@@ -515,9 +515,9 @@ namespace Space_shooter.Logic
                     break;
                 case BossName.None:
                     break;
-               }
             }
-
+        }
+        // Decrease shooting timers
         private void CountersTimeEllapses()
         {
             if (enemyShotTimer == 0) enemyShotTimer = Enemyshottimechange;
@@ -527,7 +527,7 @@ namespace Space_shooter.Logic
 
             if (playerShotTimer > 0) playerShotTimer--;
         }
-
+        // Checks if the player health is 0, saves the score, than calls the gameover method
         private void SeeIfGameEnds()
         {
             if (Player.Health <= 0)
@@ -538,7 +538,7 @@ namespace Space_shooter.Logic
 
             }
         }
-
+        // Player interactions like moving and shooting
         private void PlayerInteractions(System.Windows.Size size)
         {
             if(Player.Position.Y > size.Height - 100)
@@ -578,7 +578,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Checks if the player intersects with a powerup, and gets its benefits
         private void PowerupPickup(System.Windows.Size size)
         {
             for (int i = 0; i < Powerups.Count; i++)
@@ -652,7 +652,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Checks if a object hitbox intersects with b object hitbox
         private bool Collide(Rect rect1, Rect rect2)
         {
             if (rect1.IntersectsWith(rect2))
@@ -661,7 +661,7 @@ namespace Space_shooter.Logic
             }
             else return false;
         }
-
+        // If an asteroid gets hit, it randomly drops a powerup
         private void PowerupDrop(Asteroid asteroid)
         {
             if (random.Next(99) < Poweruprate)
@@ -705,7 +705,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Moves one step with the enemies
         private void EnemyShipsMovement(System.Windows.Size size)
         {
             foreach (var item in EnemyShips)
@@ -713,7 +713,7 @@ namespace Space_shooter.Logic
                 item.MoveSideWays(size);
             }
         }
-
+        // Gets the difficultiness out of the score
         private bool DifficultyByScore()
         {
 
@@ -724,7 +724,7 @@ namespace Space_shooter.Logic
             }
             return false;
         }
-
+        // Increases the difficulty if it reaches a value in score
         private void IncreaseDifficulty(int kiloScore)
         {
             if (kiloScore < 5)
@@ -736,7 +736,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
-
+        // Moves one steo with the lasers
         private void LasersMovement(System.Windows.Size size)
         {
             for (int i = 0; i < Lasers.Count; i++)
@@ -749,6 +749,7 @@ namespace Space_shooter.Logic
                 }
             }
         }
+        // Decreases the powerups timers one
         public void Powerup_Timer_Step()
         {
             if (RapidfireTime > 0) rapidFireTime--;

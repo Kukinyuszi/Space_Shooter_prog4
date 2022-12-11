@@ -1,29 +1,107 @@
 {
   "Lasers": [
     {
-      "Laservector": "-5.675,10.775",
-      "Angle": 117.77497499572732,
+      "Laservector": "1,6",
+      "Angle": 80.53767779197439,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 43,
-      "Hitbox": "282,633,10,10",
-      "Position": "287,638",
+      "Counter": 76,
+      "Hitbox": "528,694,10,10",
+      "Position": "533,699",
       "FromBoss": false
     },
     {
-      "Laservector": "0,7",
-      "Angle": 90.0,
+      "Laservector": "-1,6",
+      "Angle": 99.46232220802561,
       "Speed": 0,
       "Fromplayer": false,
       "Big": false,
       "IsHit": false,
       "Ammosize": 10,
-      "Counter": 44,
-      "Hitbox": "346,511,10,10",
-      "Position": "351,516",
+      "Counter": 77,
+      "Hitbox": "375,700,10,10",
+      "Position": "380,705",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "1,6",
+      "Angle": 80.53767779197439,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 77,
+      "Hitbox": "497,700,10,10",
+      "Position": "502,705",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "-1,6",
+      "Angle": 99.46232220802561,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 77,
+      "Hitbox": "343,700,10,10",
+      "Position": "348,705",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "1,6",
+      "Angle": 80.53767779197439,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 22,
+      "Hitbox": "529,370,10,10",
+      "Position": "534,375",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "-1,6",
+      "Angle": 99.46232220802561,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 22,
+      "Hitbox": "485,370,10,10",
+      "Position": "490,375",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "1,6",
+      "Angle": 80.53767779197439,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 22,
+      "Hitbox": "387,370,10,10",
+      "Position": "392,375",
+      "FromBoss": false
+    },
+    {
+      "Laservector": "-1,6",
+      "Angle": 99.46232220802561,
+      "Speed": 0,
+      "Fromplayer": false,
+      "Big": false,
+      "IsHit": false,
+      "Ammosize": 10,
+      "Counter": 22,
+      "Hitbox": "343,370,10,10",
+      "Position": "348,375",
       "FromBoss": false
     }
   ],
@@ -31,42 +109,42 @@
     {
       "Speed": 5,
       "IsHit": false,
-      "Position": "336,600",
-      "Hitbox": "311,580,50,40"
+      "Position": "66,225",
+      "Hitbox": "41,205,50,40"
     }
   ],
   "EnemyShips": [
     {
       "left": true,
-      "Position": "504,185",
-      "Name": 2,
+      "Position": "516,220",
+      "Name": 1,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "479,165,50,40"
+      "Hitbox": "491,200,50,40"
     },
     {
       "left": true,
-      "Position": "307,185",
-      "Name": 0,
+      "Position": "348,220",
+      "Name": 1,
       "IsHit": false,
       "IsDead": false,
       "IsMoving": false,
-      "Hitbox": "282,165,50,40"
+      "Hitbox": "323,200,50,40"
     }
   ],
   "Powerups": [],
   "Player": {
-    "left": true,
-    "Position": "175,633",
+    "left": false,
+    "Position": "255,764",
     "Weapon": 3,
     "IsDead": false,
     "IsMoving": false,
-    "Hitbox": "160,621,30,25",
-    "Health": 90
+    "Hitbox": "240,752,30,25",
+    "Health": 80
   },
   "Boss": null,
-  "Score": 1910,
+  "Score": 1970,
   "HighScore": 17020,
   "PlayerName": "Akos",
   "Asteroidspeed": 5,
@@ -85,5 +163,5 @@
   "Rapid": false,
   "Strong": false,
   "Weaponon": false,
-  "Area": "550.4,735.2"
+  "Area": "550,864"
 }
